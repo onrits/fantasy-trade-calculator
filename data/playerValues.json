@@ -1,0 +1,1722 @@
+[
+    {
+        "Rank": 1,
+        "Player": "Josh Allen",
+        "Position": "QB",
+        "Pos Rank": "QB 1",
+        "TIER": 1,
+        "VALUE": 4.25
+    },
+    {
+        "Rank": 2,
+        "Player": "Lamar Jackson",
+        "Position": "QB",
+        "Pos Rank": "QB 2",
+        "TIER": 1,
+        "VALUE": 4.25
+    },
+    {
+        "Rank": 3,
+        "Player": "Jayden Daniels",
+        "Position": "QB",
+        "Pos Rank": "QB 3",
+        "TIER": 1,
+        "VALUE": 4.2
+    },
+    {
+        "Rank": 4,
+        "Player": "Jalen Hurts",
+        "Position": "QB",
+        "Pos Rank": "QB 4",
+        "TIER": 1,
+        "VALUE": 4
+    },
+    {
+        "Rank": 5,
+        "Player": "Ja'Marr Chase",
+        "Position": "WR",
+        "Pos Rank": "WR 1",
+        "TIER": 2,
+        "VALUE": 3.5
+    },
+    {
+        "Rank": 6,
+        "Player": "Justin Jefferson",
+        "Position": "WR",
+        "Pos Rank": "WR 2",
+        "TIER": 2,
+        "VALUE": 3.5
+    },
+    {
+        "Rank": 7,
+        "Player": "CeeDee Lamb",
+        "Position": "WR",
+        "Pos Rank": "WR 3",
+        "TIER": 2,
+        "VALUE": 3.25
+    },
+    {
+        "Rank": 8,
+        "Player": "Malik Nabers",
+        "Position": "WR",
+        "Pos Rank": "WR 4",
+        "TIER": 2,
+        "VALUE": 3.25
+    },
+    {
+        "Rank": 9,
+        "Player": "Puka Nacua",
+        "Position": "WR",
+        "Pos Rank": "WR 5",
+        "TIER": 2,
+        "VALUE": 3.25
+    },
+    {
+        "Rank": 10,
+        "Player": "Brian Thomas Jr.",
+        "Position": "WR",
+        "Pos Rank": "WR 6",
+        "TIER": 2,
+        "VALUE": 3.2
+    },
+    {
+        "Rank": 11,
+        "Player": "Nico Collins",
+        "Position": "WR",
+        "Pos Rank": "WR 7",
+        "TIER": 2,
+        "VALUE": 3.2
+    },
+    {
+        "Rank": 12,
+        "Player": "Brock Bowers",
+        "Position": "TE",
+        "Pos Rank": "TE 1",
+        "TIER": 2,
+        "VALUE": 3.1
+    },
+    {
+        "Rank": 13,
+        "Player": "Bijan Robinson",
+        "Position": "RB",
+        "Pos Rank": "RB 1",
+        "TIER": 2,
+        "VALUE": 3.1
+    },
+    {
+        "Rank": 14,
+        "Player": "Amon-Ra St. Brown",
+        "Position": "WR",
+        "Pos Rank": "WR 8",
+        "TIER": 3,
+        "VALUE": 2.75
+    },
+    {
+        "Rank": 15,
+        "Player": "Ladd McConkey",
+        "Position": "WR",
+        "Pos Rank": "WR 9",
+        "TIER": 3,
+        "VALUE": 2.75
+    },
+    {
+        "Rank": 16,
+        "Player": "Drake London",
+        "Position": "WR",
+        "Pos Rank": "WR 10",
+        "TIER": 3,
+        "VALUE": 2.75
+    },
+    {
+        "Rank": 17,
+        "Player": "Joe Burrow",
+        "Position": "QB",
+        "Pos Rank": "QB 5",
+        "TIER": 3,
+        "VALUE": 2.5
+    },
+    {
+        "Rank": 18,
+        "Player": "Drake Maye",
+        "Position": "QB",
+        "Pos Rank": "QB 6",
+        "TIER": 3,
+        "VALUE": 2.5
+    },
+    {
+        "Rank": 19,
+        "Player": "Ashton Jeanty",
+        "Position": "RB",
+        "Pos Rank": "RB 2",
+        "TIER": 3,
+        "VALUE": 2.75
+    },
+    {
+        "Rank": 20,
+        "Player": "Jahmyr Gibbs",
+        "Position": "RB",
+        "Pos Rank": "RB 3",
+        "TIER": 3,
+        "VALUE": 2.75
+    },
+    {
+        "Rank": 21,
+        "Player": "Marvin Harrison Jr.",
+        "Position": "WR",
+        "Pos Rank": "WR 11",
+        "TIER": 4,
+        "VALUE": 2
+    },
+    {
+        "Rank": 22,
+        "Player": "Trey McBride",
+        "Position": "TE",
+        "Pos Rank": "TE 2",
+        "TIER": 4,
+        "VALUE": 2.25
+    },
+    {
+        "Rank": 23,
+        "Player": "Justin Herbert",
+        "Position": "QB",
+        "Pos Rank": "QB 7",
+        "TIER": 4,
+        "VALUE": 2
+    },
+    {
+        "Rank": 24,
+        "Player": "A.J. Brown",
+        "Position": "WR",
+        "Pos Rank": "WR 12",
+        "TIER": 4,
+        "VALUE": 2
+    },
+    {
+        "Rank": 25,
+        "Player": "Garrett Wilson",
+        "Position": "WR",
+        "Pos Rank": "WR 13",
+        "TIER": 5,
+        "VALUE": 1.5
+    },
+    {
+        "Rank": 26,
+        "Player": "Patrick Mahomes",
+        "Position": "QB",
+        "Pos Rank": "QB 8",
+        "TIER": 5,
+        "VALUE": 1.4
+    },
+    {
+        "Rank": 27,
+        "Player": "De'Von Achane",
+        "Position": "RB",
+        "Pos Rank": "RB 4",
+        "TIER": 5,
+        "VALUE": 1.75
+    },
+    {
+        "Rank": 28,
+        "Player": "Jaxon Smith-Njigba",
+        "Position": "WR",
+        "Pos Rank": "WR 14",
+        "TIER": 5,
+        "VALUE": 1.5
+    },
+    {
+        "Rank": 29,
+        "Player": "Caleb Williams",
+        "Position": "QB",
+        "Pos Rank": "QB 9",
+        "TIER": 5,
+        "VALUE": 1.4
+    },
+    {
+        "Rank": 30,
+        "Player": "Bo Nix",
+        "Position": "QB",
+        "Pos Rank": "QB 10",
+        "TIER": 5,
+        "VALUE": 1.4
+    },
+    {
+        "Rank": 31,
+        "Player": "Kyler Murray",
+        "Position": "QB",
+        "Pos Rank": "QB 11",
+        "TIER": 5,
+        "VALUE": 1.4
+    },
+    {
+        "Rank": 32,
+        "Player": "Jordan Love",
+        "Position": "QB",
+        "Pos Rank": "QB 12",
+        "TIER": 5,
+        "VALUE": 1.35
+    },
+    {
+        "Rank": 33,
+        "Player": "Brock Purdy",
+        "Position": "QB",
+        "Pos Rank": "QB 13",
+        "TIER": 5,
+        "VALUE": 1.35
+    },
+    {
+        "Rank": 34,
+        "Player": "Travis Hunter",
+        "Position": "WR",
+        "Pos Rank": "WR 15",
+        "TIER": 5,
+        "VALUE": 1.35
+    },
+    {
+        "Rank": 35,
+        "Player": "Tetairoa McMillan",
+        "Position": "WR",
+        "Pos Rank": "WR 16",
+        "TIER": 5,
+        "VALUE": 1.3
+    },
+    {
+        "Rank": 36,
+        "Player": "Rashee Rice",
+        "Position": "WR",
+        "Pos Rank": "WR 17",
+        "TIER": 5,
+        "VALUE": 1.25
+    },
+    {
+        "Rank": 37,
+        "Player": "C.J. Stroud",
+        "Position": "QB",
+        "Pos Rank": "QB 14",
+        "TIER": 6,
+        "VALUE": 1
+    },
+    {
+        "Rank": 38,
+        "Player": "J.J. McCarthy",
+        "Position": "QB",
+        "Pos Rank": "QB 15",
+        "TIER": 6,
+        "VALUE": 1
+    },
+    {
+        "Rank": 39,
+        "Player": "Baker Mayfield",
+        "Position": "QB",
+        "Pos Rank": "QB 16",
+        "TIER": 6,
+        "VALUE": 1
+    },
+    {
+        "Rank": 40,
+        "Player": "Omarion Hampton",
+        "Position": "RB",
+        "Pos Rank": "RB 5",
+        "TIER": 6,
+        "VALUE": 1
+    },
+    {
+        "Rank": 41,
+        "Player": "Breece Hall",
+        "Position": "RB",
+        "Pos Rank": "RB 6",
+        "TIER": 6,
+        "VALUE": 1
+    },
+    {
+        "Rank": 42,
+        "Player": "Bucky Irving",
+        "Position": "RB",
+        "Pos Rank": "RB 7",
+        "TIER": 6,
+        "VALUE": 1
+    },
+    {
+        "Rank": 43,
+        "Player": "Saquon Barkley",
+        "Position": "RB",
+        "Pos Rank": "RB 8",
+        "TIER": 6,
+        "VALUE": 1
+    },
+    {
+        "Rank": 44,
+        "Player": "Tee Higgins",
+        "Position": "WR",
+        "Pos Rank": "WR 18",
+        "TIER": 6,
+        "VALUE": 1
+    },
+    {
+        "Rank": 45,
+        "Player": "Cam Ward",
+        "Position": "QB",
+        "Pos Rank": "QB 17",
+        "TIER": 6,
+        "VALUE": 1
+    },
+    {
+        "Rank": 46,
+        "Player": "Trevor Lawrence",
+        "Position": "QB",
+        "Pos Rank": "QB 18",
+        "TIER": 6,
+        "VALUE": 1
+    },
+    {
+        "Rank": 47,
+        "Player": "Dak Prescott",
+        "Position": "QB",
+        "Pos Rank": "QB 19",
+        "TIER": 6,
+        "VALUE": 1
+    },
+    {
+        "Rank": 48,
+        "Player": "Christian McCaffrey",
+        "Position": "RB",
+        "Pos Rank": "RB 9",
+        "TIER": 6,
+        "VALUE": 0.85
+    },
+    {
+        "Rank": 49,
+        "Player": "Colston Loveland",
+        "Position": "TE",
+        "Pos Rank": "TE 3",
+        "TIER": 7,
+        "VALUE": 0.75
+    },
+    {
+        "Rank": 50,
+        "Player": "Rome Odunze",
+        "Position": "WR",
+        "Pos Rank": "WR 19",
+        "TIER": 7,
+        "VALUE": 0.75
+    },
+    {
+        "Rank": 51,
+        "Player": "Chris Olave",
+        "Position": "WR",
+        "Pos Rank": "WR 20",
+        "TIER": 7,
+        "VALUE": 0.75
+    },
+    {
+        "Rank": 52,
+        "Player": "Jaxson Dart",
+        "Position": "QB",
+        "Pos Rank": "QB 20",
+        "TIER": 7,
+        "VALUE": 0.75
+    },
+    {
+        "Rank": 53,
+        "Player": "Emeka Egbuka",
+        "Position": "WR",
+        "Pos Rank": "WR 21",
+        "TIER": 7,
+        "VALUE": 0.75
+    },
+    {
+        "Rank": 54,
+        "Player": "Brandon Aiyuk",
+        "Position": "WR",
+        "Pos Rank": "WR 22",
+        "TIER": 7,
+        "VALUE": 0.6
+    },
+    {
+        "Rank": 55,
+        "Player": "Kaleb Johnson",
+        "Position": "RB",
+        "Pos Rank": "RB 10",
+        "TIER": 7,
+        "VALUE": 0.6
+    },
+    {
+        "Rank": 56,
+        "Player": "TreVeyon Henderson",
+        "Position": "RB",
+        "Pos Rank": "RB 11",
+        "TIER": 7,
+        "VALUE": 0.6
+    },
+    {
+        "Rank": 57,
+        "Player": "Quinshon Judkins",
+        "Position": "RB",
+        "Pos Rank": "RB 12",
+        "TIER": 7,
+        "VALUE": 0.6
+    },
+    {
+        "Rank": 58,
+        "Player": "Josh Jacobs",
+        "Position": "RB",
+        "Pos Rank": "RB 13",
+        "TIER": 7,
+        "VALUE": 0.6
+    },
+    {
+        "Rank": 59,
+        "Player": "George Pickens",
+        "Position": "WR",
+        "Pos Rank": "WR 23",
+        "TIER": 8,
+        "VALUE": 0.4
+    },
+    {
+        "Rank": 60,
+        "Player": "Kenneth Walker III",
+        "Position": "RB",
+        "Pos Rank": "RB 14",
+        "TIER": 8,
+        "VALUE": 0.4
+    },
+    {
+        "Rank": 61,
+        "Player": "Kyren Williams",
+        "Position": "RB",
+        "Pos Rank": "RB 15",
+        "TIER": 8,
+        "VALUE": 0.4
+    },
+    {
+        "Rank": 62,
+        "Player": "Jonathan Taylor",
+        "Position": "RB",
+        "Pos Rank": "RB 16",
+        "TIER": 8,
+        "VALUE": 0.4
+    },
+    {
+        "Rank": 63,
+        "Player": "James Cook",
+        "Position": "RB",
+        "Pos Rank": "RB 17",
+        "TIER": 8,
+        "VALUE": 0.4
+    },
+    {
+        "Rank": 64,
+        "Player": "Chase Brown",
+        "Position": "RB",
+        "Pos Rank": "RB 18",
+        "TIER": 8,
+        "VALUE": 0.4
+    },
+    {
+        "Rank": 65,
+        "Player": "RJ Harvey",
+        "Position": "RB",
+        "Pos Rank": "RB 19",
+        "TIER": 8,
+        "VALUE": 0.25
+    },
+    {
+        "Rank": 66,
+        "Player": "DeVonta Smith",
+        "Position": "WR",
+        "Pos Rank": "WR 24",
+        "TIER": 8,
+        "VALUE": 0.25
+    },
+    {
+        "Rank": 67,
+        "Player": "Luther Burden",
+        "Position": "WR",
+        "Pos Rank": "WR 25",
+        "TIER": 9,
+        "VALUE": 0.2
+    },
+    {
+        "Rank": 68,
+        "Player": "Matthew Golden",
+        "Position": "WR",
+        "Pos Rank": "WR 26",
+        "TIER": 9,
+        "VALUE": 0.2
+    },
+    {
+        "Rank": 69,
+        "Player": "Josh Downs",
+        "Position": "WR",
+        "Pos Rank": "WR 27",
+        "TIER": 9,
+        "VALUE": 0.2
+    },
+    {
+        "Rank": 70,
+        "Player": "Jayden Reed",
+        "Position": "WR",
+        "Pos Rank": "WR 28",
+        "TIER": 9,
+        "VALUE": 0.2
+    },
+    {
+        "Rank": 71,
+        "Player": "Jaylen Waddle",
+        "Position": "WR",
+        "Pos Rank": "WR 29",
+        "TIER": 9,
+        "VALUE": 0.2
+    },
+    {
+        "Rank": 72,
+        "Player": "Xavier Worthy",
+        "Position": "WR",
+        "Pos Rank": "WR 30",
+        "TIER": 9,
+        "VALUE": 0.2
+    },
+    {
+        "Rank": 73,
+        "Player": "DK Metcalf",
+        "Position": "WR",
+        "Pos Rank": "WR 31",
+        "TIER": 9,
+        "VALUE": 0.2
+    },
+    {
+        "Rank": 74,
+        "Player": "Ricky Pearsall",
+        "Position": "WR",
+        "Pos Rank": "WR 32",
+        "TIER": 9,
+        "VALUE": 0.2
+    },
+    {
+        "Rank": 75,
+        "Player": "Jordan Addison",
+        "Position": "WR",
+        "Pos Rank": "WR 33",
+        "TIER": 9,
+        "VALUE": 0.2
+    },
+    {
+        "Rank": 76,
+        "Player": "Zay Flowers",
+        "Position": "WR",
+        "Pos Rank": "WR 34",
+        "TIER": 9,
+        "VALUE": 0.2
+    },
+    {
+        "Rank": 77,
+        "Player": "D.J. Moore",
+        "Position": "WR",
+        "Pos Rank": "WR 35",
+        "TIER": 9,
+        "VALUE": 0.2
+    },
+    {
+        "Rank": 78,
+        "Player": "Jared Goff",
+        "Position": "QB",
+        "Pos Rank": "QB 21",
+        "TIER": 9,
+        "VALUE": 0.2
+    },
+    {
+        "Rank": 79,
+        "Player": "Derrick Henry",
+        "Position": "RB",
+        "Pos Rank": "RB 20",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 78,
+        "Player": "Chuba Hubbard",
+        "Position": "RB",
+        "Pos Rank": "RB 21",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 79,
+        "Player": "Alvin Kamara",
+        "Position": "RB",
+        "Pos Rank": "RB 22",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 80,
+        "Player": "Terry McLaurin",
+        "Position": "WR",
+        "Pos Rank": "WR 36",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 81,
+        "Player": "Chris Godwin",
+        "Position": "WR",
+        "Pos Rank": "WR 37",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 82,
+        "Player": "Mike Evans",
+        "Position": "WR",
+        "Pos Rank": "WR 38",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 83,
+        "Player": "Davante Adams",
+        "Position": "WR",
+        "Pos Rank": "WR 39",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 84,
+        "Player": "Joe Mixon",
+        "Position": "RB",
+        "Pos Rank": "RB 23",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 85,
+        "Player": "Bryce Young",
+        "Position": "QB",
+        "Pos Rank": "QB 22",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 86,
+        "Player": "Tua Tagovailoa",
+        "Position": "QB",
+        "Pos Rank": "QB 23",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 87,
+        "Player": "Justin Fields",
+        "Position": "QB",
+        "Pos Rank": "QB 24",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 88,
+        "Player": "Tyreek Hill",
+        "Position": "WR",
+        "Pos Rank": "WR 40",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 89,
+        "Player": "Michael Penix",
+        "Position": "QB",
+        "Pos Rank": "QB 25",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 90,
+        "Player": "Sam Darnold",
+        "Position": "QB",
+        "Pos Rank": "QB 26",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 91,
+        "Player": "George Kittle",
+        "Position": "TE",
+        "Pos Rank": "TE 4",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 92,
+        "Player": "Tyler Warren",
+        "Position": "TE",
+        "Pos Rank": "TE 5",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 93,
+        "Player": "Sam Laporta",
+        "Position": "TE",
+        "Pos Rank": "TE 6",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 94,
+        "Player": "David Montgomery",
+        "Position": "RB",
+        "Pos Rank": "RB 24",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 95,
+        "Player": "Tony Pollard",
+        "Position": "RB",
+        "Pos Rank": "RB 25",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 96,
+        "Player": "Jack Bech",
+        "Position": "WR",
+        "Pos Rank": "WR 41",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 97,
+        "Player": "Kyle Williams",
+        "Position": "WR",
+        "Pos Rank": "WR 42",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 98,
+        "Player": "Courtland Sutton",
+        "Position": "WR",
+        "Pos Rank": "WR 43",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 99,
+        "Player": "Tre Harris",
+        "Position": "WR",
+        "Pos Rank": "WR 44",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 100,
+        "Player": "Khalil Shakir",
+        "Position": "WR",
+        "Pos Rank": "WR 45",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 101,
+        "Player": "Jameson Williams",
+        "Position": "WR",
+        "Pos Rank": "WR 46",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 102,
+        "Player": "Jerry Jeudy",
+        "Position": "WR",
+        "Pos Rank": "WR 47",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 103,
+        "Player": "Mark Andrews",
+        "Position": "TE",
+        "Pos Rank": "TE 7",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 104,
+        "Player": "Michael Pittman Jr.",
+        "Position": "WR",
+        "Pos Rank": "WR 48",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 105,
+        "Player": "Stefon Diggs",
+        "Position": "WR",
+        "Pos Rank": "WR 49",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 106,
+        "Player": "Deebo Samuel",
+        "Position": "WR",
+        "Pos Rank": "WR 50",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 107,
+        "Player": "James Conner",
+        "Position": "RB",
+        "Pos Rank": "RB 26",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 108,
+        "Player": "Geno Smith",
+        "Position": "QB",
+        "Pos Rank": "QB 27",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 109,
+        "Player": "Tucker Kraft",
+        "Position": "TE",
+        "Pos Rank": "TE 8",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 110,
+        "Player": "Dalton Kincaid",
+        "Position": "TE",
+        "Pos Rank": "TE 9",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 111,
+        "Player": "David Njoku",
+        "Position": "TE",
+        "Pos Rank": "TE 10",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 112,
+        "Player": "T.J. Hockenson",
+        "Position": "TE",
+        "Pos Rank": "TE 11",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 113,
+        "Player": "Matthew Stafford",
+        "Position": "QB",
+        "Pos Rank": "QB 28",
+        "TIER": 11,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 114,
+        "Player": "Bhayshul Tuten",
+        "Position": "RB",
+        "Pos Rank": "RB 27",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 115,
+        "Player": "Jauan Jennings",
+        "Position": "WR",
+        "Pos Rank": "WR 51",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 116,
+        "Player": "Jalen Milroe",
+        "Position": "QB",
+        "Pos Rank": "QB 29",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 117,
+        "Player": "Isiah Pacheco",
+        "Position": "RB",
+        "Pos Rank": "RB 28",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 118,
+        "Player": "Tyrone Tracy",
+        "Position": "RB",
+        "Pos Rank": "RB 29",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 119,
+        "Player": "Cam Skattebo",
+        "Position": "RB",
+        "Pos Rank": "RB 30",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 120,
+        "Player": "Keon Coleman",
+        "Position": "WR",
+        "Pos Rank": "WR 52",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 121,
+        "Player": "Evan Engram",
+        "Position": "TE",
+        "Pos Rank": "TE 12",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 122,
+        "Player": "Calvin Ridley",
+        "Position": "WR",
+        "Pos Rank": "WR 53",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 123,
+        "Player": "Jakobi Meyers",
+        "Position": "WR",
+        "Pos Rank": "WR 54",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 124,
+        "Player": "Jonnu Smith",
+        "Position": "TE",
+        "Pos Rank": "TE 13",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 125,
+        "Player": "Travis Kelce",
+        "Position": "TE",
+        "Pos Rank": "TE 14",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 126,
+        "Player": "Cooper Kupp",
+        "Position": "WR",
+        "Pos Rank": "WR 55",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 127,
+        "Player": "Tyler Shough",
+        "Position": "QB",
+        "Pos Rank": "QB 30",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 128,
+        "Player": "D'Andre Swift",
+        "Position": "RB",
+        "Pos Rank": "RB 31",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 129,
+        "Player": "Brian Robinson Jr.",
+        "Position": "RB",
+        "Pos Rank": "RB 32",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 130,
+        "Player": "Jaylin Noel",
+        "Position": "WR",
+        "Pos Rank": "WR 56",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 131,
+        "Player": "Jaylen Warren",
+        "Position": "RB",
+        "Pos Rank": "RB 33",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 132,
+        "Player": "Zach Charbonnet",
+        "Position": "RB",
+        "Pos Rank": "RB 34",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 133,
+        "Player": "Travis Etienne",
+        "Position": "RB",
+        "Pos Rank": "RB 35",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 134,
+        "Player": "Jalen Coker",
+        "Position": "WR",
+        "Pos Rank": "WR 57",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 135,
+        "Player": "Jake Ferguson",
+        "Position": "TE",
+        "Pos Rank": "TE 15",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 136,
+        "Player": "Harold Fannin Jr.",
+        "Position": "TE",
+        "Pos Rank": "TE 16",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 137,
+        "Player": "Terrance Ferguson",
+        "Position": "TE",
+        "Pos Rank": "TE 17",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 138,
+        "Player": "Cedric Tillman",
+        "Position": "WR",
+        "Pos Rank": "WR 58",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 139,
+        "Player": "Dallas Goedert",
+        "Position": "TE",
+        "Pos Rank": "TE 18",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 140,
+        "Player": "Kyle Pitts",
+        "Position": "TE",
+        "Pos Rank": "TE 19",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 141,
+        "Player": "Trey Benson",
+        "Position": "RB",
+        "Pos Rank": "RB 36",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 142,
+        "Player": "Aaron Jones",
+        "Position": "RB",
+        "Pos Rank": "RB 37",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 143,
+        "Player": "Daniel Jones",
+        "Position": "QB",
+        "Pos Rank": "QB 31",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 144,
+        "Player": "JK Dobbins",
+        "Position": "RB",
+        "Pos Rank": "RB 38",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 145,
+        "Player": "Tyjae Spears",
+        "Position": "RB",
+        "Pos Rank": "RB 39",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 146,
+        "Player": "Tank Bigsby",
+        "Position": "RB",
+        "Pos Rank": "RB 40",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 147,
+        "Player": "Rashod Bateman",
+        "Position": "WR",
+        "Pos Rank": "WR 59",
+        "TIER": 12,
+        "VALUE": 0.025
+    },
+    {
+        "Rank": 148,
+        "Player": "Shedeur Sanders",
+        "Position": "QB",
+        "Pos Rank": "QB 32",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 149,
+        "Player": "Aaron Rodgers",
+        "Position": "QB",
+        "Pos Rank": "QB 33",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 150,
+        "Player": "Darnell Mooney",
+        "Position": "WR",
+        "Pos Rank": "WR 60",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 151,
+        "Player": "Roschon Johnson",
+        "Position": "RB",
+        "Pos Rank": "RB 41",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 152,
+        "Player": "Adonai Mitchell",
+        "Position": "WR",
+        "Pos Rank": "WR 61",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 153,
+        "Player": "Mason Taylor",
+        "Position": "TE",
+        "Pos Rank": "TE 20",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 154,
+        "Player": "Christian Kirk",
+        "Position": "WR",
+        "Pos Rank": "WR 62",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 155,
+        "Player": "Elic Ayomanor",
+        "Position": "WR",
+        "Pos Rank": "WR 63",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 156,
+        "Player": "Brenton Strange",
+        "Position": "TE",
+        "Pos Rank": "TE 21",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 157,
+        "Player": "Russell Wilson",
+        "Position": "QB",
+        "Pos Rank": "QB 34",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 158,
+        "Player": "Jordan Mason",
+        "Position": "RB",
+        "Pos Rank": "RB 42",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 159,
+        "Player": "Isaac Guerrendo",
+        "Position": "RB",
+        "Pos Rank": "RB 43",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 160,
+        "Player": "Braelon Allen",
+        "Position": "RB",
+        "Pos Rank": "RB 44",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 161,
+        "Player": "Ray Davis",
+        "Position": "RB",
+        "Pos Rank": "RB 45",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 162,
+        "Player": "Jonathan Brooks",
+        "Position": "RB",
+        "Pos Rank": "RB 46",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 163,
+        "Player": "Rachaad White",
+        "Position": "RB",
+        "Pos Rank": "RB 47",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 164,
+        "Player": "Rhamondre Stevenson",
+        "Position": "RB",
+        "Pos Rank": "RB 48",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 165,
+        "Player": "Najee Harris",
+        "Position": "RB",
+        "Pos Rank": "RB 49",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 166,
+        "Player": "Tyler Allgeier",
+        "Position": "RB",
+        "Pos Rank": "RB 50",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 167,
+        "Player": "Kirk Cousins",
+        "Position": "QB",
+        "Pos Rank": "QB 35",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 168,
+        "Player": "Pat Freiermuth",
+        "Position": "TE",
+        "Pos Rank": "TE 22",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 169,
+        "Player": "Xavier Legette",
+        "Position": "WR",
+        "Pos Rank": "WR 64",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 170,
+        "Player": "Jalen McMillan",
+        "Position": "WR",
+        "Pos Rank": "WR 65",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 171,
+        "Player": "Michael Mayer",
+        "Position": "TE",
+        "Pos Rank": "TE 23",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 172,
+        "Player": "Dontayvion Wicks",
+        "Position": "WR",
+        "Pos Rank": "WR 66",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 173,
+        "Player": "Tank Dell ",
+        "Position": "WR",
+        "Pos Rank": "WR 67",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 174,
+        "Player": "Christian Watson",
+        "Position": "WR",
+        "Pos Rank": "WR 68",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 175,
+        "Player": "Hollywood Brown",
+        "Position": "WR",
+        "Pos Rank": "WR 69",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 176,
+        "Player": "Rashid Shaheed",
+        "Position": "WR",
+        "Pos Rank": "WR 70",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 177,
+        "Player": "Demario Douglas",
+        "Position": "WR",
+        "Pos Rank": "WR 71",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 178,
+        "Player": "Alec Pierce",
+        "Position": "WR",
+        "Pos Rank": "WR 72",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 179,
+        "Player": "Jalen Royals",
+        "Position": "WR",
+        "Pos Rank": "WR 73",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 180,
+        "Player": "Elijah Arroyo",
+        "Position": "TE",
+        "Pos Rank": "TE 24",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 181,
+        "Player": "Jaydon Blue",
+        "Position": "RB",
+        "Pos Rank": "RB 51",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 182,
+        "Player": "Jordan Whittington",
+        "Position": "WR",
+        "Pos Rank": "WR 74",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 183,
+        "Player": "Dylan Sampson",
+        "Position": "RB",
+        "Pos Rank": "RB 52",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 184,
+        "Player": "Cole Kmet",
+        "Position": "TE",
+        "Pos Rank": "TE 25",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 185,
+        "Player": "Tory Horton ",
+        "Position": "WR",
+        "Pos Rank": "WR 75",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 186,
+        "Player": "Jarquez Hunter",
+        "Position": "RB",
+        "Pos Rank": "RB 53",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 187,
+        "Player": "Blake Corum",
+        "Position": "RB",
+        "Pos Rank": "RB 54",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 188,
+        "Player": "Keenan Allen",
+        "Position": "WR",
+        "Pos Rank": "WR 76",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 189,
+        "Player": "Hunter Henry",
+        "Position": "TE",
+        "Pos Rank": "TE 26",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 190,
+        "Player": "Jaylen Wright",
+        "Position": "RB",
+        "Pos Rank": "RB 55",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 191,
+        "Player": "MarShawn Lloyd",
+        "Position": "RB",
+        "Pos Rank": "RB 56",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 192,
+        "Player": "Kendre Miller",
+        "Position": "RB",
+        "Pos Rank": "RB 57",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 193,
+        "Player": "Devin Neal",
+        "Position": "RB",
+        "Pos Rank": "RB 58",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 194,
+        "Player": "DJ Giddens",
+        "Position": "RB",
+        "Pos Rank": "RB 59",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 195,
+        "Player": "Sean Tucker",
+        "Position": "RB",
+        "Pos Rank": "RB 60",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 196,
+        "Player": "Juwan Johnson ",
+        "Position": "TE",
+        "Pos Rank": "TE 27",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 197,
+        "Player": "Dalton Schultz",
+        "Position": "TE",
+        "Pos Rank": "TE 28",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 198,
+        "Player": "Romeo Doubs",
+        "Position": "WR",
+        "Pos Rank": "WR 77",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 199,
+        "Player": "Josh Palmer",
+        "Position": "WR",
+        "Pos Rank": "WR 78",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 200,
+        "Player": "Quentin Johnston",
+        "Position": "WR",
+        "Pos Rank": "WR 79",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 201,
+        "Player": "Adam Thielen",
+        "Position": "WR",
+        "Pos Rank": "WR 80",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 202,
+        "Player": "Noah Fant",
+        "Position": "TE",
+        "Pos Rank": "TE 29",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 203,
+        "Player": "Javonte Williams",
+        "Position": "RB",
+        "Pos Rank": "RB 61",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 204,
+        "Player": "Miles Sanders",
+        "Position": "RB",
+        "Pos Rank": "RB 62",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 205,
+        "Player": "Rico Dowdle",
+        "Position": "RB",
+        "Pos Rank": "RB 63",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 206,
+        "Player": "Brashard Smith",
+        "Position": "RB",
+        "Pos Rank": "RB 64",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 207,
+        "Player": "Jordan James",
+        "Position": "RB",
+        "Pos Rank": "RB 65",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 208,
+        "Player": "Oronde Gadsden II",
+        "Position": "TE",
+        "Pos Rank": "TE 30",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 209,
+        "Player": "Pat Bryant",
+        "Position": "WR",
+        "Pos Rank": "WR 81",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 210,
+        "Player": "Troy Franklin",
+        "Position": "WR",
+        "Pos Rank": "WR 82",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 211,
+        "Player": "Wan'Dale Robinson",
+        "Position": "WR",
+        "Pos Rank": "WR 83",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 212,
+        "Player": "Isaiah Davis",
+        "Position": "RB",
+        "Pos Rank": "RB 66",
+        "TIER": 13,
+        "VALUE": 0.001
+    },
+    {
+        "Rank": 213,
+        "Player": "Audric Estime",
+        "Position": "RB",
+        "Pos Rank": "RB 67",
+        "TIER": 13,
+        "VALUE": 0.001
+    }
+]
