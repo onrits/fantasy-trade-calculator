@@ -60,7 +60,9 @@ export default function TradeInput({ allItems, selectedAssets, onSelect }) {
                             onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#444')} // Hover effect
                             onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'transparent')}
                         >
-                            {item.name || item.full_name || item.label} ({item.type || item.position || ''})
+                            {item.name || item.full_name || item.label} ({item.position || item.type || ''})
+
+
                         </li>
                     ))}
                 </ul>

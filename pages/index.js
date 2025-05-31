@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import TradeInput from '../components/TradeInput';
 import RankingsTable from '../components/RankingsTable';
 import Legend from '../components/Legend';
-
+import EditableRankings from '../components/EditableRankings';
 import playerValues from '../data/playerValues.json';       // static players with values
 import draftPickValues from '../data/draftPickValues.json'; // static draft picks with values
+import { useMemo } from 'react';
 
 export default function Home() {
   const [players, setPlayers] = useState([]);
@@ -24,7 +25,7 @@ export default function Home() {
   const normalizedDraftPicks = draftPickValues
     .filter(p => p["Draft Pick"])
     .map(p => ({
-      id: p["Draft Pick"],
+      id: `pick-${p["Draft Pick"]}`,  // <- Prefix 'pick-' to ensure uniqueness
       label: p["Draft Pick"],
       value: draftPickValueMap[p["Draft Pick"]] || 0,
       type: 'Pick',
@@ -32,19 +33,20 @@ export default function Home() {
 
   useEffect(() => {
     const normalizedPlayers = playerValues.map(p => ({
-      ...p, // <-- keep original fields like TIER, VALUE, Rank
-      id: p.Player,
-      name: p.Player, // <-- make sure this exists for search
+      ...p, // keep original fields like TIER, VALUE, Rank, Player, Position
+      id: `player-${p.Player}`,  // <- Prefix 'player-' for uniqueness
+      name: p.Player, // for search compatibility
       value: p.VALUE || 0,
       type: 'Player',
+      position: p.Position || '',
     }));
 
     setPlayers(normalizedPlayers);
   }, []);
 
-
-
-  const allItems = [...players, ...normalizedDraftPicks];
+  const allItems = useMemo(() => {
+    return [...players, ...normalizedDraftPicks];
+  }, [players]);
 
   function addToTeam1(item) {
     setTeam1Assets(prev => (prev.find(i => i.id === item.id) ? prev : [...prev, item]));
@@ -78,7 +80,8 @@ export default function Home() {
           <ul>
             {team1Assets.map(asset => (
               <li key={asset.id} style={{ marginBottom: '0.5rem' }}>
-                {(asset.name || asset.label)} ({asset.type || asset.position || 'Pick'}) - Value: {asset.value?.toFixed(2) || '0.00'}{' '}
+                {(asset.name || asset.label)} ({asset.position || asset.type || 'Pick'})
+                - Value: {asset.value?.toFixed(2) || '0.00'}{' '}
                 <button onClick={() => removeFromTeam1(asset.id)}>Remove</button>
               </li>
             ))}
@@ -89,7 +92,8 @@ export default function Home() {
           <ul>
             {team2Assets.map(asset => (
               <li key={asset.id} style={{ marginBottom: '0.5rem' }}>
-                {(asset.name || asset.label)} ({asset.type || asset.position || 'Pick'}) - Value: {asset.value?.toFixed(2) || '0.00'}{' '}
+                {(asset.name || asset.label)} ({asset.position || asset.type || 'Pick'})
+                - Value: {asset.value?.toFixed(2) || '0.00'}{' '}
                 <button onClick={() => removeFromTeam2(asset.id)}>Remove</button>
               </li>
             ))}
@@ -103,8 +107,8 @@ export default function Home() {
 
         {/* Right Column: Rankings */}
         <div style={{ flex: '1 1 400px', minWidth: 300 }}>
-          <h2>Current Rankings & Values</h2>
-          <RankingsTable rankings={sortedPlayers} />
+          <h2>Edit Rankings</h2>
+          <EditableRankings players={players} onChange={setPlayers} />
         </div>
       </div>
     </div>

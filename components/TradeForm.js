@@ -1,28 +1,34 @@
 import { useState } from 'react';
 import TradeInput from './TradeInput';
-import playerValues from '../data/playerValues.json'; // your static players with values
+//import playerValues from '../data/playerValues.json'; // your static players with values
 import draftPicks from '../data/draftPickValues.json';    // your static picks with values
 
 export default function TradeForm() {
     const [teamAItems, setTeamAItems] = useState([]);
     const [teamBItems, setTeamBItems] = useState([]);
 
+    const getLiveValue = (item) => {
+        const match = allItems.find(i => i.id === item.id);
+        return match?.value ?? 0;
+    };
+
+
     // Combine players and picks into one list
-    const allItems = [
+    export default function TradeForm({ allItems }) {
         ...playerValues.map(p => ({
-            id: p.Player,
-            name: p.Player,
-            position: p.Position,
-            value: p.VALUE,
-            type: 'Player',
-        })),
+        id: p.Player,
+        name: p.Player,
+        position: p.Position,
+        value: p.VALUE,
+        type: 'Player',
+    })),
         ...draftPicks.map(p => ({
-            id: p.id.toString(),
-            name: p.label,
-            value: p.VALUE,
-            type: 'Pick',
-        })),
-    ];
+        id: p.id.toString(),
+        name: p.label,
+        value: p.VALUE,
+        type: 'Pick',
+    })),
+     }
 
     // Add item to team if not already selected
     const addItemToTeam = (team, item) => {
@@ -47,7 +53,8 @@ export default function TradeForm() {
 
     // Calculate total value for a team
     const calcTotalValue = items =>
-        items.reduce((sum, item) => sum + (item.value || 0), 0);
+        items.reduce((sum, item) => sum + getLiveValue(item), 0);
+
 
     return (
         <div style={{ display: 'flex', gap: '2rem' }}>

@@ -85,7 +85,7 @@
         "Position": "WR",
         "Pos Rank": "WR 7",
         "TIER": 2,
-        "VALUE": 3.2
+        "VALUE": 3.25
     },
     {
         "Rank": 12,
@@ -93,7 +93,7 @@
         "Position": "TE",
         "Pos Rank": "TE 1",
         "TIER": 2,
-        "VALUE": 3.1
+        "VALUE": 3.25
     },
     {
         "Rank": 13,
@@ -101,7 +101,7 @@
         "Position": "RB",
         "Pos Rank": "RB 1",
         "TIER": 2,
-        "VALUE": 3.1
+        "VALUE": 3.25
     },
     {
         "Rank": 14,
@@ -149,7 +149,7 @@
         "Position": "RB",
         "Pos Rank": "RB 2",
         "TIER": 3,
-        "VALUE": 2.75
+        "VALUE": 2.95
     },
     {
         "Rank": 20,
@@ -157,7 +157,7 @@
         "Position": "RB",
         "Pos Rank": "RB 3",
         "TIER": 3,
-        "VALUE": 2.75
+        "VALUE": 2.95
     },
     {
         "Rank": 21,
