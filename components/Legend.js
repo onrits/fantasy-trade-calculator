@@ -87,14 +87,14 @@ export default function Legend() {
                 "Bench fillers. Some hope or past glory. Not trustworthy yet.",
         },
         {
-            name: "Tier 10+",
+            name: "Tier 10",
             war: "0.0–0.49",
             frp: "0–0.32",
             ranks: "WR: 51–60, RB: 45–52, TE: 17–20",
             description: "Waiver-level players. You’re stashing or praying.",
         },
         {
-            name: "Tier 11",
+            name: "Tier 11+",
             war: "<0",
             frp: "<0",
             ranks: "WR: 61+, RB: 53+, TE: 21+",

@@ -4,8 +4,13 @@ function parseTier(tier) {
     return match ? parseInt(match[0], 10) : null;
 }
 
+function getTierForAsset(asset) {
+    return parseTier(asset.tier || asset.TIER || null);
+}
+
 export function evaluateTrade(team1Assets, team2Assets, options = {}) {
     const margin = options.margin || 0.075;
+    const penaltyPerSpot = options.rosterPenaltyRate || 0.05;
 
     const totalValue = (assets) =>
         assets.reduce((sum, asset) => sum + (asset.value || 0), 0);
@@ -21,11 +26,11 @@ export function evaluateTrade(team1Assets, team2Assets, options = {}) {
     const team2Count = team2Assets.length;
     const diff = Math.abs(team1Count - team2Count);
 
-    // 📦 Quantity-for-quality / Roster Clogger Adjustment
+    // 📦 Quantity-for-quality / Roster Clogger Adjustment (3+ extra pieces)
     if (diff >= 3) {
         reason += '📦 One side is trading 3+ more pieces — potential roster clogger. ';
-        const penaltyPerExtra = 0.1; // 10% per extra piece
-        const adjustmentFactor = 1 - penaltyPerExtra * (diff - 2); // Start penalty at 3rd piece
+        const cloggerPenalty = 0.1;
+        const adjustmentFactor = 1 - cloggerPenalty * (diff - 2);
         if (team1Count > team2Count) {
             team1Total *= adjustmentFactor;
             reason += `Adjusted Team 1's value by -${Math.round((1 - adjustmentFactor) * 100)}%. `;
@@ -35,21 +40,81 @@ export function evaluateTrade(team1Assets, team2Assets, options = {}) {
         }
     }
 
+    // 🧩 Roster Spot Value Adjustment (applies to imbalance in *active roster* assets only)
+    const CURRENT_YEAR = new Date().getFullYear(); // e.g. 2025
+
+    const isActiveRosterAsset = item => {
+        if (item.type !== 'Pick') return true; // all players count
+        if (!item.label || typeof item.label !== 'string') return false;
+
+        const pickYear = parseInt(item.label.split(' ')[0]);
+        return pickYear === CURRENT_YEAR; // only count current-year picks as "roster players"
+    };
+
+    const team1Players = team1Assets.filter(isActiveRosterAsset);
+    const team2Players = team2Assets.filter(isActiveRosterAsset);
+
+    const team1PlayerCount = team1Players.length;
+    const team2PlayerCount = team2Players.length;
+
+    if (team1PlayerCount !== team2PlayerCount) {
+        const extraPlayers = Math.abs(team1PlayerCount - team2PlayerCount);
+        const penalty = 1 - penaltyPerSpot * extraPlayers;
+        const percent = Math.round(penaltyPerSpot * extraPlayers * 100);
+
+        if (team1PlayerCount > team2PlayerCount) {
+            team1Total *= penalty;
+            reason += `🧩 Team 1 is receiving ${extraPlayers} more players — adjusted for roster spot value (-${percent}%). `;
+        } else {
+            team2Total *= penalty;
+            reason += `🧩 Team 2 is receiving ${extraPlayers} more players — adjusted for roster spot value (-${percent}%). `;
+        }
+    }
+
+
+
+    // 🏈 QB Tax Adjustment
+    function hasValuableQB(assets) {
+        return assets.some(a => (a.Pos === 'QB' || a.type === 'QB') && (a.value || 0) >= 1.5);
+    }
+
+    function hasQB(assets) {
+        return assets.some(a => a.Pos === 'QB' || a.type === 'QB');
+    }
+
+    const team1HasValuableQB = hasValuableQB(team1Assets);
+    const team2HasValuableQB = hasValuableQB(team2Assets);
+
+    const team1HasQB = hasQB(team1Assets);
+    const team2HasQB = hasQB(team2Assets);
+
+    const qbTaxRate = 0.075;
+
+    if (team1HasValuableQB && !team2HasQB) {
+        team2Total *= 1 - qbTaxRate;
+        reason += `🏈 Team 2 receives a valuable QB without trading one — applying ${Math.round(qbTaxRate * 100)}% QB Tax to Team 2. `;
+    }
+
+    if (team2HasValuableQB && !team1HasQB) {
+        team1Total *= 1 - qbTaxRate;
+        reason += `🏈 Team 1 receives a valuable QB without trading one — applying ${Math.round(qbTaxRate * 100)}% QB Tax to Team 1. `;
+    }
+
     // ⭐ Tier Mismatch / Star Tax Adjustment
     const top1 = team1Assets
-        .map((a) => parseTier(a.tier))
+        .map(getTierForAsset)
         .filter((t) => t !== null)
         .sort((a, b) => a - b)[0];
 
     const top2 = team2Assets
-        .map((a) => parseTier(a.tier))
+        .map(getTierForAsset)
         .filter((t) => t !== null)
         .sort((a, b) => a - b)[0];
 
     if (top1 !== undefined && top2 !== undefined) {
         const tierGap = Math.abs(top1 - top2);
         if (tierGap > 2) {
-            const taxRate = 0.1 * (tierGap - 2); // 10% per tier beyond 2
+            const taxRate = 0.1 * (tierGap - 2);
             reason += `⚠️ Tier mismatch: Top asset gap is ${tierGap} tiers — applying ${Math.round(taxRate * 100)}% Star Tax. `;
             if (top1 < top2) {
                 team2Total *= 1 - taxRate;
@@ -61,26 +126,19 @@ export function evaluateTrade(team1Assets, team2Assets, options = {}) {
         }
     }
 
-    // NEW: Check if all traded assets are within the same tier
+    // NEW: Same-tier, same-count trades are considered preference-based even
     const allTiers = [
-        ...team1Assets.map((a) => parseTier(a.tier)).filter((t) => t !== null),
-        ...team2Assets.map((a) => parseTier(a.tier)).filter((t) => t !== null),
+        ...team1Assets.map(getTierForAsset).filter((t) => t !== null),
+        ...team2Assets.map(getTierForAsset).filter((t) => t !== null),
     ];
 
     let winner = '';
     let isEvenTrade = false;
 
-    const totalCombined = team1Total + team2Total;
-    let percent1 = totalCombined === 0 ? 50 : (team1Total / totalCombined) * 100;
-    let percent2 = 100 - percent1;
-
-    const noPlayers = team1Assets.length === 0 && team2Assets.length === 0;
-
-    if (noPlayers) {
-        winner = 'Add players to evaluate';
-    } else {
+    if (allTiers.length > 0) {
         const minTier = Math.min(...allTiers);
         const maxTier = Math.max(...allTiers);
+
         const sameTier = maxTier - minTier === 0;
         const sameCount = team1Count === team2Count;
 
@@ -88,6 +146,17 @@ export function evaluateTrade(team1Assets, team2Assets, options = {}) {
             winner = 'Even Trade';
             isEvenTrade = true;
             reason += 'ℹ️ All traded assets are from the same tier and equal in number — differences are a matter of team preference. ';
+        }
+    }
+
+    // ⚖️ Final evaluation (unless preference-based even already decided)
+    if (!isEvenTrade) {
+        const totalCombined = team1Total + team2Total;
+        const percent1 = totalCombined === 0 ? 50 : (team1Total / totalCombined) * 100;
+        const percent2 = 100 - percent1;
+
+        if (team1Count === 0 && team2Count === 0) {
+            winner = '';
         } else if (Math.abs(team1Total - team2Total) / Math.max(team1Total, team2Total) <= margin) {
             winner = 'Even Trade';
             isEvenTrade = true;
@@ -97,6 +166,10 @@ export function evaluateTrade(team1Assets, team2Assets, options = {}) {
             winner = 'Team 2 Wins';
         }
     }
+
+    const totalCombined = team1Total + team2Total;
+    const percent1 = totalCombined === 0 ? 50 : (team1Total / totalCombined) * 100;
+    const percent2 = 100 - percent1;
 
     return {
         rawTeam1Total: parseFloat(rawTeam1Total.toFixed(3)),

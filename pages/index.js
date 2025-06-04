@@ -40,6 +40,8 @@ export default function Home() {
         label: p["Draft Pick"],
         value: draftPickValueMap[p["Draft Pick"]] || 0,
         type: 'Pick',
+        tier: p.TIER ?? p.tier ?? null,
+        season: parseInt(p["Draft Pick"]?.split(' ')[0]) || null,
       }));
 
     const normalizedPlayers = players.map(p => ({
@@ -102,9 +104,12 @@ export default function Home() {
               {team1Assets.map(asset => (
                 <li key={asset.id} className={`${styles.assetItem} ${styles.team1}`}>
                   <span>
-                    {(asset.name || asset.label)} ({asset.position || asset.type || 'Pick'}) - Value:{' '}
-                    {asset.value?.toFixed(2) || '0.00'}
+                    {(asset.name || asset.label)}{' '}
+                    ({asset.position || asset.Pos || asset.Position || asset.type || 'Pick'}, Tier {parseInt(asset.tier || asset.TIER || '?')}
+                    ){' '}
+                    - Value: {asset.value?.toFixed(2) || '0.00'}
                   </span>
+
                   <button
                     onClick={() => removeFromTeam1(asset.id)}
                     className={`${styles.removeButton} ${styles.team1}`}
@@ -124,9 +129,11 @@ export default function Home() {
               {team2Assets.map(asset => (
                 <li key={asset.id} className={`${styles.assetItem} ${styles.team2}`}>
                   <span>
-                    {(asset.name || asset.label)} ({asset.position || asset.type || 'Pick'}) - Value:{' '}
-                    {asset.value?.toFixed(2) || '0.00'}
+                    {(asset.name || asset.label)}{' '}
+                    ({asset.position || asset.Pos || asset.Position || asset.type || 'Pick'}, Tier {asset.tier ?? '?'}){' '}
+                    - Value: {asset.value?.toFixed(2) || '0.00'}
                   </span>
+
                   <button
                     onClick={() => removeFromTeam2(asset.id)}
                     className={`${styles.removeButton} ${styles.team2}`}

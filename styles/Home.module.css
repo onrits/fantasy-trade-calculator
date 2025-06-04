@@ -263,12 +263,13 @@
 
 .midLine {
   position: absolute;
-  top: 0;
+  top: -50%;
   left: 50%;
-  height: 100%;
-  width: 2px;
-  background-color: #333;
+  height: 200%;
+  width: 5px;
+  background-color: #cfcfcf;
   z-index: 4;
+  transform: translateX(-50%);
   /* on top of everything */
 }
 

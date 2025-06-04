@@ -40,9 +40,11 @@ export default function TradeForm({ allItems }) {
                 {team1Assets.map(asset => (
                     <li key={asset.id} className={`${styles.assetItem} ${styles.team1}`}>
                         <span>
-                            {(asset.name || asset.label)} ({asset.position || asset.type || 'Pick'}) - Value:{' '}
-                            {asset.value?.toFixed(2) || '0.00'}
+                            {(asset.name || asset.label)}{' '}
+                            ({asset.position || asset.Pos || asset.Position || asset.type || 'Pick'}, Tier {asset.tier ?? '?'}){' '}
+                            - Value: {asset.value?.toFixed(2) || '0.00'}
                         </span>
+
                         <button
                             onClick={removeFromTeam(setTeam1Assets, team1Assets)(asset.id)}
                             className={`${styles.removeButton} ${styles.team1}`}
@@ -65,9 +67,11 @@ export default function TradeForm({ allItems }) {
                 {team2Assets.map(asset => (
                     <li key={asset.id} className={`${styles.assetItem} ${styles.team2}`}>
                         <span>
-                            {(asset.name || asset.label)} ({asset.position || asset.type || 'Pick'}) - Value:{' '}
-                            {asset.value?.toFixed(2) || '0.00'}
+                            {(asset.name || asset.label)}{' '}
+                            ({asset.position || asset.Pos || asset.Position || asset.type || 'Pick'}, Tier {asset.tier ?? '?'}){' '}
+                            - Value: {asset.value?.toFixed(2) || '0.00'}
                         </span>
+
                         <button
                             onClick={removeFromTeam(setTeam2Assets, team2Assets)(asset.id)}
                             className={`${styles.removeButton} ${styles.team2}`}
