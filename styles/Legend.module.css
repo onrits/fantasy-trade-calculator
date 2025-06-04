@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+.container {
+    max-width: 620px;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem;
+    background: #121214;
+    border-radius: 12px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e6e8eb;
+    box-shadow: 0 6px 16px rgb(0 0 0 / 0.7);
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #ff6363;
+    text-shadow: 0 0 8px #ff6363;
+}
+
+.list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.listItem {
+    border-left: 5px solid var(--tier-color, #ff6363);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    cursor: default;
+}
+
+.listItem:hover {
+    transform: translateX(4px);
+    box-shadow: 0 3px 8px rgb(255 99 99 / 0.3);
+}
+
+.tierName {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0 0 0.15rem 0;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    text-shadow: 0 0 4px #ff6363;
+}
+
+.stats {
+    margin: 0 0 0.15rem 0;
+    font-size: 0.85rem;
+    color: #bbb;
+    font-weight: 600;
+}
+
+.stats strong {
+    color: #fff;
+}
+
+.ranks {
+    margin: 0 0 0.3rem 0;
+    font-size: 0.8rem;
+    color: #9bb8f7;
+    font-weight: 500;
+}
+
+.description {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #aaa;
+    line-height: 1.3;
+    font-weight: 400;
+}
+
+.noteBox {
+    margin-top: 2rem;
+    padding: 0.75rem 1rem;
+    background: #1e1e28;
+    border-left: 4px solid #ff6363;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #ccc;
+    font-style: italic;
+    letter-spacing: 0.04em;
+}
+
+.noteBox strong {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.footerNote {
+    margin-top: 2rem;
+    border-top: 1px solid #2b2b3a;
+    padding-top: 1rem;
+    font-size: 0.75rem;
+    color: #777e9e;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.footerNote p {
+    margin: 0.2rem 0;
+}

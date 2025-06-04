@@ -1,108 +1,107 @@
 import { useState } from 'react';
 import TradeInput from './TradeInput';
-//import playerValues from '../data/playerValues.json'; // your static players with values
-import draftPicks from '../data/draftPickValues.json';    // your static picks with values
+import styles from '../styles/Home.module.css';
 
-export default function TradeForm() {
-    const [teamAItems, setTeamAItems] = useState([]);
-    const [teamBItems, setTeamBItems] = useState([]);
+export default function TradeForm({ allItems }) {
+    const [team1Assets, setTeam1Assets] = useState([]);
+    const [team2Assets, setTeam2Assets] = useState([]);
 
-    const getLiveValue = (item) => {
-        const match = allItems.find(i => i.id === item.id);
-        return match?.value ?? 0;
+    const totalValue = assets =>
+        assets.reduce((sum, asset) => sum + (asset.value || 0), 0);
+
+    const team1Total = totalValue(team1Assets);
+    const team2Total = totalValue(team2Assets);
+
+    const addToTeam = (teamSetter, assets) => item => {
+        teamSetter(prev =>
+            prev.find(i => i.id === item.id) ? prev : [...prev, item]
+        );
     };
 
-
-    // Combine players and picks into one list
-    export default function TradeForm({ allItems }) {
-        ...playerValues.map(p => ({
-        id: p.Player,
-        name: p.Player,
-        position: p.Position,
-        value: p.VALUE,
-        type: 'Player',
-    })),
-        ...draftPicks.map(p => ({
-        id: p.id.toString(),
-        name: p.label,
-        value: p.VALUE,
-        type: 'Pick',
-    })),
-     }
-
-    // Add item to team if not already selected
-    const addItemToTeam = (team, item) => {
-        if (team === 'A') {
-            if (!teamAItems.find(i => i.id === item.id)) {
-                setTeamAItems([...teamAItems, item]);
-            }
-        } else {
-            if (!teamBItems.find(i => i.id === item.id)) {
-                setTeamBItems([...teamBItems, item]);
-            }
-        }
+    const removeFromTeam = (teamSetter, assets) => id => {
+        teamSetter(prev => prev.filter(i => i.id !== id));
     };
 
-    const removeItemFromTeam = (team, itemId) => {
-        if (team === 'A') {
-            setTeamAItems(teamAItems.filter(i => i.id !== itemId));
-        } else {
-            setTeamBItems(teamBItems.filter(i => i.id !== itemId));
-        }
-    };
+    const totalCombined = team1Total + team2Total;
+    const percent1 = totalCombined === 0 ? 50 : (team1Total / totalCombined) * 100;
+    const percent2 = 100 - percent1;
 
-    // Calculate total value for a team
-    const calcTotalValue = items =>
-        items.reduce((sum, item) => sum + getLiveValue(item), 0);
-
+    let winner = '';
+    if (team1Total > team2Total) winner = 'Team 1 Wins';
+    else if (team2Total > team1Total) winner = 'Team 2 Wins';
+    else if (team1Total === 0 && team2Total === 0) winner = '';
+    else winner = 'Even Trade';
 
     return (
-        <div style={{ display: 'flex', gap: '2rem' }}>
-            {/* Team A */}
-            <div>
-                <h3>Team A</h3>
-                <TradeInput
-                    allItems={allItems}
-                    selectedAssets={teamAItems}
-                    onSelect={item => addItemToTeam('A', item)}
-                />
-                <ul>
-                    {teamAItems.map(item => (
-                        <li key={item.id}>
-                            {item.name} ({item.type}) — Value: {item.value.toFixed(2)}{' '}
-                            <button onClick={() => removeItemFromTeam('A', item.id)}>
-                                Remove
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-                <p>
-                    <strong>Total value:</strong> {calcTotalValue(teamAItems).toFixed(2)}
-                </p>
-            </div>
+        <div className={styles.tradeForm}>
+            <h2 className={`${styles.sectionTitle} ${styles.team1Title}`}>
+                Team 1 (Total Value: {team1Total.toFixed(3)})
+            </h2>
+            <TradeInput
+                allItems={allItems}
+                selectedAssets={team1Assets}
+                onSelect={addToTeam(setTeam1Assets, team1Assets)}
+            />
+            <ul className={styles.assetList}>
+                {team1Assets.map(asset => (
+                    <li key={asset.id} className={`${styles.assetItem} ${styles.team1}`}>
+                        <span>
+                            {(asset.name || asset.label)} ({asset.position || asset.type || 'Pick'}) - Value:{' '}
+                            {asset.value?.toFixed(2) || '0.00'}
+                        </span>
+                        <button
+                            onClick={removeFromTeam(setTeam1Assets, team1Assets)(asset.id)}
+                            className={`${styles.removeButton} ${styles.team1}`}
+                        >
+                            ✕
+                        </button>
+                    </li>
+                ))}
+            </ul>
 
-            {/* Team B */}
-            <div>
-                <h3>Team B</h3>
-                <TradeInput
-                    allItems={allItems}
-                    selectedAssets={teamBItems}
-                    onSelect={item => addItemToTeam('B', item)}
-                />
-                <ul>
-                    {teamBItems.map(item => (
-                        <li key={item.id}>
-                            {item.name} ({item.type}) — Value: {item.value.toFixed(2)}{' '}
-                            <button onClick={() => removeItemFromTeam('B', item.id)}>
-                                Remove
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-                <p>
-                    <strong>Total value:</strong> {calcTotalValue(teamBItems).toFixed(2)}
-                </p>
-            </div>
+            <h2 className={`${styles.sectionTitle} ${styles.marginTop} ${styles.team2Title}`}>
+                Team 2 (Total Value: {team2Total.toFixed(3)})
+            </h2>
+            <TradeInput
+                allItems={allItems}
+                selectedAssets={team2Assets}
+                onSelect={addToTeam(setTeam2Assets, team2Assets)}
+            />
+            <ul className={styles.assetList}>
+                {team2Assets.map(asset => (
+                    <li key={asset.id} className={`${styles.assetItem} ${styles.team2}`}>
+                        <span>
+                            {(asset.name || asset.label)} ({asset.position || asset.type || 'Pick'}) - Value:{' '}
+                            {asset.value?.toFixed(2) || '0.00'}
+                        </span>
+                        <button
+                            onClick={removeFromTeam(setTeam2Assets, team2Assets)(asset.id)}
+                            className={`${styles.removeButton} ${styles.team2}`}
+                        >
+                            ✕
+                        </button>
+                    </li>
+                ))}
+            </ul>
+
+            {/* Trade Comparison Bar */}
+            {(team1Total > 0 || team2Total > 0) && (
+                <div className={styles.tradeComparisonContainer}>
+                    <div className={styles.tradeComparisonBar}>
+                        <div
+                            className={styles.team1Bar}
+                            style={{ width: `${percent1}%` }}
+                        />
+                        <div
+                            className={styles.team2Bar}
+                            style={{ width: `${percent2}%` }}
+                        />
+                    </div>
+                    <div className={styles.tradeComparisonLabel}>
+                        {winner}
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
