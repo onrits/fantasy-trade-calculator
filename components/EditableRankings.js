@@ -31,19 +31,19 @@ const tierColors = {
 };
 
 const tierNames = {
-    1: "League Breakers",
-    2: "The Elite",
-    3: "Franchise Cornerstones",
-    4: "Stars",
-    5: "High-end Starters",
-    6: "Above Average Starters",
-    7: "Starters",
-    8: "Low-end Starters",
-    9: "Fringe Starters",
-    10: "Contributors",
-    11: "Bench Pieces",
-    12: "Insurance",
-    13: "Roster Cloggers",
+    1: "League Breakers - Tier 1",
+    2: "The Elite - Tier 2",
+    3: "Franchise Cornerstones - Tier 3",
+    4: "Stars - Tier 4",
+    5: "High-end Starters - Tier 5",
+    6: "Above Average Starters - Tier 6",
+    7: "Starters - Tier 7",
+    8: "Low-end Starters - Tier 8",
+    9: "Fringe Starters - Tier 9",
+    10: "Contributors - Tier 10",
+    11: "Bench Pieces - Tier 11",
+    12: "Insurance - Tier 12",
+    13: "Roster Cloggers - Tier 13",
 };
 
 function getTierColor(tier) {

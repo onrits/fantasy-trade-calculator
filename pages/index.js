@@ -4,6 +4,8 @@ import Legend from '../components/Legend';
 import EditableRankings from '../components/EditableRankings';
 import playerValues from '../data/playerValues.json';
 import draftPickValues from '../data/draftPickValues.json';
+import { evaluateTrade } from '../utils/tradeLogic';
+
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -47,6 +49,7 @@ export default function Home() {
       value: p.VALUE || 0,
       type: 'Player',
       position: p.Position || '',
+      tier: p.TIER || p.tier || null,
     }));
 
     return [...normalizedPlayers, ...normalizedPicks];
@@ -68,16 +71,20 @@ export default function Home() {
     setTeam2Assets(prev => prev.filter(i => i.id !== id));
   }
 
-  const totalValue = assets => assets.reduce((sum, a) => sum + (a.value || 0), 0);
-
-  // Calculate values for both teams
-  const team1Value = totalValue(team1Assets);
-  const team2Value = totalValue(team2Assets);
-  const totalCombined = team1Value + team2Value;
-
-  // Avoid division by zero, default to equal split if no assets
-  const team1Percent = totalCombined > 0 ? (team1Value / totalCombined) * 100 : 50;
-  const team2Percent = totalCombined > 0 ? (team2Value / totalCombined) * 100 : 50;
+  const {
+    rawTeam1Total,
+    rawTeam2Total,
+    adjustedTeam1Total,
+    adjustedTeam2Total,
+    percent1: team1Percent,
+    percent2: team2Percent,
+    winner,
+    isEvenTrade,
+    reason,
+  } = evaluateTrade(team1Assets, team2Assets, {
+    margin: 0.075,
+    allItems,
+  });
 
   return (
     <div className={styles.container}>
@@ -88,7 +95,7 @@ export default function Home() {
         <div className={styles.leftColumn}>
           <section className={styles.calculator}>
             <h2 className={`${styles.sectionTitle} ${styles.team1Title}`}>
-              Team 1 (Total Value: {team1Value.toFixed(3)})
+              Team 1 (Total: {rawTeam1Total.toFixed(3)} | Adjusted: {adjustedTeam1Total.toFixed(3)})
             </h2>
             <TradeInput allItems={allItems} selectedAssets={team1Assets} onSelect={addToTeam1} />
             <ul className={styles.assetList}>
@@ -110,7 +117,7 @@ export default function Home() {
             </ul>
 
             <h2 className={`${styles.sectionTitle} ${styles.marginTop} ${styles.team2Title}`}>
-              Team 2 (Total Value: {team2Value.toFixed(3)})
+              Team 2 (Total: {rawTeam2Total.toFixed(3)} | Adjusted: {adjustedTeam2Total.toFixed(3)})
             </h2>
             <TradeInput allItems={allItems} selectedAssets={team2Assets} onSelect={addToTeam2} />
             <ul className={styles.assetList}>
@@ -133,26 +140,58 @@ export default function Home() {
 
             {/* --- TRADE COMPARISON BAR --- */}
             <div className={styles.tradeComparisonContainer}>
-              <div className={styles.tradeComparisonBar}>
+              <div className={styles.tradeComparisonBarWrapper}>
+                {/* Background buffer bar */}
+                <div className={styles.bufferBar} />
+
+                {/* Even zone overlay — sibling to bufferBar and foregroundBar */}
                 <div
-                  className={styles.team1Bar}
-                  style={{ width: `${team1Percent}%` }}
-                  title={`Team 1: ${team1Value.toFixed(2)}`}
+                  className={styles.evenZone}
+                  style={{
+                    left: `${50 - 7.5}%`,
+                    width: `15%`,
+                  }}
                 />
-                <div
-                  className={styles.team2Bar}
-                  style={{ width: `${team2Percent}%` }}
-                  title={`Team 2: ${team2Value.toFixed(2)}`}
-                />
+
+                {/* Foreground bars */}
+                <div className={styles.foregroundBar}>
+                  {isEvenTrade ? (
+                    // Center a single bar in the even zone when trade is even
+                    <div
+                      className={styles.teamEvenBar}
+                      style={{
+                        width: '15%',
+                        left: '42.5%', // 50% - half of 15% = 42.5%
+                        position: 'absolute',
+                      }}
+                      title={`Even Trade: ${adjustedTeam1Total.toFixed(2)} / ${adjustedTeam2Total.toFixed(2)}`}
+                    />
+                  ) : (
+                    <>
+                      <div
+                        className={styles.team1Bar}
+                        style={{ width: `${team1Percent}%` }}
+                        title={`Team 1: ${adjustedTeam1Total.toFixed(2)}`}
+                      />
+                      <div
+                        className={styles.team2Bar}
+                        style={{ width: `${team2Percent}%` }}
+                        title={`Team 2: ${adjustedTeam2Total.toFixed(2)}`}
+                      />
+                    </>
+                  )}
+                </div>
+
+                {/* Midline at 50% */}
+                <div className={styles.midLine} />
               </div>
-              <div className={styles.tradeComparisonLabel}>
-                {team1Value > team2Value
-                  ? 'Team 1 is winning this trade'
-                  : team2Value > team1Value
-                    ? 'Team 2 is winning this trade'
-                    : 'Trade is even'}
-              </div>
+
+              <div className={styles.tradeComparisonLabel}>{winner}</div>
+              {reason && <div className={styles.tradeComparisonReason}>{reason}</div>}
             </div>
+
+
+
           </section>
 
           <section className={styles.legend}>

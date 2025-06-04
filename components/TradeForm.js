@@ -1,16 +1,20 @@
 import { useState } from 'react';
 import TradeInput from './TradeInput';
+import { evaluateTrade } from '../utils/tradeLogic'; // Make sure this file exists
 import styles from '../styles/Home.module.css';
 
 export default function TradeForm({ allItems }) {
     const [team1Assets, setTeam1Assets] = useState([]);
     const [team2Assets, setTeam2Assets] = useState([]);
 
-    const totalValue = assets =>
-        assets.reduce((sum, asset) => sum + (asset.value || 0), 0);
-
-    const team1Total = totalValue(team1Assets);
-    const team2Total = totalValue(team2Assets);
+    const {
+        team1Total,
+        team2Total,
+        percent1,
+        percent2,
+        winner,
+        reason,
+    } = evaluateTrade(team1Assets, team2Assets, { margin: 0.075 });
 
     const addToTeam = (teamSetter, assets) => item => {
         teamSetter(prev =>
@@ -21,16 +25,6 @@ export default function TradeForm({ allItems }) {
     const removeFromTeam = (teamSetter, assets) => id => {
         teamSetter(prev => prev.filter(i => i.id !== id));
     };
-
-    const totalCombined = team1Total + team2Total;
-    const percent1 = totalCombined === 0 ? 50 : (team1Total / totalCombined) * 100;
-    const percent2 = 100 - percent1;
-
-    let winner = '';
-    if (team1Total > team2Total) winner = 'Team 1 Wins';
-    else if (team2Total > team1Total) winner = 'Team 2 Wins';
-    else if (team1Total === 0 && team2Total === 0) winner = '';
-    else winner = 'Even Trade';
 
     return (
         <div className={styles.tradeForm}>
@@ -102,6 +96,12 @@ export default function TradeForm({ allItems }) {
                     </div>
                 </div>
             )}
+            {reason && (
+                <div className={styles.tradeComparisonReason}>
+                    {reason}
+                </div>
+            )}
+
         </div>
     );
 }
