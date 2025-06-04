@@ -5,6 +5,9 @@ import EditableRankings from '../components/EditableRankings';
 import playerValues from '../data/playerValues.json';
 import draftPickValues from '../data/draftPickValues.json';
 import { evaluateTrade } from '../utils/tradeLogic';
+import { useAuth } from '../contexts/AuthContext';
+import { db } from '../utils/firebase';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 
 import styles from '../styles/Home.module.css';
 
@@ -12,18 +15,71 @@ export default function Home() {
   const [players, setPlayers] = useState([]);
   const [team1Assets, setTeam1Assets] = useState([]);
   const [team2Assets, setTeam2Assets] = useState([]);
+  const { user, loading, signInWithGoogle, logout } = useAuth();
+  const [isClient, setIsClient] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
+  const [saveSuccess, setSaveSuccess] = useState(false);
 
   useEffect(() => {
-    const normalizedPlayers = playerValues.map(p => ({
-      ...p,
-      id: `player-${p.Player}`,
-      name: p.Player,
-      value: p.VALUE || 0,
-      type: 'Player',
-      position: p.Position || '',
-    }));
-    setPlayers(normalizedPlayers);
+    setIsClient(true);
   }, []);
+
+  // Load user rankings or default players on mount or user change
+  useEffect(() => {
+    const loadUserRankings = async () => {
+      if (user) {
+        const docRef = doc(db, 'userRankings', user.uid);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          setPlayers(docSnap.data().players);
+          return;
+        }
+      }
+
+      // Fallback: use default player values for guests or first-time users
+      const normalizedPlayers = playerValues.map(p => ({
+        ...p,
+        id: `player-${p.Player}`,
+        name: p.Player,
+        value: p.VALUE || 0,
+        type: 'Player',
+        position: p.Position || '',
+      }));
+      setPlayers(normalizedPlayers);
+    };
+
+    loadUserRankings();
+  }, [user]);
+
+  // === Remove auto-save effect ===
+  // useEffect(() => {
+  //   if (!user || players.length === 0) return;
+  //
+  //   const saveRankings = async () => {
+  //     const docRef = doc(db, 'userRankings', user.uid);
+  //     await setDoc(docRef, { players });
+  //   };
+  //
+  //   saveRankings();
+  // }, [players, user]);
+
+  // Manual save handler
+  const handleSave = async () => {
+    if (!user) return;
+    setIsSaving(true);
+    setSaveSuccess(false);
+    try {
+      const docRef = doc(db, 'userRankings', user.uid);
+      await setDoc(docRef, { players });
+      setSaveSuccess(true);
+    } catch (error) {
+      console.error('Error saving rankings:', error);
+    } finally {
+      setIsSaving(false);
+      setTimeout(() => setSaveSuccess(false), 2000); // hide success message after 2 seconds
+    }
+  };
 
   const draftPickValueMap = useMemo(() => {
     return draftPickValues.reduce((acc, pick) => {
@@ -60,15 +116,12 @@ export default function Home() {
   function addToTeam1(item) {
     setTeam1Assets(prev => (prev.find(i => i.id === item.id) ? prev : [...prev, item]));
   }
-
   function addToTeam2(item) {
     setTeam2Assets(prev => (prev.find(i => i.id === item.id) ? prev : [...prev, item]));
   }
-
   function removeFromTeam1(id) {
     setTeam1Assets(prev => prev.filter(i => i.id !== id));
   }
-
   function removeFromTeam2(id) {
     setTeam2Assets(prev => prev.filter(i => i.id !== id));
   }
@@ -88,12 +141,39 @@ export default function Home() {
     allItems,
   });
 
+  if (loading) {
+    return (
+      <div className={styles.container}>
+        <h1 className={styles.title}>Loading...</h1>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Fantasy Trade Calculator</h1>
 
+      <div className={styles.authControls} style={{ marginBottom: '1rem' }}>
+        {user ? (
+          <>
+            <span>Signed in as <strong>{user.displayName || user.email}</strong></span>
+            <button
+              onClick={logout}
+              className={styles.buttonSecondary}
+              style={{ marginLeft: '1rem' }}
+            >
+              Sign Out
+            </button>
+          </>
+        ) : (
+          <button onClick={signInWithGoogle} className={styles.buttonPrimary}>
+            Sign In with Google
+          </button>
+        )}
+
+      </div>
+
       <div className={styles.mainLayout}>
-        {/* LEFT COLUMN: Calculator + Legend */}
         <div className={styles.leftColumn}>
           <section className={styles.calculator}>
             <h2 className={`${styles.sectionTitle} ${styles.team1Title}`}>
@@ -105,11 +185,9 @@ export default function Home() {
                 <li key={asset.id} className={`${styles.assetItem} ${styles.team1}`}>
                   <span>
                     {(asset.name || asset.label)}{' '}
-                    ({asset.position || asset.Pos || asset.Position || asset.type || 'Pick'}, Tier {parseInt(asset.tier || asset.TIER || '?')}
-                    ){' '}
-                    - Value: {asset.value?.toFixed(2) || '0.00'}
+                    ({asset.position || asset.Pos || asset.Position || asset.type || 'Pick'}, Tier {parseInt(asset.tier || asset.TIER || '?')})
+                    {' '} - Value: {asset.value?.toFixed(2) || '0.00'}
                   </span>
-
                   <button
                     onClick={() => removeFromTeam1(asset.id)}
                     className={`${styles.removeButton} ${styles.team1}`}
@@ -130,10 +208,9 @@ export default function Home() {
                 <li key={asset.id} className={`${styles.assetItem} ${styles.team2}`}>
                   <span>
                     {(asset.name || asset.label)}{' '}
-                    ({asset.position || asset.Pos || asset.Position || asset.type || 'Pick'}, Tier {asset.tier ?? '?'}){' '}
-                    - Value: {asset.value?.toFixed(2) || '0.00'}
+                    ({asset.position || asset.Pos || asset.Position || asset.type || 'Pick'}, Tier {asset.tier ?? '?'})
+                    {' '} - Value: {asset.value?.toFixed(2) || '0.00'}
                   </span>
-
                   <button
                     onClick={() => removeFromTeam2(asset.id)}
                     className={`${styles.removeButton} ${styles.team2}`}
@@ -145,32 +222,18 @@ export default function Home() {
               ))}
             </ul>
 
-            {/* --- TRADE COMPARISON BAR --- */}
             <div className={styles.tradeComparisonContainer}>
               <div className={styles.tradeComparisonBarWrapper}>
-                {/* Background buffer bar */}
                 <div className={styles.bufferBar} />
-
-                {/* Even zone overlay — sibling to bufferBar and foregroundBar */}
                 <div
                   className={styles.evenZone}
-                  style={{
-                    left: `${50 - 7.5}%`,
-                    width: `15%`,
-                  }}
+                  style={{ left: `${50 - 7.5}%`, width: `15%` }}
                 />
-
-                {/* Foreground bars */}
                 <div className={styles.foregroundBar}>
                   {isEvenTrade ? (
-                    // Center a single bar in the even zone when trade is even
                     <div
                       className={styles.teamEvenBar}
-                      style={{
-                        width: '15%',
-                        left: '42.5%', // 50% - half of 15% = 42.5%
-                        position: 'absolute',
-                      }}
+                      style={{ width: '15%', left: '42.5%', position: 'absolute' }}
                       title={`Even Trade: ${adjustedTeam1Total.toFixed(2)} / ${adjustedTeam2Total.toFixed(2)}`}
                     />
                   ) : (
@@ -188,17 +251,11 @@ export default function Home() {
                     </>
                   )}
                 </div>
-
-                {/* Midline at 50% */}
                 <div className={styles.midLine} />
               </div>
-
               <div className={styles.tradeComparisonLabel}>{winner}</div>
               {reason && <div className={styles.tradeComparisonReason}>{reason}</div>}
             </div>
-
-
-
           </section>
 
           <section className={styles.legend}>
@@ -206,11 +263,39 @@ export default function Home() {
           </section>
         </div>
 
-        {/* RIGHT COLUMN: Rankings */}
         <aside className={styles.rankings}>
           <h2 className={styles.sectionTitle}>Edit Rankings</h2>
-          <EditableRankings players={players} onChange={setPlayers} />
+
+          {isClient && (
+            <>
+              {user ? (
+                <button
+                  className={styles.buttonPrimary}
+                  onClick={handleSave}
+                  disabled={isSaving}
+                  style={{
+                    marginBottom: '1rem',
+                    width: '100%',
+                    cursor: isSaving ? 'not-allowed' : 'pointer',
+                    backgroundColor: isSaving ? '#ccc' : undefined,
+                    color: isSaving ? '#666' : undefined,
+                    transition: 'background-color 0.2s ease',
+                  }}
+                >
+                  {isSaving ? 'Saving...' : saveSuccess ? 'Saved!' : 'Save Rankings'}
+                </button>
+              ) : (
+                <p style={{ color: '#aaa', fontStyle: 'italic', marginBottom: '1rem' }}>
+                  Sign in to save your rankings.
+                </p>
+              )}
+
+              <EditableRankings players={players} onChange={setPlayers} />
+            </>
+          )}
         </aside>
+
+
       </div>
     </div>
   );

@@ -111,3 +111,38 @@
 .footerNote p {
     margin: 0.2rem 0;
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggleButton {
+    background-color: #1e1e28;
+    color: #ff6363;
+    border: 1px solid #ff6363;
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.toggleButton:hover {
+    background-color: #ff6363;
+    color: #121214;
+}
+
+.collapsed {
+    padding: 1rem 1.5rem;
+    margin: 1rem auto;
+    max-width: 620px;
+}
+
+.expanded {
+    padding: 1rem 1.5rem;
+    margin: 1rem auto;
+    max-width: 620px;
+}

@@ -1,4 +1,6 @@
 import styles from '../styles/Legend.module.css';
+import { useState } from 'react';
+
 
 const tierColors = {
     "Tier 1": "#ff6363",    // neon red
@@ -15,6 +17,10 @@ const tierColors = {
 };
 
 export default function Legend() {
+    const [expanded, setExpanded] = useState(false);
+
+    const toggleLegend = () => setExpanded((prev) => !prev);
+
     const tiers = [
         {
             name: "Tier 1",
@@ -103,39 +109,49 @@ export default function Legend() {
     ];
 
     return (
-        <section className={styles.container}>
-            <h3 className={styles.title}>Tier Legend</h3>
-            <ul className={styles.list}>
-                {tiers.map((t) => (
-                    <li
-                        key={t.name}
-                        className={styles.listItem}
-                        style={{ '--tier-color': tierColors[t.name] }}
-                    >
-                        <h4 className={styles.tierName}>{t.name}</h4>
-                        <p className={styles.stats}>
-                            <span>WAR: <strong>{t.war}</strong></span> /{' '}
-                            <span>FRPs: <strong>{t.frp}</strong></span>
+        <section className={`${styles.container} ${expanded ? styles.expanded : styles.collapsed}`}>
+            <div className={styles.header}>
+                <h3 className={styles.title}>Tier Legend</h3>
+                <button onClick={toggleLegend} className={styles.toggleButton}>
+                    {expanded ? 'Hide' : 'Show'} Legend
+                </button>
+            </div>
+
+            {expanded && (
+                <>
+                    <ul className={styles.list}>
+                        {tiers.map((t) => (
+                            <li
+                                key={t.name}
+                                className={styles.listItem}
+                                style={{ '--tier-color': tierColors[t.name] }}
+                            >
+                                <h4 className={styles.tierName}>{t.name}</h4>
+                                <p className={styles.stats}>
+                                    <span>WAR: <strong>{t.war}</strong></span> /{' '}
+                                    <span>FRPs: <strong>{t.frp}</strong></span>
+                                </p>
+                                <p className={styles.ranks}>{t.ranks}</p>
+                                <p className={styles.description}>{t.description}</p>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <aside className={styles.noteBox}>
+                        <strong>Base First (1.0)</strong>
+                        <p>
+                            Generic first-round pick, equally likely to be pick 1 or 12.<br />
+                            Worth ~1.25–1.75 WAR per season or ~0.05 WAR per game.
                         </p>
-                        <p className={styles.ranks}>{t.ranks}</p>
-                        <p className={styles.description}>{t.description}</p>
-                    </li>
-                ))}
-            </ul>
+                    </aside>
 
-            <aside className={styles.noteBox}>
-                <strong>Base First (1.0)</strong>
-                <p>
-                    Generic first-round pick, equally likely to be pick 1 or 12.<br />
-                    Worth ~1.25–1.75 WAR per season or ~0.05 WAR per game.
-                </p>
-            </aside>
-
-            <footer className={styles.footerNote}>
-                <p>WAR = average Wins Above Replacement over 3 year window</p>
-                <p>FRPs = equivalent value in Base First Round Picks</p>
-                <p>Historical positional finishing ranks in each tier</p>
-            </footer>
+                    <footer className={styles.footerNote}>
+                        <p>WAR = average Wins Above Replacement over 3 year window</p>
+                        <p>FRPs = equivalent value in Base First Round Picks</p>
+                        <p>Historical positional finishing ranks in each tier</p>
+                    </footer>
+                </>
+            )}
         </section>
     );
 }

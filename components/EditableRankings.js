@@ -54,11 +54,12 @@ function getTierName(tier) {
     return tierNames[parseInt(tier, 10)] || `Tier ${tier}`;
 }
 
-// Helper to convert hex color to rgba string with given opacity
+// Convert hex color to rgba with opacity
 function hexToRGBA(hex, alpha = 1) {
-    let r = 0, g = 0, b = 0;
+    let r = 0,
+        g = 0,
+        b = 0;
 
-    // Remove #
     if (hex[0] === "#") {
         hex = hex.slice(1);
     }
@@ -143,7 +144,8 @@ function SortableItem({ player, tier, onMoveUp, onMoveDown }) {
         <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
             <div style={textStyle}>
                 <strong>{player.Rank}. </strong>
-                {player.Player} <span style={posStyle}>({player.Pos || player.Position || "?"})</span>
+                {player.Player}{" "}
+                <span style={posStyle}>({player.Pos || player.Position || "?"})</span>
                 <span style={valueStyle}>{player.VALUE.toFixed(2)}</span>
             </div>
             <div>
@@ -246,6 +248,7 @@ export default function EditableRankings({ players, onChange }) {
             const [moved] = reordered.splice(oldIndex, 1);
             reordered.splice(newIndex, 0, moved);
 
+            // Update moved player's VALUE based on neighbors for smooth ordering
             const updatedMoved = { ...moved };
             if (newIndex === 0) {
                 const nextPlayer = reordered[1];
@@ -262,7 +265,6 @@ export default function EditableRankings({ players, onChange }) {
                     updatedMoved.VALUE = moved.VALUE;
                 }
             }
-
             reordered[newIndex] = updatedMoved;
 
             const updated = {
@@ -278,28 +280,20 @@ export default function EditableRankings({ players, onChange }) {
 
             const oldIndex = sourceItems.findIndex((p) => p.id === active.id);
             const movedPlayer = sourceItems[oldIndex];
-            const newIndex = destItems.findIndex((p) => p.id === active.id);
 
+            // When dragging to a new tier, insert at top (index 0)
+            destItems.splice(0, 0, { ...movedPlayer, TIER: parseInt(destTier) });
+            sourceItems.splice(oldIndex, 1);
+
+            // Recalculate VALUE for moved player
             const updatedMoved = { ...movedPlayer, TIER: parseInt(destTier) };
-
-            if (newIndex === 0) {
+            if (destItems.length === 1) {
+                updatedMoved.VALUE = movedPlayer.VALUE;
+            } else {
                 const nextPlayer = destItems[1];
                 updatedMoved.VALUE = nextPlayer ? nextPlayer.VALUE : movedPlayer.VALUE;
-            } else if (newIndex === destItems.length - 1) {
-                const prevPlayer = destItems[newIndex - 1];
-                updatedMoved.VALUE = prevPlayer ? prevPlayer.VALUE : movedPlayer.VALUE;
-            } else {
-                const prevPlayer = destItems[newIndex - 1];
-                const nextPlayer = destItems[newIndex + 1];
-                if (prevPlayer && nextPlayer) {
-                    updatedMoved.VALUE = (prevPlayer.VALUE + nextPlayer.VALUE) / 2;
-                } else {
-                    updatedMoved.VALUE = movedPlayer.VALUE;
-                }
             }
-
-            destItems[newIndex] = updatedMoved;
-            sourceItems.splice(oldIndex, 1);
+            destItems[0] = updatedMoved;
 
             const updated = {
                 ...tiers,
@@ -314,7 +308,9 @@ export default function EditableRankings({ players, onChange }) {
 
     const flattenTiers = (tierMap) => {
         const result = [];
-        const sorted = Object.keys(tierMap).sort((a, b) => a - b);
+        const sorted = Object.keys(tierMap)
+            .map(Number)
+            .sort((a, b) => a - b);
         sorted.forEach((tier) => {
             tierMap[tier].forEach((p) => {
                 result.push({ ...p, Rank: result.length + 1 });
@@ -337,6 +333,7 @@ export default function EditableRankings({ players, onChange }) {
         const [moved] = arr.splice(index, 1);
         arr.splice(newIndex, 0, moved);
         updated[tier] = arr;
+
         setTiers(updated);
         onChange(flattenTiers(updated));
     };
@@ -356,7 +353,9 @@ export default function EditableRankings({ players, onChange }) {
     };
 
     const activePlayer = activeId
-        ? Object.values(tiers).flat().find((p) => p.id === activeId)
+        ? Object.values(tiers)
+            .flat()
+            .find((p) => p.id === activeId)
         : null;
 
     return (
@@ -420,7 +419,7 @@ export default function EditableRankings({ players, onChange }) {
                             >
                                 <div
                                     style={{
-                                        backgroundColor: hexToRGBA(getTierColor(tierId), 0.15), // subtle lighter background for the tier container
+                                        backgroundColor: hexToRGBA(getTierColor(tierId), 0.15),
                                         padding: "12px",
                                         borderRadius: "10px",
                                         display: "flex",

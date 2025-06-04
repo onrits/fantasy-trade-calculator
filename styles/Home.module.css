@@ -285,3 +285,113 @@
   z-index: 4;
   cursor: default;
 }
+
+/* Mobile first improvements */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .mainLayout {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .leftColumn,
+  .rankings {
+    flex: none;
+    width: 100%;
+  }
+
+  .rankings {
+    min-height: auto;
+    /* Allow rankings box to adjust height on mobile */
+    max-height: 400px;
+    /* Optional, to avoid overly tall scroll areas */
+  }
+
+  .assetList {
+    max-height: 180px;
+    /* Shorter scroll for lists on mobile */
+  }
+
+  .calculator {
+    padding: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+
+  .removeButton {
+    font-size: 1.5rem;
+    padding: 0.2rem;
+  }
+
+  /* Make trade comparison bar smaller */
+  .tradeComparisonBarWrapper {
+    height: 16px;
+  }
+
+  .tradeComparisonLabel {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+  }
+
+  .assetItem {
+    font-size: 0.75rem;
+  }
+
+  .removeButton {
+    font-size: 1.25rem;
+  }
+}
+
+.buttonPrimary {
+  cursor: pointer;
+  /* shows hand cursor on hover */
+  background-color: #0070f3;
+  /* example blue background */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.buttonPrimary:hover {
+  background-color: #005bb5;
+  /* darker blue on hover */
+}
+
+
+.buttonSecondary {
+  background-color: transparent;
+  color: #0070f3;
+  border: 2px solid #0070f3;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.buttonSecondary:hover {
+  background-color: #0070f3;
+  color: white;
+}
