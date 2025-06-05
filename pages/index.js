@@ -19,6 +19,8 @@ export default function Home() {
   const [isClient, setIsClient] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
+  const [showResetMenu, setShowResetMenu] = useState(false);
+
 
   useEffect(() => {
     setIsClient(true);
@@ -80,6 +82,54 @@ export default function Home() {
       setTimeout(() => setSaveSuccess(false), 2000); // hide success message after 2 seconds
     }
   };
+
+  const handleResetRankings = async () => {
+    if (user) {
+      try {
+        const docRef = doc(db, 'userRankings', user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setPlayers(docSnap.data().players);
+        } else {
+          // No saved data, fallback to default
+          setPlayers(playerValues.map(p => ({
+            ...p,
+            id: `player-${p.Player}`,
+            name: p.Player,
+            value: p.VALUE || 0,
+            type: 'Player',
+            position: p.Position || '',
+          })));
+        }
+      } catch (error) {
+        console.error('Error resetting rankings:', error);
+      }
+    } else {
+      // Guest fallback: reset to default rankings
+      setPlayers(playerValues.map(p => ({
+        ...p,
+        id: `player-${p.Player}`,
+        name: p.Player,
+        value: p.VALUE || 0,
+        type: 'Player',
+        position: p.Position || '',
+      })));
+    }
+  };
+
+  const handleResetToDefault = () => {
+    const defaultPlayers = playerValues.map(p => ({
+      ...p,
+      id: `player-${p.Player}`,
+      name: p.Player,
+      value: p.VALUE || 0,
+      type: 'Player',
+      position: p.Position || '',
+      tier: p.TIER || p.tier || null,
+    }));
+    setPlayers(defaultPlayers);
+  };
+
 
   const draftPickValueMap = useMemo(() => {
     return draftPickValues.reduce((acc, pick) => {
@@ -269,26 +319,83 @@ export default function Home() {
           {isClient && (
             <>
               {user ? (
-                <button
-                  className={styles.buttonPrimary}
-                  onClick={handleSave}
-                  disabled={isSaving}
-                  style={{
-                    marginBottom: '1rem',
-                    width: '100%',
-                    cursor: isSaving ? 'not-allowed' : 'pointer',
-                    backgroundColor: isSaving ? '#ccc' : undefined,
-                    color: isSaving ? '#666' : undefined,
-                    transition: 'background-color 0.2s ease',
-                  }}
-                >
-                  {isSaving ? 'Saving...' : saveSuccess ? 'Saved!' : 'Save Rankings'}
-                </button>
+                <div style={{ display: 'flex', gap: '4%', marginBottom: '1rem' }}>
+                  {/* Save Rankings Button */}
+                  <button
+                    className={styles.buttonPrimary}
+                    onClick={handleSave}
+                    style={{ flex: 1 }}
+                  >
+                    {isSaving ? 'Saving...' : saveSuccess ? 'Saved!' : 'Save Rankings'}
+                  </button>
+
+                  {/* Reset Dropdown Button */}
+                  <div style={{ position: 'relative', flex: 1 }}>
+                    <button
+                      className={styles.buttonSecondary}
+                      onClick={() => setShowResetMenu(prev => !prev)}
+                      style={{ width: '100%' }}
+                    >
+                      Reset ▼
+                    </button>
+
+                    {showResetMenu && (
+                      <div
+                        style={{
+                          position: 'absolute',
+                          top: '100%',
+                          left: 0,
+                          width: '100%',
+                          backgroundColor: '#222',
+                          border: '1px solid #444',
+                          zIndex: 10,
+                        }}
+                      >
+                        <button
+                          onClick={() => {
+                            handleResetRankings();
+                            setShowResetMenu(false);
+                          }}
+                          style={{
+                            width: '100%',
+                            padding: '0.5rem',
+                            textAlign: 'left',
+                            color: '#eee',
+                            background: 'none',
+                            border: 'none',
+                            cursor: 'pointer',
+                          }}
+                        >
+                          Reset to Last Save
+                        </button>
+                        <button
+                          onClick={() => {
+                            handleResetToDefault();
+                            setShowResetMenu(false);
+                          }}
+                          style={{
+                            width: '100%',
+                            padding: '0.5rem',
+                            textAlign: 'left',
+                            color: '#eee',
+                            background: 'none',
+                            border: 'none',
+                            cursor: 'pointer',
+                          }}
+                        >
+                          Reset to Default
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </div>
               ) : (
                 <p style={{ color: '#aaa', fontStyle: 'italic', marginBottom: '1rem' }}>
                   Sign in to save your rankings.
                 </p>
               )}
+
+
 
               <EditableRankings players={players} onChange={setPlayers} />
             </>

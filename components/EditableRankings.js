@@ -338,19 +338,19 @@ export default function EditableRankings({ players, onChange }) {
         onChange(flattenTiers(updated));
     };
 
-    const handleReset = () => {
-        const tierMap = {};
-        originalPlayers.forEach((p) => {
-            const tier = p.TIER || 99;
-            if (!tierMap[tier]) tierMap[tier] = [];
-            tierMap[tier].push(p);
-        });
-        for (const tier in tierMap) {
-            tierMap[tier].sort((a, b) => a.Rank - b.Rank);
-        }
-        setTiers(tierMap);
-        onChange(originalPlayers);
-    };
+    /* const handleReset = () => {
+      const tierMap = {};
+      originalPlayers.forEach((p) => {
+        const tier = p.TIER || 99;
+        if (!tierMap[tier]) tierMap[tier] = [];
+        tierMap[tier].push(p);
+      });
+      for (const tier in tierMap) {
+        tierMap[tier].sort((a, b) => a.Rank - b.Rank);
+      }
+      setTiers(tierMap);
+      onChange(originalPlayers);
+    }; */
 
     const activePlayer = activeId
         ? Object.values(tiers)
@@ -369,25 +369,25 @@ export default function EditableRankings({ players, onChange }) {
                 minHeight: "100vh",
             }}
         >
-            <button
-                onClick={handleReset}
-                style={{
-                    marginBottom: "1rem",
-                    padding: "6px 12px",
-                    borderRadius: "6px",
-                    backgroundColor: "#1f1f1f",
-                    color: "#eee",
-                    border: "none",
-                    cursor: "pointer",
-                    fontWeight: "600",
-                    fontSize: "13px",
-                    transition: "background-color 0.2s ease",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#444")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1f1f1f")}
-            >
-                🔁 Reset
-            </button>
+            {/* <button
+        onClick={handleReset}
+        style={{
+          marginBottom: "1rem",
+          padding: "6px 12px",
+          borderRadius: "6px",
+          backgroundColor: "#1f1f1f",
+          color: "#eee",
+          border: "none",
+          cursor: "pointer",
+          fontWeight: "600",
+          fontSize: "13px",
+          transition: "background-color 0.2s ease",
+        }}
+        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#444")}
+        onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1f1f1f")}
+      >
+        🔁 Reset
+      </button> */}
 
             <DndContext
                 sensors={sensors}
