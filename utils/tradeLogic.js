@@ -149,7 +149,7 @@ export function evaluateTrade(team1Assets, team2Assets, options = {}) {
         }
     }
 
-    // ⚖️ Final evaluation (unless preference-based even already decided)
+    // ⚖️ Final evaluation (unless preference-based even already decided) comment
     if (!isEvenTrade) {
         const totalCombined = team1Total + team2Total;
         const percent1 = totalCombined === 0 ? 50 : (team1Total / totalCombined) * 100;
