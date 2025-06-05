@@ -202,10 +202,11 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Dynasty Trade Calculator</h1>
+      <h1 className={styles.headerTitle}>TI-CALC</h1>
+
       <p className={styles.tagline}>
-        Edit the rankings to create your own personal calculator.
-      </p>
+        Edit the rankings and tiers to create your own personal calculator.
+      </p> <br />
 
       <div className={styles.authControls} style={{ marginBottom: '1rem' }}>
         {user ? (
@@ -327,7 +328,7 @@ export default function Home() {
                 <div className={styles.tradeComparisonLabel}>{winner}</div>
                 {!isEvenTrade && (
                   <div className={styles.reasonBox} style={{ marginTop: '1rem' }}>
-                    <strong>{winner} leads by {Math.abs(adjustedTeam1Total - adjustedTeam2Total).toFixed(2)} points</strong>
+                    <strong>{winner} by {Math.abs(adjustedTeam1Total - adjustedTeam2Total).toFixed(2)} First Round Picks</strong>
                     <p style={{ marginTop: '0.5rem' }}>
                       That's roughly equivalent to:
                     </p>

@@ -113,7 +113,7 @@ export default function Legend() {
     return (
         <section className={`${styles.container} ${expanded ? styles.expanded : styles.collapsed}`}>
             <div className={styles.header}>
-                <h3 className={styles.title}>Tier Legend</h3>
+                <h3 className={styles.title}>Ranking Guide</h3>
                 <button onClick={toggleLegend} className={styles.toggleButton}>
                     {expanded ? 'Hide' : 'Show'} Legend
                 </button>

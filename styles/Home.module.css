@@ -349,7 +349,7 @@
   }
 
   .rankings {
-    max-height: 250px;
+
     font-size: 0.75rem;
   }
 
@@ -429,4 +429,13 @@
   list-style-type: none;
   margin-top: 0.5rem;
   padding-left: 1rem;
+}
+
+.headerImage {
+  max-width: 50%;
+  text-align: left;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 1rem 0;
 }
