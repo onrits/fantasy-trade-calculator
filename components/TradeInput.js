@@ -19,7 +19,7 @@ export default function TradeInput({ allItems, selectedAssets, onSelect }) {
     };
 
     return (
-        <div style={{ position: 'relative', marginBottom: '1rem', width: '100%' }}>
+        <div style={{ position: 'relative', marginBottom: '1.5rem', width: '100%' }}>
             <input
                 ref={inputRef}
                 type="text"
@@ -28,19 +28,32 @@ export default function TradeInput({ allItems, selectedAssets, onSelect }) {
                 onChange={e => setQuery(e.target.value)}
                 style={{
                     width: '100%',
-                    padding: '10px 14px',
+                    padding: '0.75rem 1rem',
                     borderRadius: '8px',
-                    border: '1.5px solid #444',
-                    backgroundColor: '#1e1e1e',
-                    color: '#eee',
+                    border: '2px solid #475ee6',
+                    backgroundColor: '#f6f3e1',
+                    color: '#475ee6',
                     fontSize: '1rem',
-                    boxShadow: '0 2px 5px rgba(0,0,0,0.7)',
+                    fontWeight: '700',
+                    fontFamily: "'Space Mono', monospace",
+                    boxShadow: '4px 4px 0 #111',
                     outline: 'none',
-                    transition: 'border-color 0.25s ease',
+                    transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+                    // Remove default input shadows for clean look
+                    WebkitAppearance: 'none',
+                    MozAppearance: 'none',
+                    appearance: 'none',
                 }}
-                onFocus={e => e.currentTarget.style.borderColor = '#f39c12'}
-                onBlur={e => e.currentTarget.style.borderColor = '#444'}
+                onFocus={e => {
+                    e.currentTarget.style.borderColor = '#ff0055'; // accent pink on focus per baseline hover color
+                    e.currentTarget.style.boxShadow = '6px 6px 0 #ff0055';
+                }}
+                onBlur={e => {
+                    e.currentTarget.style.borderColor = '#475ee6';
+                    e.currentTarget.style.boxShadow = '4px 4px 0 #111';
+                }}
                 autoComplete="off"
+                spellCheck={false}
             />
 
             {query && filtered.length > 0 && (
@@ -50,36 +63,41 @@ export default function TradeInput({ allItems, selectedAssets, onSelect }) {
                         top: '44px',
                         left: 0,
                         right: 0,
-                        maxHeight: 240,
+                        maxHeight: 250,
                         overflowY: 'auto',
-                        backgroundColor: '#2c2c2c',
+                        backgroundColor: '#f6f3e1',
                         borderRadius: '8px',
-                        border: '1.5px solid #555',
+                        border: '2px solid #475ee6',
                         margin: 0,
                         padding: 0,
                         listStyle: 'none',
-                        zIndex: 100,
-                        boxShadow: '0 8px 16px rgba(0,0,0,0.8)',
-                        color: '#eee',
+                        zIndex: 150,
+                        boxShadow: '6px 6px 0 #111',
+                        color: '#475ee6',
+                        fontFamily: "'Space Mono', monospace",
+                        fontWeight: '700',
                     }}
                 >
                     {filtered.map(item => (
                         <li
                             key={item.id}
                             style={{
-                                padding: '10px 16px',
+                                padding: '0.75rem 1rem',
                                 cursor: 'pointer',
-                                borderBottom: '1px solid #444',
-                                transition: 'background-color 0.2s ease',
+                                borderBottom: '1px solid #ccc',
+                                userSelect: 'none',
+                                transition: 'background-color 0.25s ease',
+                                fontWeight: '700',
+                                fontFamily: "'Space Mono', monospace",
+                                color: '#475ee6',
                             }}
                             onClick={() => handleSelect(item)}
-                            onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#444')}
+                            onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#ff005533')}
                             onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'transparent')}
                         >
                             <strong>{item.name || item.full_name || item.label}</strong>{' '}
-                            <span style={{ color: '#bbb' }}>
-                                ({item.Pos || item.Position || item.position || item.type || ''})
-
+                            <span style={{ color: '#999', fontWeight: '400', fontFamily: "'Space Mono', monospace" }}>
+                                ({item.Pos || item.Position || item.position || item.type || 'N/A'})
                             </span>
                         </li>
                     ))}

@@ -3,18 +3,20 @@ import { useState } from 'react';
 
 
 const tierColors = {
-    "Tier 1": "#ff6363",    // neon red
-    "Tier 2": "#ffa94d",    // neon orange
-    "Tier 3": "#ffd43b",    // neon yellow
-    "Tier 4": "#69db7c",    // neon green
-    "Tier 5": "#4dabf7",    // neon blue
-    "Tier 6": "#f783ac",    // neon pink
-    "Tier 7": "#845ef7",    // neon purple
-    "Tier 8": "#00b4d8",    // neon cyan
-    "Tier 9": "#d6336c",    // neon magenta
-    "Tier 10+": "#12b886",  // neon teal
-    "Tier 11": "#868e96",   // grayish neon
+    "Tier 1": "#b33a3a",    // deep crimson red (dark enough for white text)
+    "Tier 2": "#cc7a33",    // warm burnt orange
+    "Tier 3": "#d1b331",    // mustard yellow, darker gold tone
+    "Tier 4": "#3a8a3a",    // dark forest green
+    "Tier 5": "#2a71b8",    // medium dark blue
+    "Tier 6": "#b34a79",    // muted dark pink
+    "Tier 7": "#5b3db8",    // deep purple
+    "Tier 8": "#0088aa",    // teal blue
+    "Tier 9": "#a02c59",    // dark magenta
+    "Tier 10+": "#117a65",  // dark teal
+    "Tier 11": "#555c62",   // dark gray
 };
+
+
 
 export default function Legend() {
     const [expanded, setExpanded] = useState(false);

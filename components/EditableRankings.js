@@ -76,7 +76,7 @@ function hexToRGBA(hex, alpha = 1) {
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
-function SortableItem({ player, tier, onMoveUp, onMoveDown }) {
+function SortableItem({ player, tier }) {
     const {
         attributes,
         listeners,
@@ -87,25 +87,27 @@ function SortableItem({ player, tier, onMoveUp, onMoveDown }) {
     } = useSortable({ id: player.id });
 
     const tierColor = getTierColor(tier);
-    const backgroundColor = hexToRGBA(tierColor, 0.4); // 40% opacity
 
     const style = {
         transform: CSS.Transform.toString(transform),
         transition,
-        backgroundColor,
-        color: "#eee",
-        padding: "8px 12px",
-        borderRadius: "6px",
+        backgroundColor: "#f5ecdf", // cream background
+        color: "#0a0a0a", // dark text
+        padding: "8px 20px",
+        borderRadius: 0,
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        boxShadow: isDragging
-            ? "0 0 0 2px #6366f1"
-            : "0 1px 3px rgba(0, 0, 0, 0.6)",
+        border: `2px solid ${tierColor}`,
         fontSize: "13px",
-        fontWeight: 500,
+        lineHeight: 1.4,
+        fontFamily: "'Playfair Display', serif",
         cursor: "grab",
         userSelect: "none",
+        boxShadow: isDragging ? `0 0 0 3px ${tierColor}` : "none",
+        overflowWrap: "break-word",
+        width: "100%",
+        boxSizing: "border-box",
     };
 
     const textStyle = {
@@ -113,31 +115,31 @@ function SortableItem({ player, tier, onMoveUp, onMoveDown }) {
         overflow: "hidden",
         textOverflow: "ellipsis",
         whiteSpace: "nowrap",
+        fontWeight: 700,
+        fontFamily: "'Playfair Display', serif",
+        letterSpacing: "0.04em",
+        textTransform: "uppercase",
+        fontSize: "12px",
     };
 
     const posStyle = {
-        color: "#888",
-        marginLeft: 4,
+        color: tierColor,
+        marginLeft: 10,
+        fontWeight: 600,
+        fontFamily: "'Montserrat', sans-serif",
+        textTransform: "uppercase",
+        letterSpacing: "0.02em",
+        fontSize: "11px",
     };
 
     const valueStyle = {
         fontVariantNumeric: "tabular-nums",
-        marginLeft: 8,
-        fontWeight: "600",
-        color: "#a0a0a0",
-        minWidth: 48,
+        marginLeft: 14,
+        fontWeight: 700,
+        color: tierColor,
+        minWidth: 56,
         textAlign: "right",
-    };
-
-    const buttonStyle = {
-        cursor: "pointer",
-        background: "none",
-        border: "none",
-        color: "#666",
-        fontSize: "14px",
-        padding: "0 4px",
-        lineHeight: "1",
-        transition: "color 0.2s ease",
+        fontSize: "12px",
     };
 
     return (
@@ -148,34 +150,14 @@ function SortableItem({ player, tier, onMoveUp, onMoveDown }) {
                 <span style={posStyle}>({player.Pos || player.Position || "?"})</span>
                 <span style={valueStyle}>{player.VALUE.toFixed(2)}</span>
             </div>
-            <div>
-                <button
-                    onClick={() => onMoveUp(player)}
-                    style={buttonStyle}
-                    aria-label="Move up"
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#6366f1")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "#666")}
-                >
-                    ▲
-                </button>
-                <button
-                    onClick={() => onMoveDown(player)}
-                    style={buttonStyle}
-                    aria-label="Move down"
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#6366f1")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "#666")}
-                >
-                    ▼
-                </button>
-            </div>
         </div>
     );
 }
 
 export default function EditableRankings({ players, onChange }) {
     const [tiers, setTiers] = useState({});
-    const [originalPlayers, setOriginalPlayers] = useState([]);
     const [activeId, setActiveId] = useState(null);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const tierMap = {};
@@ -188,8 +170,17 @@ export default function EditableRankings({ players, onChange }) {
             tierMap[tier].sort((a, b) => a.Rank - b.Rank);
         }
         setTiers(tierMap);
-        setOriginalPlayers(players);
     }, [players]);
+
+    // Detect mobile via window width, update on resize
+    useEffect(() => {
+        function handleResize() {
+            setIsMobile(window.innerWidth < 600);
+        }
+        handleResize(); // initial check
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     const sensors = useSensors(
         useSensor(PointerSensor, { activationConstraint: { distance: 5 } })
@@ -319,76 +310,73 @@ export default function EditableRankings({ players, onChange }) {
         return result;
     };
 
-    const movePlayer = (player, direction) => {
-        const tier = findContainer(player.id);
-        if (!tier) return;
-
-        const updated = { ...tiers };
-        const index = updated[tier].findIndex((p) => p.id === player.id);
-        const newIndex = index + direction;
-
-        if (newIndex < 0 || newIndex >= updated[tier].length) return;
-
-        const arr = [...updated[tier]];
-        const [moved] = arr.splice(index, 1);
-        arr.splice(newIndex, 0, moved);
-        updated[tier] = arr;
-
-        setTiers(updated);
-        onChange(flattenTiers(updated));
-    };
-
-    /* const handleReset = () => {
-      const tierMap = {};
-      originalPlayers.forEach((p) => {
-        const tier = p.TIER || 99;
-        if (!tierMap[tier]) tierMap[tier] = [];
-        tierMap[tier].push(p);
-      });
-      for (const tier in tierMap) {
-        tierMap[tier].sort((a, b) => a.Rank - b.Rank);
-      }
-      setTiers(tierMap);
-      onChange(originalPlayers);
-    }; */
-
     const activePlayer = activeId
         ? Object.values(tiers)
             .flat()
             .find((p) => p.id === activeId)
         : null;
 
-    return (
-        <div
-            style={{
-                backgroundColor: "#0a0a0a",
-                color: "#eee",
-                fontFamily:
-                    "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-                padding: "0.75rem 1rem",
-                minHeight: "100vh",
-            }}
-        >
-            {/* <button
-        onClick={handleReset}
-        style={{
-          marginBottom: "1rem",
-          padding: "6px 12px",
-          borderRadius: "6px",
-          backgroundColor: "#1f1f1f",
-          color: "#eee",
-          border: "none",
-          cursor: "pointer",
-          fontWeight: "600",
-          fontSize: "13px",
-          transition: "background-color 0.2s ease",
-        }}
-        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#444")}
-        onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1f1f1f")}
-      >
-        🔁 Reset
-      </button> */}
+    // Responsive styles depend on isMobile:
+    // Adjust container padding, font sizes, gaps, etc.
+    const containerStyle = {
+        backgroundColor: "#f5ecdf",
+        color: "#2e2e2e",
+        fontFamily: "'Montserrat Black', 'Montserrat', sans-serif",
+        padding: isMobile ? "0.75rem 1rem" : "1rem 1.5rem",
+        minHeight: "100vh",
+    };
 
+    const tierWrapperStyle = {
+        marginBottom: "2rem",
+        maxWidth: isMobile ? "100%" : "720px",
+        marginLeft: "auto",
+        marginRight: "auto",
+    };
+
+    const tierHeaderStyle = (tierId) => ({
+        color: getTierColor(tierId),
+        marginBottom: isMobile ? "0.75rem" : "1rem",
+        fontWeight: 900,
+        fontSize: isMobile ? "0.9rem" : "1rem",
+        fontFamily: "'Playfair Display', serif",
+        letterSpacing: "0.1em",
+        textTransform: "uppercase",
+        userSelect: "none",
+        borderBottom: `2px solid ${getTierColor(tierId)}`,
+        paddingBottom: "6px",
+        width: "100%",
+        boxSizing: "border-box",
+    });
+
+    const tierListStyle = (tierId) => ({
+        backgroundColor: hexToRGBA(getTierColor(tierId), 0.1),
+        padding: isMobile ? "12px" : "20px",
+        borderRadius: 0,
+        display: "flex",
+        flexDirection: "column",
+        gap: isMobile ? "8px" : "12px",
+        borderLeft: `4px solid ${getTierColor(tierId)}`,
+        borderRight: "2px solid #333",
+        boxShadow: "none",
+        width: "100%",
+        boxSizing: "border-box",
+    });
+
+    const dragOverlayStyle = {
+        backgroundColor: "#475ee6",
+        color: "#f5ecdf",
+        padding: isMobile ? "8px 12px" : "12px 18px",
+        borderRadius: "10px",
+        boxShadow: "0 6px 14px rgba(71, 94, 230, 0.3)",
+        fontWeight: "900",
+        fontSize: isMobile ? "12px" : "14px",
+        userSelect: "none",
+        fontFamily: "'Montserrat Black', 'Montserrat', sans-serif",
+        whiteSpace: "nowrap",
+    };
+
+    return (
+        <div style={containerStyle}>
             <DndContext
                 sensors={sensors}
                 collisionDetection={closestCenter}
@@ -399,44 +387,20 @@ export default function EditableRankings({ players, onChange }) {
                 {Object.keys(tiers)
                     .sort((a, b) => a - b)
                     .map((tierId) => (
-                        <div key={tierId} style={{ marginBottom: "1.5rem" }}>
-                            <h3
-                                style={{
-                                    color: getTierColor(tierId),
-                                    marginBottom: "10px",
-                                    fontWeight: 800,
-                                    fontSize: "1.125rem",
-                                    letterSpacing: "0.04em",
-                                    textTransform: "uppercase",
-                                    userSelect: "none",
-                                }}
-                            >
+                        <div key={tierId} style={tierWrapperStyle}>
+                            <h3 style={tierHeaderStyle(tierId)}>
                                 {getTierName(tierId)}
                             </h3>
                             <SortableContext
                                 items={tiers[tierId].map((p) => p.id)}
                                 strategy={verticalListSortingStrategy}
                             >
-                                <div
-                                    style={{
-                                        backgroundColor: hexToRGBA(getTierColor(tierId), 0.15),
-                                        padding: "12px",
-                                        borderRadius: "10px",
-                                        display: "flex",
-                                        flexDirection: "column",
-                                        gap: "6px",
-                                        boxShadow: "0 2px 6px rgba(0,0,0,0.5)",
-                                        borderLeft: `5px solid ${getTierColor(tierId)}`,
-                                        borderRight: "1px solid #222",
-                                    }}
-                                >
+                                <div style={tierListStyle(tierId)}>
                                     {tiers[tierId].map((player) => (
                                         <SortableItem
                                             key={player.id}
                                             player={player}
                                             tier={tierId}
-                                            onMoveUp={(p) => movePlayer(p, -1)}
-                                            onMoveDown={(p) => movePlayer(p, 1)}
                                         />
                                     ))}
                                 </div>
@@ -446,19 +410,9 @@ export default function EditableRankings({ players, onChange }) {
 
                 <DragOverlay>
                     {activePlayer ? (
-                        <div
-                            style={{
-                                backgroundColor: "#333",
-                                color: "#eee",
-                                padding: "10px 14px",
-                                borderRadius: "8px",
-                                boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-                                fontWeight: "600",
-                                fontSize: "13px",
-                                userSelect: "none",
-                            }}
-                        >
-                            {activePlayer.Rank}. {activePlayer.Player} ({activePlayer.Position}) -{" "}
+                        <div style={dragOverlayStyle}>
+                            {activePlayer.Rank}. {activePlayer.Player} (
+                            {activePlayer.Position}) -{" "}
                             {activePlayer.VALUE.toFixed(2)}
                         </div>
                     ) : null}

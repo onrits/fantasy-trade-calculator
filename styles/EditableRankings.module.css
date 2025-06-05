@@ -1,11 +1,11 @@
-/* EditableRankings.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Montserrat:ital,wght@0,900;1,700&family=Gorgeous&display=swap');
 
 .container {
-    background-color: #0a0a0a;
-    color: #eee;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding: 0.75rem 1rem;
+    background-color: #f5ecdf;
+    /* cream */
+    color: #0a0a0a;
+    font-family: 'Montserrat', 'Playfair Display', 'Gorgeous', sans-serif;
+    padding: 1rem 1.25rem;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -14,68 +14,96 @@
 .scrollableContent {
     overflow-y: auto;
     flex: 1;
-    padding-right: 4px;
+    padding-right: 6px;
 }
 
 .resetButton {
     margin-bottom: 1rem;
-    padding: 6px 12px;
-    border-radius: 6px;
-    background-color: #1f1f1f;
-    color: #eee;
-    border: none;
+    padding: 8px 16px;
+    border: 2px solid #475ee6;
+    /* bold blue border */
+    background-color: #f5ecdf;
+    color: #475ee6;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 13px;
-    transition: background-color 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    box-shadow: none;
+    border-radius: 0;
+    /* no rounding */
+    transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .resetButton:hover {
-    background-color: #444;
+    background-color: #475ee6;
+    color: #f5ecdf;
+    border-color: #2a44c5;
 }
 
 .tierSection {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .tierTitle {
-    color: #eee;
-    margin-bottom: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 0.02em;
+    color: #0a0a0a;
+    margin-bottom: 10px;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
+    border-bottom: 3px solid #475ee6;
+    padding-bottom: 6px;
+    width: fit-content;
 }
 
 .tierList {
-    padding: 12px;
-    border-radius: 10px;
+    width: 100%;
+    max-width: 720px;
+    padding: 20px;
+    border-left: 6px solid var(--tier-color, #475ee6);
+    border-right: 2px solid #475ee6;
+    background-color: var(--tier-bg-color, #d9e4ff);
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-    border-left: 5px solid var(--tier-color);
-    border-right: 1px solid #222;
-    background-color: var(--tier-bg-color);
+    gap: 16px;
+    box-shadow: none;
+    border-radius: 0;
 }
 
 .sortableItem {
-    background-color: #121212;
-    color: #eee;
-    padding: 8px 12px;
-    border-radius: 6px;
+    width: 100%;
+    background-color: #e8efff;
+    color: #0a0a0a;
+    padding: 14px 20px;
+    border: 2px solid #475ee6;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    cursor: grab;
+    user-select: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-    font-size: 13px;
-    font-weight: 500;
-    cursor: grab;
-    user-select: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    border-radius: 0;
+}
+
+.sortableItem:hover {
+    background-color: #c7d7ff;
+    border-color: #2a44c5;
 }
 
 .sortableItemDragging {
-    box-shadow: 0 0 0 2px #6366f1;
+    outline: 3px solid #475ee6;
+    outline-offset: 2px;
+    box-shadow: none;
+    border-radius: 0;
 }
 
 .itemText {
@@ -83,44 +111,55 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif !important;
+    line-height: 1.1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .position {
-    color: #888;
-    margin-left: 4px;
+    color: #333;
+    margin-left: 8px;
+    font-style: normal;
+    font-weight: 600;
 }
 
 .value {
     font-variant-numeric: tabular-nums;
-    margin-left: 8px;
-    font-weight: 600;
-    color: #a0a0a0;
-    min-width: 48px;
+    margin-left: 12px;
+    font-weight: 900;
+    color: #222;
+    min-width: 56px;
     text-align: right;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .actionButtons button {
     cursor: pointer;
     background: none;
     border: none;
-    color: #666;
-    font-size: 14px;
-    padding: 0 4px;
+    color: #475ee6;
+    font-size: 16px;
+    padding: 0 6px;
     line-height: 1;
     transition: color 0.2s ease;
 }
 
 .actionButtons button:hover {
-    color: #6366f1;
+    color: #2a44c5;
 }
 
 .dragOverlay {
-    background-color: #333;
-    color: #eee;
-    padding: 10px 14px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    font-weight: 600;
-    font-size: 13px;
+    background-color: #aec5ff;
+    color: #0a0a0a;
+    padding: 14px 20px;
+    border: 2px solid #475ee6;
+    font-weight: 900;
+    font-size: 14px;
     user-select: none;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 0;
+    box-shadow: none;
 }

@@ -1,26 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Space+Mono:wght@400;700&display=swap');
 
 .container {
     max-width: 620px;
     margin: 2rem auto;
-    padding: 1rem 1.5rem;
-    background: #121214;
+    padding: 1.5rem 2rem;
+    background: rgba(245, 236, 223, 0.85);
+    /* match baseline cream */
     border-radius: 12px;
-    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #e6e8eb;
-    box-shadow: 0 6px 16px rgb(0 0 0 / 0.7);
-    font-size: 0.85rem;
-    line-height: 1.3;
+    font-family: 'Playfair Display', serif;
+    color: #475ee6;
+    /* blue text */
+    /* Hard shadow with zero blur and full opacity */
+    box-shadow: 6px 6px 0 0 #475ee6;
+    border: 2px solid #475ee6;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .title {
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
-    font-size: 1.3rem;
-    margin-bottom: 1.25rem;
-    letter-spacing: 0.05em;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: #ff6363;
-    text-shadow: 0 0 8px #ff6363;
+    color: #475ee6;
+    border-bottom: 4px double #475ee6;
+    padding-bottom: 0.5rem;
+    /* Remove soft glow, keep text shadow sharp and subtle */
+    text-shadow: 1px 1px 0 #475ee6;
 }
 
 .list {
@@ -30,119 +38,129 @@
 }
 
 .listItem {
-    border-left: 5px solid var(--tier-color, #ff6363);
-    padding-left: 1rem;
+    border-left: 6px solid var(--tier-color, #475ee6);
+    padding-left: 1.25rem;
     margin-bottom: 1.5rem;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
     cursor: default;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.95rem;
 }
 
 .listItem:hover {
     transform: translateX(4px);
-    box-shadow: 0 3px 8px rgb(255 99 99 / 0.3);
+    /* Hard shadow on hover */
+    box-shadow: 6px 6px 0 0 #475ee6;
 }
 
 .tierName {
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
-    font-size: 1.05rem;
-    margin: 0 0 0.15rem 0;
-    color: #fff;
+    font-size: 1.1rem;
+    margin: 0 0 0.2rem 0;
+    color: #333;
     text-transform: uppercase;
     letter-spacing: 0.07em;
-    text-shadow: 0 0 4px #ff6363;
+    /* Replace soft glow with subtle solid shadow */
+    text-shadow: 1px 1px 0 #475ee6;
 }
 
 .stats {
-    margin: 0 0 0.15rem 0;
-    font-size: 0.85rem;
-    color: #bbb;
+    margin: 0 0 0.2rem 0;
+    font-size: 0.9rem;
+    color: #6a7ed1;
     font-weight: 600;
+    font-family: 'Space Mono', monospace;
 }
 
 .stats strong {
-    color: #fff;
+    color: #333;
 }
 
 .ranks {
     margin: 0 0 0.3rem 0;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #9bb8f7;
     font-weight: 500;
+    font-family: 'Space Mono', monospace;
 }
 
 .description {
     margin: 0;
-    font-size: 0.85rem;
-    color: #aaa;
-    line-height: 1.3;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
     font-weight: 400;
+    font-family: 'Space Mono', monospace;
 }
 
 .noteBox {
     margin-top: 2rem;
-    padding: 0.75rem 1rem;
-    background: #1e1e28;
-    border-left: 4px solid #ff6363;
+    padding: 1rem 1.25rem;
+    background-color: #e6eafc;
+    /* light blue */
+    border-left: 4px solid #475ee6;
     border-radius: 8px;
-    font-size: 0.85rem;
-    color: #ccc;
+    font-size: 0.9rem;
+    color: #475ee6;
     font-style: italic;
     letter-spacing: 0.04em;
+    font-family: 'Space Mono', monospace;
 }
 
 .noteBox strong {
     display: block;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
     font-weight: 700;
-    color: #fff;
+    color: #333;
     text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
 }
 
 .footerNote {
     margin-top: 2rem;
-    border-top: 1px solid #2b2b3a;
+    border-top: 1px solid #475ee6aa;
     padding-top: 1rem;
-    font-size: 0.75rem;
-    color: #777e9e;
+    font-size: 0.8rem;
+    color: #475ee6cc;
     line-height: 1.4;
     font-weight: 400;
+    font-family: 'Space Mono', monospace;
 }
 
 .footerNote p {
-    margin: 0.2rem 0;
+    margin: 0.3rem 0;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Playfair Display', serif;
 }
 
 .toggleButton {
-    background-color: #1e1e28;
-    color: #ff6363;
-    border: 1px solid #ff6363;
+    background-color: #e6eafc;
+    color: #475ee6;
+    border: 2px solid #475ee6;
     border-radius: 6px;
-    padding: 0.4rem 0.8rem;
+    padding: 0.5rem 1rem;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 0.8rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
     transition: background 0.2s ease, color 0.2s ease;
 }
 
 .toggleButton:hover {
-    background-color: #ff6363;
-    color: #121214;
+    background-color: #475ee6;
+    color: #f6f3e1;
 }
 
-.collapsed {
-    padding: 1rem 1.5rem;
-    margin: 1rem auto;
-    max-width: 620px;
-}
-
+.collapsed,
 .expanded {
-    padding: 1rem 1.5rem;
-    margin: 1rem auto;
+    padding: 1.5rem 2rem;
+    margin: 1.5rem auto;
     max-width: 620px;
 }

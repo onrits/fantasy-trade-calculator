@@ -201,7 +201,10 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Fantasy Trade Calculator</h1>
+      <h1 className={styles.title}>Dynasty Trade Calculator</h1>
+      <p className={styles.tagline}>
+        Edit the rankings to create your own personal calculator.
+      </p>
 
       <div className={styles.authControls} style={{ marginBottom: '1rem' }}>
         {user ? (

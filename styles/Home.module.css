@@ -1,227 +1,162 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  background-color: #121214;
-  /* match legend background */
-  color: #e6e8eb;
-  /* match legend text */
-  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  min-height: 100vh;
+  background: rgba(245, 236, 223, 0.85);
+  color: #000000;
+  font-family: 'Playfair Display', serif;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  box-shadow: 8px 8px 0 #000000;
+  border: 2px solid #000000;
 }
 
 .title {
+  font-size: 3rem;
   font-weight: 700;
-  font-size: 2.8rem;
-  text-align: center;
-  letter-spacing: 0.1em;
-  color: #ff6363;
-  /* match legend title color */
-  text-shadow: 0 0 8px #ff6363;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-bottom: 4px double #475ee6;
+  padding-bottom: 0.5rem;
 }
 
 .mainLayout {
-  display: flex;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
   gap: 2rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
 }
 
 .leftColumn {
-  flex: 3;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
+.calculator,
+.legend,
+.rankings {
+  background: rgba(245, 236, 223, 0.85);
+  padding: 1.5rem;
+  border: 2px solid #000000;
+  box-shadow: 6px 6px 0 #111;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 .calculator {
-  background-color: #121214;
-  border-radius: 12px;
-  padding: 1.5rem 2rem;
-  box-shadow: 0 6px 16px rgb(0 0 0 / 0.7);
-  border: 1px solid #2b2b3a;
-  font-size: 0.85rem;
-  line-height: 1.3;
-  color: #e6e8eb;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .sectionTitle {
-  font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
+  font-weight: bold;
   margin-bottom: 1rem;
-  letter-spacing: 0.05em;
+  font-family: 'Playfair Display', serif;
   text-transform: uppercase;
-  color: #ff6363;
-  text-shadow: 0 0 8px #ff6363;
-  border-bottom: 1px solid #ff6363;
-  padding-bottom: 0.3rem;
+  border-left: 6px solid #000000;
+  padding-left: 0.75rem;
 }
 
 .assetList {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
   margin: 0;
-  max-height: 280px;
-  overflow-y: auto;
-  color: #e6e8eb;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .assetItem {
+  background: #f6f3e1;
+  border: 2px solid #000000;
+  padding: 0.75rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.25rem 0;
-  border-left: 5px solid var(--tier-color, #ff6363);
-  padding-left: 1rem;
-  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  box-shadow: 4px 4px 0 #000000;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-  cursor: default;
 }
 
 .assetItem:hover {
-  transform: translateX(4px);
-  box-shadow: 0 3px 8px rgb(255 99 99 / 0.3);
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0 #475ee6;
+}
+
+.assetItem span {
+  font-weight: 700;
 }
 
 .removeButton {
-  background: transparent;
+  background: none;
   border: none;
-  color: #ff6363;
-  cursor: pointer;
   font-size: 1.25rem;
-  line-height: 1;
+  cursor: pointer;
+  color: #475ee6;
   padding: 0;
-  transition: color 0.3s ease;
+  margin-left: 1rem;
 }
 
 .removeButton:hover {
-  color: #ff8a8a;
+  color: #ff0055;
 }
 
-.legend {
-  background-color: #121214;
-  border-radius: 12px;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 6px 16px rgb(0 0 0 / 0.7);
-  border: 1px solid #2b2b3a;
-  font-family: 'Poppins', sans-serif;
-  color: #e6e8eb;
-  font-size: 0.85rem;
-  line-height: 1.3;
-  margin-top: 2rem;
+.legendItem {
+  margin-bottom: 0.75rem;
+}
+
+.legendItem strong {
+  display: inline-block;
+  width: 90px;
 }
 
 .rankings {
-  flex: 2;
-  background-color: #121214;
-  border-radius: 12px;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 6px 16px rgb(0 0 0 / 0.7);
-  border: 1px solid #2b2b3a;
+  max-height: 800px;
   overflow-y: auto;
-  font-family: 'Poppins', sans-serif;
-  color: #e6e8eb;
-  font-size: 0.85rem;
-  line-height: 1.3;
-  min-height: 600px;
 }
 
-/* Utility */
-.marginTop {
-  margin-top: 2rem;
+.rankings h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
-.team1Title {
-  color: #4caf50;
-  /* green */
-  text-shadow: 0 0 8px #4caf50;
+.rankings ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.team2Title {
-  color: #2196f3;
-  /* blue */
-  text-shadow: 0 0 8px #2196f3;
-}
-
-.assetItem.team1 {
-  border-left-color: #4caf50;
-}
-
-.assetItem.team2 {
-  border-left-color: #2196f3;
-}
-
-.removeButton.team1 {
-  color: #4caf50;
-}
-
-.removeButton.team1:hover {
-  color: #81c784;
-  /* lighter green */
-}
-
-.removeButton.team2 {
-  color: #2196f3;
-}
-
-.removeButton.team2:hover {
-  color: #64b5f6;
-  /* lighter blue */
-}
-
-
-.tradeComparisonContainer {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.tradeComparisonBar {
-  display: flex;
-  height: 20px;
-  border: 1px solid #ccc;
-  margin-bottom: 0.5rem;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.team1Bar {
-  background-color: #4caf50;
-  /* green */
-  height: 100%;
-}
-
-.team2Bar {
-  background-color: #2196f3;
-  /* blue */
-  height: 100%;
-}
-
-.tradeComparisonLabel {
-  font-weight: bold;
-  color: #333;
-}
-
-.tradeComparisonReason {
-  margin-top: 8px;
-  font-size: 0.95rem;
-  color: #aaa;
-  text-align: center;
+.rankings li .itemText {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 8px;
+  font-weight: 600;
 }
 
 .tradeComparisonContainer {
   margin-top: 2rem;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
 }
 
 .tradeComparisonBarWrapper {
   position: relative;
-  height: 24px;
-  margin-bottom: 0.5rem;
+  height: 28px;
+  max-width: 420px;
+  margin: 0 auto 1rem;
+  border: 2px solid #000;
+  box-shadow: 5px 5px 0 #111;
+  border-radius: 4px;
+  background-color: #f6f3e1;
+  overflow: hidden;
 }
 
 .bufferBar {
@@ -229,211 +164,219 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 100%;
-  background-color: #e0e0e0;
-  border-radius: 8px;
+  bottom: 0;
+  background-color: #f0f0f0;
+  opacity: 0.4;
   z-index: 1;
-  overflow: hidden;
 }
 
-
+.evenZone {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: #ccc;
+  opacity: 0.5;
+  border-left: 2px solid #888;
+  border-right: 2px solid #888;
+  z-index: 2;
+}
 
 .foregroundBar {
   position: relative;
-  display: flex;
   height: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  z-index: 3;
+  z-index: 5;
 }
 
-
-.tradeComparisonLabel {
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.1rem;
+.teamEvenBar,
+.team1Bar,
+.team2Bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.15);
+  transition: width 0.4s ease;
 }
 
-.tradeComparisonReason {
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 0.25rem;
-  text-align: center;
+.teamEvenBar {
+  background-color: #999999;
+  left: 42.5%;
+  width: 15%;
+  border-radius: 4px;
+  box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.team1Bar {
+  background-color: #2222ff;
+  left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  box-shadow: inset 2px 2px 5px rgba(34, 34, 255, 0.6);
+}
+
+.team2Bar {
+  background-color: #ff8800;
+  right: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  box-shadow: inset 2px 2px 5px rgba(255, 136, 0, 0.6);
 }
 
 .midLine {
   position: absolute;
-  top: -50%;
-  left: 50%;
-  height: 200%;
-  width: 5px;
-  background-color: #cfcfcf;
-  z-index: 4;
-  transform: translateX(-50%);
-  /* on top of everything */
-}
-
-.teamEvenBar {
-  position: absolute;
   top: 0;
+  left: 50%;
   height: 100%;
-  background-color: rgba(255, 99, 99, 0.8);
-  /* bright red with some transparency */
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(255, 99, 99, 0.7);
-  transition: width 0.3s ease, left 0.3s ease;
-  z-index: 4;
-  cursor: default;
+  width: 3px;
+  background-color: #000;
+  z-index: 10;
+  transform: translateX(-50%);
+  box-shadow: 1px 0 1px #222;
 }
 
-/* Mobile first improvements */
+.tradeComparisonLabel {
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+  color: #111;
+}
+
+.tradeComparisonReason {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  color: #333;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttonPrimary {
+  background: #475ee6;
+  color: #f6f3e1;
+  border: 2px solid #475ee6;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #000000;
+  transition: background 0.3s ease;
+}
+
+.buttonPrimary:hover {
+  background: #ff0055;
+  color: #f6f3e1;
+}
+
+.buttonSecondary {
+  background: none;
+  color: #475ee6;
+  border: 2px dashed #475ee6;
+  padding: 0.5rem 1rem;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #111;
+}
+
+.buttonSecondary:hover {
+  background: #475ee6;
+  color: #f6f3e1;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 1.5rem 0 0;
+  font-size: 0.85rem;
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  border-top: 2px solid #000000;
+  color: #444;
+}
+
+.footer a {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.footer a:hover {
+  color: #ff0055;
+}
+
+/* Responsive tweaks */
 @media (max-width: 768px) {
   .container {
     padding: 1rem;
-  }
-
-  .title {
-    font-size: 2rem;
+    min-height: 100vh;
   }
 
   .mainLayout {
+    display: flex;
     flex-direction: column;
-    gap: 1rem;
-  }
-
-  .leftColumn,
-  .rankings {
-    flex: none;
-    width: 100%;
-  }
-
-  .rankings {
-    min-height: auto;
-    /* Allow rankings box to adjust height on mobile */
-    max-height: 400px;
-    /* Optional, to avoid overly tall scroll areas */
-  }
-
-  .assetList {
-    max-height: 180px;
-    /* Shorter scroll for lists on mobile */
+    gap: 1.5rem;
   }
 
   .calculator {
     padding: 1rem;
+    gap: 1rem;
+    max-height: 80vh;
+    overflow-y: auto;
   }
 
-  .sectionTitle {
-    font-size: 1.1rem;
+  .legend,
+  .rankings {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .assetItem {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    line-height: 1.2;
+  }
+
+  .assetItem span {
+    font-size: 0.75rem;
   }
 
   .removeButton {
-    font-size: 1.5rem;
-    padding: 0.2rem;
+    font-size: 1rem;
+    margin-left: 0.25rem;
   }
 
-  /* Make trade comparison bar smaller */
-  .tradeComparisonBarWrapper {
-    height: 16px;
+  .rankings {
+    max-height: 250px;
+    font-size: 0.75rem;
+  }
+
+  .rankings h3 {
+    font-size: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+  }
+
+  .tradeComparisonContainer {
+    margin-top: 1rem;
   }
 
   .tradeComparisonLabel {
     font-size: 1rem;
   }
-}
 
-/* Extra small mobile */
-@media (max-width: 480px) {
-  .title {
-    font-size: 1.6rem;
+  .tradeComparisonReason {
+    font-size: 0.85rem;
   }
 
-  .sectionTitle {
-    font-size: 1rem;
+  .buttonPrimary,
+  .buttonSecondary {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
   }
-
-  .assetItem {
-    font-size: 0.75rem;
-  }
-
-  .removeButton {
-    font-size: 1.25rem;
-  }
-}
-
-.buttonPrimary {
-  cursor: pointer;
-  /* shows hand cursor on hover */
-  background-color: #0070f3;
-  /* example blue background */
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
-}
-
-.buttonPrimary:hover {
-  background-color: #005bb5;
-  /* darker blue on hover */
-}
-
-
-.buttonSecondary {
-  background-color: transparent;
-  color: #0070f3;
-  border: 2px solid #0070f3;
-  border-radius: 6px;
-  padding: 0.5rem 1.2rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.buttonSecondary:hover {
-  background-color: #0070f3;
-  color: white;
-}
-
-.dropdownWrapper {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-.dropdownWrapper button {
-  width: 100%;
-  text-align: left;
-}
-
-.dropdownMenu {
-  display: none;
-  position: absolute;
-  background-color: #1a1a1a;
-  border: 1px solid #444;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  z-index: 1;
-  margin-top: 4px;
-  width: 100%;
-}
-
-.dropdownWrapper:hover .dropdownMenu {
-  display: block;
-}
-
-.dropdownMenu button {
-  background: none;
-  border: none;
-  color: #eee;
-  padding: 10px;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-}
-
-.dropdownMenu button:hover {
-  background-color: #333;
 }
