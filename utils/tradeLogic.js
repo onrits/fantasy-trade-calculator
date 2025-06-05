@@ -21,39 +21,36 @@ export function evaluateTrade(team1Assets, team2Assets, options = {}) {
     let team1Total = rawTeam1Total;
     let team2Total = rawTeam2Total;
 
-    let reason = '';
+    let reasons = [];
     const team1Count = team1Assets.length;
     const team2Count = team2Assets.length;
     const diff = Math.abs(team1Count - team2Count);
 
     // 📦 Quantity-for-quality / Roster Clogger Adjustment (3+ extra pieces)
     if (diff >= 3) {
-        reason += '📦 One side is trading 3+ more pieces — potential roster clogger. ';
+        reasons.push('One side is trading 3+ more pieces — potential roster clogger');
         const cloggerPenalty = 0.1;
         const adjustmentFactor = 1 - cloggerPenalty * (diff - 2);
         if (team1Count > team2Count) {
             team1Total *= adjustmentFactor;
-            reason += `Adjusted Team 1's value by -${Math.round((1 - adjustmentFactor) * 100)}%. `;
+            reasons.push(`Adjusted Team 1's value by (-${Math.round((1 - adjustmentFactor) * 100)}%).`);
         } else {
             team2Total *= adjustmentFactor;
-            reason += `Adjusted Team 2's value by -${Math.round((1 - adjustmentFactor) * 100)}%. `;
+            reasons.push(`Adjusted Team 2's value by (-${Math.round((1 - adjustmentFactor) * 100)}%).`);
         }
     }
 
-    // 🧩 Roster Spot Value Adjustment (applies to imbalance in *active roster* assets only)
-    const CURRENT_YEAR = new Date().getFullYear(); // e.g. 2025
-
+    // 🧩 Roster Spot Value Adjustment
+    const CURRENT_YEAR = new Date().getFullYear();
     const isActiveRosterAsset = item => {
-        if (item.type !== 'Pick') return true; // all players count
+        if (item.type !== 'Pick') return true;
         if (!item.label || typeof item.label !== 'string') return false;
-
         const pickYear = parseInt(item.label.split(' ')[0]);
-        return pickYear === CURRENT_YEAR; // only count current-year picks as "roster players"
+        return pickYear === CURRENT_YEAR;
     };
 
     const team1Players = team1Assets.filter(isActiveRosterAsset);
     const team2Players = team2Assets.filter(isActiveRosterAsset);
-
     const team1PlayerCount = team1Players.length;
     const team2PlayerCount = team2Players.length;
 
@@ -61,17 +58,14 @@ export function evaluateTrade(team1Assets, team2Assets, options = {}) {
         const extraPlayers = Math.abs(team1PlayerCount - team2PlayerCount);
         const penalty = 1 - penaltyPerSpot * extraPlayers;
         const percent = Math.round(penaltyPerSpot * extraPlayers * 100);
-
         if (team1PlayerCount > team2PlayerCount) {
             team1Total *= penalty;
-            reason += `🧩 Team 1 is receiving ${extraPlayers} more players — adjusted for roster spot value (-${percent}%). `;
+            reasons.push(`Team 1 is receiving ${extraPlayers} more players — Roster spot value adjustment: (-${percent}%).`);
         } else {
             team2Total *= penalty;
-            reason += `🧩 Team 2 is receiving ${extraPlayers} more players — adjusted for roster spot value (-${percent}%). `;
+            reasons.push(`Team 2 is receiving ${extraPlayers} more players — Roster spot value adjustment: (-${percent}%).`);
         }
     }
-
-
 
     // 🏈 QB Tax Adjustment
     function hasValuableQB(assets) {
@@ -82,78 +76,61 @@ export function evaluateTrade(team1Assets, team2Assets, options = {}) {
         return assets.some(a => a.Pos === 'QB' || a.type === 'QB');
     }
 
+    const qbTaxRate = 0.075;
     const team1HasValuableQB = hasValuableQB(team1Assets);
     const team2HasValuableQB = hasValuableQB(team2Assets);
-
     const team1HasQB = hasQB(team1Assets);
     const team2HasQB = hasQB(team2Assets);
 
-    const qbTaxRate = 0.075;
-
     if (team1HasValuableQB && !team2HasQB) {
         team2Total *= 1 - qbTaxRate;
-        reason += `🏈 Team 2 receives a valuable QB without trading one — applying ${Math.round(qbTaxRate * 100)}% QB Tax to Team 2. `;
+        reasons.push(`Team 2 receives a valuable QB without trading one — Team 2 Adjustment: (-${Math.round(qbTaxRate * 100)}%).`);
     }
-
     if (team2HasValuableQB && !team1HasQB) {
         team1Total *= 1 - qbTaxRate;
-        reason += `🏈 Team 1 receives a valuable QB without trading one — applying ${Math.round(qbTaxRate * 100)}% QB Tax to Team 1. `;
+        reasons.push(`Team 1 receives a valuable QB without trading one — Team 1 Adjustment: (-${Math.round(qbTaxRate * 100)}%).`);
     }
 
     // ⭐ Tier Mismatch / Star Tax Adjustment
-    const top1 = team1Assets
-        .map(getTierForAsset)
-        .filter((t) => t !== null)
-        .sort((a, b) => a - b)[0];
-
-    const top2 = team2Assets
-        .map(getTierForAsset)
-        .filter((t) => t !== null)
-        .sort((a, b) => a - b)[0];
+    const top1 = team1Assets.map(getTierForAsset).filter(t => t !== null).sort((a, b) => a - b)[0];
+    const top2 = team2Assets.map(getTierForAsset).filter(t => t !== null).sort((a, b) => a - b)[0];
 
     if (top1 !== undefined && top2 !== undefined) {
         const tierGap = Math.abs(top1 - top2);
         if (tierGap > 2) {
             const taxRate = 0.1 * (tierGap - 2);
-            reason += `⚠️ Tier mismatch: Top asset gap is ${tierGap} tiers — applying ${Math.round(taxRate * 100)}% Star Tax. `;
+            reasons.push(`Tier Mismatch: Top asset gap is ${tierGap} tiers - Must be within 2 tiers to avoid tax [10% per each extra tier] -`);
             if (top1 < top2) {
                 team2Total *= 1 - taxRate;
-                reason += `Team 2 value adjusted by -${Math.round(taxRate * 100)}%. `;
+                reasons.push(`Team 2 Adjustment: (-${Math.round(taxRate * 100)}%).`);
             } else {
                 team1Total *= 1 - taxRate;
-                reason += `Team 1 value adjusted by -${Math.round(taxRate * 100)}%. `;
+                reasons.push(`Team 1 Adjustment: (-${Math.round(taxRate * 100)}%).`);
             }
         }
     }
 
-    // NEW: Same-tier, same-count trades are considered preference-based even
-    const allTiers = [
-        ...team1Assets.map(getTierForAsset).filter((t) => t !== null),
-        ...team2Assets.map(getTierForAsset).filter((t) => t !== null),
-    ];
-
+    // Even trade detection
+    const allTiers = [...team1Assets, ...team2Assets].map(getTierForAsset).filter(t => t !== null);
     let winner = '';
     let isEvenTrade = false;
 
     if (allTiers.length > 0) {
         const minTier = Math.min(...allTiers);
         const maxTier = Math.max(...allTiers);
-
         const sameTier = maxTier - minTier === 0;
         const sameCount = team1Count === team2Count;
 
         if (sameTier && sameCount) {
             winner = 'Even Trade';
             isEvenTrade = true;
-            reason += 'ℹ️ All traded assets are from the same tier and equal in number — differences are a matter of team preference. ';
+            reasons.push('All assets are from the same tier and equal in number — differences are a matter of preference.');
         }
     }
 
-    // ⚖️ Final evaluation (unless preference-based even already decided) comment
     if (!isEvenTrade) {
         const totalCombined = team1Total + team2Total;
         const percent1 = totalCombined === 0 ? 50 : (team1Total / totalCombined) * 100;
-        const percent2 = 100 - percent1;
 
         if (team1Count === 0 && team2Count === 0) {
             winner = '';
@@ -180,6 +157,7 @@ export function evaluateTrade(team1Assets, team2Assets, options = {}) {
         percent2: parseFloat(percent2.toFixed(2)),
         winner,
         isEvenTrade,
-        reason: reason.trim(),
+        reason: reasons.join(' ').trim(),
+        reasonList: reasons
     };
 }

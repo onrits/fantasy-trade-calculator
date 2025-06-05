@@ -36,7 +36,7 @@ export default function TradeInput({ allItems, selectedAssets, onSelect }) {
                     fontSize: '1rem',
                     fontWeight: '700',
                     fontFamily: "'Space Mono', monospace",
-                    boxShadow: '4px 4px 0 #111',
+                    boxShadow: 'none',
                     outline: 'none',
                     transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
                     // Remove default input shadows for clean look
@@ -46,11 +46,11 @@ export default function TradeInput({ allItems, selectedAssets, onSelect }) {
                 }}
                 onFocus={e => {
                     e.currentTarget.style.borderColor = '#ff0055'; // accent pink on focus per baseline hover color
-                    e.currentTarget.style.boxShadow = '6px 6px 0 #ff0055';
+                    e.currentTarget.style.boxShadow = 'none';
                 }}
                 onBlur={e => {
                     e.currentTarget.style.borderColor = '#475ee6';
-                    e.currentTarget.style.boxShadow = '4px 4px 0 #111';
+                    e.currentTarget.style.boxShadow = 'none';
                 }}
                 autoComplete="off"
                 spellCheck={false}

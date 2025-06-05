@@ -8,11 +8,11 @@
     /* match baseline cream */
     border-radius: 12px;
     font-family: 'Playfair Display', serif;
-    color: #475ee6;
+    color: #000000;
     /* blue text */
     /* Hard shadow with zero blur and full opacity */
-    box-shadow: 6px 6px 0 0 #475ee6;
-    border: 2px solid #475ee6;
+    box-shadow: 6px 6px 0 0 #000000;
+    border: 2px solid #000000;
     font-size: 0.9rem;
     line-height: 1.4;
 }
@@ -24,7 +24,7 @@
     margin-bottom: 1.5rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: #475ee6;
+    color: #000000;
     border-bottom: 4px double #475ee6;
     padding-bottom: 0.5rem;
     /* Remove soft glow, keep text shadow sharp and subtle */
@@ -62,7 +62,7 @@
     text-transform: uppercase;
     letter-spacing: 0.07em;
     /* Replace soft glow with subtle solid shadow */
-    text-shadow: 1px 1px 0 #475ee6;
+
 }
 
 .stats {
@@ -99,10 +99,10 @@
     padding: 1rem 1.25rem;
     background-color: #e6eafc;
     /* light blue */
-    border-left: 4px solid #475ee6;
+    border-left: 4px solid #000000;
     border-radius: 8px;
     font-size: 0.9rem;
-    color: #475ee6;
+    color: #000000;
     font-style: italic;
     letter-spacing: 0.04em;
     font-family: 'Space Mono', monospace;

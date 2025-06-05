@@ -191,6 +191,7 @@ export default function Home() {
     allItems,
   });
 
+
   if (loading) {
     return (
       <div className={styles.container}>
@@ -229,87 +230,150 @@ export default function Home() {
       <div className={styles.mainLayout}>
         <div className={styles.leftColumn}>
           <section className={styles.calculator}>
-            <h2 className={`${styles.sectionTitle} ${styles.team1Title}`}>
-              Team 1 (Total: {rawTeam1Total.toFixed(3)} | Adjusted: {adjustedTeam1Total.toFixed(3)})
-            </h2>
-            <TradeInput allItems={allItems} selectedAssets={team1Assets} onSelect={addToTeam1} />
-            <ul className={styles.assetList}>
-              {team1Assets.map(asset => (
-                <li key={asset.id} className={`${styles.assetItem} ${styles.team1}`}>
-                  <span>
-                    {(asset.name || asset.label)}{' '}
-                    ({asset.position || asset.Pos || asset.Position || asset.type || 'Pick'}, Tier {parseInt(asset.tier || asset.TIER || '?')})
-                    {' '} - Value: {asset.value?.toFixed(2) || '0.00'}
-                  </span>
-                  <button
-                    onClick={() => removeFromTeam1(asset.id)}
-                    className={`${styles.removeButton} ${styles.team1}`}
-                    aria-label={`Remove ${asset.name || asset.label} from Team 1`}
-                  >
-                    ✕
-                  </button>
-                </li>
-              ))}
-            </ul>
-
-            <h2 className={`${styles.sectionTitle} ${styles.marginTop} ${styles.team2Title}`}>
-              Team 2 (Total: {rawTeam2Total.toFixed(3)} | Adjusted: {adjustedTeam2Total.toFixed(3)})
-            </h2>
-            <TradeInput allItems={allItems} selectedAssets={team2Assets} onSelect={addToTeam2} />
-            <ul className={styles.assetList}>
-              {team2Assets.map(asset => (
-                <li key={asset.id} className={`${styles.assetItem} ${styles.team2}`}>
-                  <span>
-                    {(asset.name || asset.label)}{' '}
-                    ({asset.position || asset.Pos || asset.Position || asset.type || 'Pick'}, Tier {asset.tier ?? '?'})
-                    {' '} - Value: {asset.value?.toFixed(2) || '0.00'}
-                  </span>
-                  <button
-                    onClick={() => removeFromTeam2(asset.id)}
-                    className={`${styles.removeButton} ${styles.team2}`}
-                    aria-label={`Remove ${asset.name || asset.label} from Team 2`}
-                  >
-                    ✕
-                  </button>
-                </li>
-              ))}
-            </ul>
-
-            <div className={styles.tradeComparisonContainer}>
-              <div className={styles.tradeComparisonBarWrapper}>
-                <div className={styles.bufferBar} />
-                <div
-                  className={styles.evenZone}
-                  style={{ left: `${50 - 7.5}%`, width: `15%` }}
-                />
-                <div className={styles.foregroundBar}>
-                  {isEvenTrade ? (
-                    <div
-                      className={styles.teamEvenBar}
-                      style={{ width: '15%', left: '42.5%', position: 'absolute' }}
-                      title={`Even Trade: ${adjustedTeam1Total.toFixed(2)} / ${adjustedTeam2Total.toFixed(2)}`}
-                    />
-                  ) : (
-                    <>
-                      <div
-                        className={styles.team1Bar}
-                        style={{ width: `${team1Percent}%` }}
-                        title={`Team 1: ${adjustedTeam1Total.toFixed(2)}`}
-                      />
-                      <div
-                        className={styles.team2Bar}
-                        style={{ width: `${team2Percent}%` }}
-                        title={`Team 2: ${adjustedTeam2Total.toFixed(2)}`}
-                      />
-                    </>
-                  )}
+            <div className={styles.teamSection}>
+              {/* TEAM 1 */}
+              <div className={`${styles.teamBox} ${styles.team1Box}`}>
+                <h2 className={styles.teamLabel}>Team 1</h2>
+                <TradeInput allItems={allItems} selectedAssets={team1Assets} onSelect={addToTeam1} />
+                <ul className={styles.assetList}>
+                  {team1Assets.map(asset => (
+                    <li key={asset.id} className={`${styles.assetItem} ${styles.team1}`}>
+                      <span>
+                        {(asset.name || asset.label)}{' '}
+                        ({asset.position || asset.Pos || asset.Position || asset.type || 'Pick'}, Tier {parseInt(asset.tier || asset.TIER || '?')})
+                        {' '} - {asset.value?.toFixed(2) || '0.00'}
+                      </span>
+                      <button
+                        onClick={() => removeFromTeam1(asset.id)}
+                        className={`${styles.removeButton} ${styles.team1}`}
+                        aria-label={`Remove ${asset.name || asset.label} from Team 1`}
+                      >
+                        ✕
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+                <div className={styles.teamTotals}>
+                  <br /> <strong>Total:</strong> {rawTeam1Total.toFixed(3)}<br />
+                  <strong>Adjusted:</strong> {adjustedTeam1Total.toFixed(3)}
                 </div>
-                <div className={styles.midLine} />
               </div>
-              <div className={styles.tradeComparisonLabel}>{winner}</div>
-              {reason && <div className={styles.tradeComparisonReason}>{reason}</div>}
+
+              {/* TEAM 2 */}
+              <div className={`${styles.teamBox} ${styles.team2Box}`}>
+                <h2 className={styles.teamLabel}>Team 2</h2>
+                <TradeInput allItems={allItems} selectedAssets={team2Assets} onSelect={addToTeam2} />
+                <ul className={styles.assetList}>
+                  {team2Assets.map(asset => (
+                    <li key={asset.id} className={`${styles.assetItem} ${styles.team2}`}>
+                      <span>
+                        {(asset.name || asset.label)}{' '}
+                        ({asset.position || asset.Pos || asset.Position || asset.type || 'Pick'}, Tier {asset.tier ?? '?'})
+                        {' '} - {asset.value?.toFixed(2) || '0.00'}
+                      </span>
+                      <button
+                        onClick={() => removeFromTeam2(asset.id)}
+                        className={`${styles.removeButton} ${styles.team2}`}
+                        aria-label={`Remove ${asset.name || asset.label} from Team 2`}
+                      >
+                        ✕
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+                <div className={styles.teamTotals}>
+                  <br /> <strong>Total:</strong> {rawTeam2Total.toFixed(3)}<br />
+                  <strong>Adjusted:</strong> {adjustedTeam2Total.toFixed(3)}
+                </div>
+              </div>
             </div>
+
+            {/* TRADE BAR */}
+
+            {/* TRADE BAR */}
+            {(team1Assets.length > 0 || team2Assets.length > 0) && (
+              <div className={styles.tradeComparisonContainer}>
+                <div className={styles.tradeComparisonBarWrapper}>
+                  <div className={styles.bufferBar} />
+                  <div
+                    className={styles.evenZone}
+                    style={{ left: `${50 - 7.5}%`, width: `15%` }}
+                  />
+                  <div className={styles.foregroundBar}>
+                    {isEvenTrade ? (
+                      <div
+                        className={styles.teamEvenBar}
+                        style={{ width: '15%', left: '42.5%', position: 'absolute' }}
+                        title={`Even Trade: ${adjustedTeam1Total.toFixed(2)} / ${adjustedTeam2Total.toFixed(2)}`}
+                      />
+                    ) : (
+                      <>
+                        <div
+                          className={styles.team1Bar}
+                          style={{ width: `${team1Percent}%` }}
+                          title={`Team 1: ${adjustedTeam1Total.toFixed(2)}`}
+                        />
+                        <div
+                          className={styles.team2Bar}
+                          style={{ width: `${team2Percent}%` }}
+                          title={`Team 2: ${adjustedTeam2Total.toFixed(2)}`}
+                        />
+                      </>
+                    )}
+                  </div>
+                  <div className={styles.midLine} />
+                </div>
+
+                <div className={styles.tradeComparisonLabel}>{winner}</div>
+                {!isEvenTrade && (
+                  <div className={styles.reasonBox} style={{ marginTop: '1rem' }}>
+                    <strong>{winner} leads by {Math.abs(adjustedTeam1Total - adjustedTeam2Total).toFixed(2)} points</strong>
+                    <p style={{ marginTop: '0.5rem' }}>
+                      That's roughly equivalent to:
+                    </p>
+                    <ul style={{ marginTop: '0.5rem' }}>
+                      {(() => {
+                        const valueGap = Math.abs(adjustedTeam1Total - adjustedTeam2Total);
+
+                        const sortedPickOptions = draftPickValues
+                          .map(p => ({
+                            label: p["Draft Pick"],
+                            value: parseFloat(p.Value),
+                          }))
+                          .filter(p => !isNaN(p.value))
+                          .sort((a, b) => Math.abs(b.value - valueGap) - Math.abs(a.value - valueGap));
+
+                        const closestPick = sortedPickOptions.find(p => Math.abs(p.value - valueGap) < 0.3);
+
+                        return (
+                          <>
+                            {closestPick && <li>{closestPick.label} ({closestPick.value.toFixed(2)})</li>}
+                          </>
+                        );
+                      })()}
+                    </ul>
+
+                    <p style={{ marginTop: '0.5rem' }}>
+                      Consider adding a draft pick or a player worth <strong>{Math.abs(adjustedTeam1Total - adjustedTeam2Total).toFixed(2)}</strong> to even things out.
+                    </p>
+                  </div>
+                )}
+
+                {reason && (
+                  <div className={styles.reasonBox}>
+                    <strong>Adjustments:</strong>
+                    <ul className={styles.reasonList}>
+                      {(Array.isArray(reason) ? reason : reason.split('.').filter(Boolean)).map((r, i) => (
+                        <li key={i}>{r.trim()}.</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+
           </section>
+
 
           <section className={styles.legend}>
             <Legend />

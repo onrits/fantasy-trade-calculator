@@ -380,3 +380,53 @@
     padding: 0.5rem 1rem;
   }
 }
+
+.teamSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px dashed #aaa;
+}
+
+.tradeInputWrapper {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed #ccc;
+  margin-bottom: 1rem;
+}
+
+.teamLabel {
+  background-color: #111;
+  color: #f6f3e1;
+  padding: 0.8rem 1.0rem;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 1.0rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 1rem;
+  border-left: 6px solid #475ee6;
+}
+
+.reasonBox {
+  background-color: #f6f3e1;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.reasonBox ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+
+.reasonList {
+  list-style-type: none;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
