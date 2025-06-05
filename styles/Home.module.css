@@ -321,14 +321,14 @@
   .calculator {
     padding: 1rem;
     gap: 1rem;
-    max-height: 80vh;
-    overflow-y: auto;
+
   }
 
   .legend,
   .rankings {
     padding: 1rem;
     font-size: 0.85rem;
+    max-height: none;
   }
 
   .assetItem {
