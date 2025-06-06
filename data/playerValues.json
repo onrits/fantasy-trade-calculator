@@ -3,652 +3,676 @@
         "Rank": 1,
         "Player": "Josh Allen",
         "Pos": "QB",
-        "Pos Rank": "QB1",
+        "Pos Rank": "QB 1",
         "TIER": 1,
         "VALUE": 4.4
     },
     {
         "Rank": 2,
-        "Player": "Lamar Jackson",
-        "Pos": "QB",
-        "Pos Rank": "QB2",
+        "Player": "Ja'Marr Chase",
+        "Pos": "WR",
+        "Pos Rank": "WR 1",
         "TIER": 1,
-        "VALUE": 4.4
+        "VALUE": 4.2
     },
     {
         "Rank": 3,
         "Player": "Jayden Daniels",
         "Pos": "QB",
-        "Pos Rank": "QB3",
+        "Pos Rank": "QB 2",
         "TIER": 2,
         "VALUE": 4
     },
     {
         "Rank": 4,
-        "Player": "Jalen Hurts",
+        "Player": "Lamar Jackson",
         "Pos": "QB",
-        "Pos Rank": "QB4",
+        "Pos Rank": "QB 3",
         "TIER": 2,
-        "VALUE": 3.8
+        "VALUE": 4
     },
     {
         "Rank": 5,
-        "Player": "Ja'Marr Chase",
+        "Player": "Justin Jefferson",
         "Pos": "WR",
-        "Pos Rank": "WR1",
+        "Pos Rank": "WR 2",
         "TIER": 2,
         "VALUE": 3.5
     },
     {
         "Rank": 6,
-        "Player": "Justin Jefferson",
-        "Pos": "WR",
-        "Pos Rank": "WR2",
+        "Player": "Joe Burrow",
+        "Pos": "QB",
+        "Pos Rank": "QB 4",
         "TIER": 2,
         "VALUE": 3.5
     },
     {
         "Rank": 7,
-        "Player": "CeeDee Lamb",
+        "Player": "Malik Nabers",
         "Pos": "WR",
-        "Pos Rank": "WR3",
-        "TIER": 3,
-        "VALUE": 3.33
+        "Pos Rank": "WR 3",
+        "TIER": 2,
+        "VALUE": 3.4
     },
     {
         "Rank": 8,
-        "Player": "Malik Nabers",
-        "Pos": "WR",
-        "Pos Rank": "WR4",
+        "Player": "Brock Bowers",
+        "Pos": "TE",
+        "Pos Rank": "TE 1",
         "TIER": 3,
-        "VALUE": 3.2
+        "VALUE": 3.3
     },
     {
         "Rank": 9,
-        "Player": "Puka Nacua",
-        "Pos": "WR",
-        "Pos Rank": "WR5",
+        "Player": "Bijan Robinson",
+        "Pos": "RB",
+        "Pos Rank": "RB 1",
         "TIER": 3,
-        "VALUE": 3.1
+        "VALUE": 3.3
     },
     {
         "Rank": 10,
-        "Player": "Brian Thomas Jr.",
+        "Player": "Jalen Hurts",
+        "Pos": "QB",
+        "Pos Rank": "QB 5",
+        "TIER": 3,
+        "VALUE": 3.3
+    },
+    {
+        "Rank": 11,
+        "Player": "Jahmyr Gibbs",
+        "Pos": "RB",
+        "Pos Rank": "RB 2",
+        "TIER": 3,
+        "VALUE": 3.3
+    },
+    {
+        "Rank": 12,
+        "Player": "CeeDee Lamb",
         "Pos": "WR",
-        "Pos Rank": "WR6",
+        "Pos Rank": "WR 4",
+        "TIER": 3,
+        "VALUE": 3.3
+    },
+    {
+        "Rank": 13,
+        "Player": "Amon-Ra St. Brown",
+        "Pos": "WR",
+        "Pos Rank": "WR 5",
         "TIER": 3,
         "VALUE": 3
     },
     {
-        "Rank": 11,
-        "Player": "Nico Collins",
-        "Pos": "WR",
-        "Pos Rank": "WR7",
-        "TIER": 3,
-        "VALUE": 2.8
-    },
-    {
-        "Rank": 12,
-        "Player": "Brock Bowers",
-        "Pos": "TE",
-        "Pos Rank": "TE1",
-        "TIER": 3,
-        "VALUE": 2.8
-    },
-    {
-        "Rank": 13,
-        "Player": "Joe Burrow",
-        "Pos": "QB",
-        "Pos Rank": "QB5",
-        "TIER": 3,
-        "VALUE": 2.8
-    },
-    {
         "Rank": 14,
-        "Player": "Drake Maye",
-        "Pos": "QB",
-        "Pos Rank": "QB6",
+        "Player": "Brian Thomas",
+        "Pos": "WR",
+        "Pos Rank": "WR 6",
         "TIER": 3,
-        "VALUE": 2.8
+        "VALUE": 3
     },
     {
         "Rank": 15,
-        "Player": "Bijan Robinson",
+        "Player": "Ashton Jeanty",
         "Pos": "RB",
-        "Pos Rank": "RB1",
+        "Pos Rank": "RB 3",
         "TIER": 3,
-        "VALUE": 2.7
+        "VALUE": 3
     },
     {
         "Rank": 16,
-        "Player": "Ashton Jeanty",
-        "Pos": "RB",
-        "Pos Rank": "RB2",
+        "Player": "Patrick Mahomes",
+        "Pos": "QB",
+        "Pos Rank": "QB 6",
         "TIER": 3,
-        "VALUE": 2.7
+        "VALUE": 3
     },
     {
         "Rank": 17,
-        "Player": "Jahmyr Gibbs",
+        "Player": "Puka Nacua",
+        "Pos": "WR",
+        "Pos Rank": "WR 7",
+        "TIER": 3,
+        "VALUE": 2.8
+    },
+    {
+        "Rank": 18,
+        "Player": "Trey McBride",
+        "Pos": "TE",
+        "Pos Rank": "TE 2",
+        "TIER": 3,
+        "VALUE": 2.8
+    },
+    {
+        "Rank": 19,
+        "Player": "Caleb Williams",
+        "Pos": "QB",
+        "Pos Rank": "QB 7",
+        "TIER": 3,
+        "VALUE": 2.8
+    },
+    {
+        "Rank": 20,
+        "Player": "Saquon Barkley",
         "Pos": "RB",
-        "Pos Rank": "RB3",
+        "Pos Rank": "RB 4",
+        "TIER": 3,
+        "VALUE": 2.8
+    },
+    {
+        "Rank": 21,
+        "Player": "C.J. Stroud",
+        "Pos": "QB",
+        "Pos Rank": "QB 8",
         "TIER": 3,
         "VALUE": 2.7
     },
     {
-        "Rank": 18,
-        "Player": "Amon-Ra St. Brown",
-        "Pos": "WR",
-        "Pos Rank": "WR8",
-        "TIER": 3,
-        "VALUE": 2.67
-    },
-    {
-        "Rank": 19,
-        "Player": "Ladd McConkey",
-        "Pos": "WR",
-        "Pos Rank": "WR9",
-        "TIER": 3,
-        "VALUE": 2.67
-    },
-    {
-        "Rank": 20,
+        "Rank": 22,
         "Player": "Drake London",
         "Pos": "WR",
-        "Pos Rank": "WR10",
+        "Pos Rank": "WR 8",
         "TIER": 3,
-        "VALUE": 2.67
-    },
-    {
-        "Rank": 21,
-        "Player": "Trey McBride",
-        "Pos": "TE",
-        "Pos Rank": "TE2",
-        "TIER": 3,
-        "VALUE": 2.67
-    },
-    {
-        "Rank": 22,
-        "Player": "Marvin Harrison Jr.",
-        "Pos": "WR",
-        "Pos Rank": "WR11",
-        "TIER": 4,
-        "VALUE": 2.25
+        "VALUE": 2.7
     },
     {
         "Rank": 23,
         "Player": "Justin Herbert",
         "Pos": "QB",
-        "Pos Rank": "QB7",
+        "Pos Rank": "QB 9",
         "TIER": 4,
-        "VALUE": 2.25
+        "VALUE": 2.6
     },
     {
         "Rank": 24,
-        "Player": "A.J. Brown",
+        "Player": "Nico Collins",
         "Pos": "WR",
-        "Pos Rank": "WR12",
+        "Pos Rank": "WR 9",
         "TIER": 4,
-        "VALUE": 2.25
+        "VALUE": 2.6
     },
     {
         "Rank": 25,
-        "Player": "Garrett Wilson",
+        "Player": "Marvin Harrison Jr",
         "Pos": "WR",
-        "Pos Rank": "WR13",
+        "Pos Rank": "WR 10",
         "TIER": 4,
-        "VALUE": 2.2
+        "VALUE": 2.5
     },
     {
         "Rank": 26,
-        "Player": "Patrick Mahomes",
+        "Player": "Bo Nix",
         "Pos": "QB",
-        "Pos Rank": "QB8",
+        "Pos Rank": "QB 10",
         "TIER": 4,
-        "VALUE": 2.2
+        "VALUE": 2.5
     },
     {
         "Rank": 27,
-        "Player": "De'Von Achane",
-        "Pos": "RB",
-        "Pos Rank": "RB4",
+        "Player": "Drake Maye",
+        "Pos": "QB",
+        "Pos Rank": "QB 11",
         "TIER": 4,
-        "VALUE": 2.2
+        "VALUE": 2.5
     },
     {
         "Rank": 28,
-        "Player": "Jaxon Smith-Njigba",
-        "Pos": "WR",
-        "Pos Rank": "WR14",
+        "Player": "Omarion Hampton",
+        "Pos": "RB",
+        "Pos Rank": "RB 5",
         "TIER": 4,
-        "VALUE": 2.2
+        "VALUE": 2.35
     },
     {
         "Rank": 29,
-        "Player": "Caleb Williams",
-        "Pos": "QB",
-        "Pos Rank": "QB9",
+        "Player": "Ladd McConkey",
+        "Pos": "WR",
+        "Pos Rank": "WR 11",
         "TIER": 4,
-        "VALUE": 2.2
+        "VALUE": 2.35
     },
     {
         "Rank": 30,
-        "Player": "Bo Nix",
+        "Player": "Jordan Love",
         "Pos": "QB",
-        "Pos Rank": "QB10",
+        "Pos Rank": "QB 12",
+        "TIER": 4,
+        "VALUE": 2.3
+    },
+    {
+        "Rank": 31,
+        "Player": "De'Von Achane",
+        "Pos": "RB",
+        "Pos Rank": "RB 6",
+        "TIER": 4,
+        "VALUE": 2.3
+    },
+    {
+        "Rank": 32,
+        "Player": "Jaxon Smith-Njigba",
+        "Pos": "WR",
+        "Pos Rank": "WR 12",
+        "TIER": 4,
+        "VALUE": 2.3
+    },
+    {
+        "Rank": 33,
+        "Player": "Travis Hunter",
+        "Pos": "WR",
+        "Pos Rank": "WR 13",
+        "TIER": 4,
+        "VALUE": 2.3
+    },
+    {
+        "Rank": 34,
+        "Player": "A.J. Brown",
+        "Pos": "WR",
+        "Pos Rank": "WR 14",
         "TIER": 4,
         "VALUE": 2.2
     },
     {
-        "Rank": 31,
-        "Player": "Kyler Murray",
-        "Pos": "QB",
-        "Pos Rank": "QB11",
-        "TIER": 4,
-        "VALUE": 2.17
-    },
-    {
-        "Rank": 32,
-        "Player": "Jordan Love",
-        "Pos": "QB",
-        "Pos Rank": "QB12",
-        "TIER": 4,
-        "VALUE": 2.17
-    },
-    {
-        "Rank": 33,
-        "Player": "Brock Purdy",
-        "Pos": "QB",
-        "Pos Rank": "QB13",
-        "TIER": 4,
-        "VALUE": 2.17
-    },
-    {
-        "Rank": 34,
-        "Player": "Travis Hunter",
-        "Pos": "WR",
-        "Pos Rank": "WR15",
-        "TIER": 4,
-        "VALUE": 2.17
-    },
-    {
         "Rank": 35,
-        "Player": "Omarion Hampton",
-        "Pos": "RB",
-        "Pos Rank": "RB5",
+        "Player": "Garrett Wilson",
+        "Pos": "WR",
+        "Pos Rank": "WR 15",
         "TIER": 4,
-        "VALUE": 2.17
+        "VALUE": 2.2
     },
     {
         "Rank": 36,
-        "Player": "Breece Hall",
-        "Pos": "RB",
-        "Pos Rank": "RB6",
-        "TIER": 4,
-        "VALUE": 2.17
+        "Player": "Brock Purdy",
+        "Pos": "QB",
+        "Pos Rank": "QB 13",
+        "TIER": 5,
+        "VALUE": 2.15
     },
     {
         "Rank": 37,
         "Player": "Bucky Irving",
         "Pos": "RB",
-        "Pos Rank": "RB7",
-        "TIER": 4,
-        "VALUE": 2.17
-    },
-    {
-        "Rank": 38,
-        "Player": "Saquon Barkley",
-        "Pos": "RB",
-        "Pos Rank": "RB8",
-        "TIER": 4,
+        "Pos Rank": "RB 7",
+        "TIER": 5,
         "VALUE": 2.1
     },
     {
-        "Rank": 39,
-        "Player": "Tetairoa McMillan",
-        "Pos": "WR",
-        "Pos Rank": "WR16",
+        "Rank": 38,
+        "Player": "Cameron Ward",
+        "Pos": "QB",
+        "Pos Rank": "QB 14",
         "TIER": 5,
         "VALUE": 2
+    },
+    {
+        "Rank": 39,
+        "Player": "Sam LaPorta",
+        "Pos": "TE",
+        "Pos Rank": "TE 3",
+        "TIER": 5,
+        "VALUE": 1.9
     },
     {
         "Rank": 40,
-        "Player": "Rashee Rice",
+        "Player": "Tetairoa McMillan",
         "Pos": "WR",
-        "Pos Rank": "WR17",
+        "Pos Rank": "WR 16",
         "TIER": 5,
-        "VALUE": 2
+        "VALUE": 1.9
     },
     {
         "Rank": 41,
-        "Player": "C.J. Stroud",
+        "Player": "Kyler Murray",
         "Pos": "QB",
-        "Pos Rank": "QB14",
+        "Pos Rank": "QB 15",
         "TIER": 5,
-        "VALUE": 2
+        "VALUE": 1.9
     },
     {
         "Rank": 42,
         "Player": "J.J. McCarthy",
         "Pos": "QB",
-        "Pos Rank": "QB15",
+        "Pos Rank": "QB 16",
         "TIER": 5,
-        "VALUE": 1.8
+        "VALUE": 1.75
     },
     {
         "Rank": 43,
-        "Player": "Baker Mayfield",
-        "Pos": "QB",
-        "Pos Rank": "QB16",
+        "Player": "TreVeyon Henderson",
+        "Pos": "RB",
+        "Pos Rank": "RB 8",
         "TIER": 5,
-        "VALUE": 1.8
+        "VALUE": 1.75
     },
     {
         "Rank": 44,
-        "Player": "Tee Higgins",
-        "Pos": "WR",
-        "Pos Rank": "WR18",
+        "Player": "Jonathan Taylor",
+        "Pos": "RB",
+        "Pos Rank": "RB 9",
         "TIER": 5,
-        "VALUE": 1.8
+        "VALUE": 1.75
     },
     {
         "Rank": 45,
-        "Player": "Cam Ward",
+        "Player": "Baker Mayfield",
         "Pos": "QB",
-        "Pos Rank": "QB17",
-        "TIER": 6,
-        "VALUE": 1.5
+        "Pos Rank": "QB 17",
+        "TIER": 5,
+        "VALUE": 1.75
     },
     {
         "Rank": 46,
-        "Player": "Trevor Lawrence",
-        "Pos": "QB",
-        "Pos Rank": "QB18",
-        "TIER": 6,
-        "VALUE": 1.5
+        "Player": "Breece Hall",
+        "Pos": "RB",
+        "Pos Rank": "RB 10",
+        "TIER": 5,
+        "VALUE": 1.75
     },
     {
         "Rank": 47,
-        "Player": "Dak Prescott",
+        "Player": "Trevor Lawrence",
         "Pos": "QB",
-        "Pos Rank": "QB19",
+        "Pos Rank": "QB 18",
+        "TIER": 5,
+        "VALUE": 1.7
+    },
+    {
+        "Rank": 48,
+        "Player": "Rashee Rice",
+        "Pos": "WR",
+        "Pos Rank": "WR 17",
+        "TIER": 5,
+        "VALUE": 1.7
+    },
+    {
+        "Rank": 49,
+        "Player": "Tee Higgins",
+        "Pos": "WR",
+        "Pos Rank": "WR 18",
+        "TIER": 5,
+        "VALUE": 1.7
+    },
+    {
+        "Rank": 50,
+        "Player": "Quinshon Judkins",
+        "Pos": "RB",
+        "Pos Rank": "RB 11",
+        "TIER": 5,
+        "VALUE": 1.7
+    },
+    {
+        "Rank": 51,
+        "Player": "Michael Penix",
+        "Pos": "QB",
+        "Pos Rank": "QB 19",
+        "TIER": 6,
+        "VALUE": 1.6
+    },
+    {
+        "Rank": 52,
+        "Player": "Kyren Williams",
+        "Pos": "RB",
+        "Pos Rank": "RB 12",
+        "TIER": 6,
+        "VALUE": 1.6
+    },
+    {
+        "Rank": 53,
+        "Player": "Christian McCaffrey",
+        "Pos": "RB",
+        "Pos Rank": "RB 13",
+        "TIER": 6,
+        "VALUE": 1.6
+    },
+    {
+        "Rank": 54,
+        "Player": "Josh Jacobs",
+        "Pos": "RB",
+        "Pos Rank": "RB 14",
+        "TIER": 6,
+        "VALUE": 1.6
+    },
+    {
+        "Rank": 55,
+        "Player": "James Cook",
+        "Pos": "RB",
+        "Pos Rank": "RB 15",
         "TIER": 6,
         "VALUE": 1.5
     },
     {
-        "Rank": 48,
-        "Player": "Christian McCaffrey",
+        "Rank": 56,
+        "Player": "Dak Prescott",
+        "Pos": "QB",
+        "Pos Rank": "QB 20",
+        "TIER": 6,
+        "VALUE": 1.5
+    },
+    {
+        "Rank": 57,
+        "Player": "Jared Goff",
+        "Pos": "QB",
+        "Pos Rank": "QB 21",
+        "TIER": 6,
+        "VALUE": 1.5
+    },
+    {
+        "Rank": 58,
+        "Player": "RJ Harvey",
         "Pos": "RB",
-        "Pos Rank": "RB9",
+        "Pos Rank": "RB 16",
         "TIER": 6,
-        "VALUE": 1.35
+        "VALUE": 1.4
     },
     {
-        "Rank": 49,
-        "Player": "Colston Loveland",
+        "Rank": 59,
+        "Player": "Derrick Henry",
+        "Pos": "RB",
+        "Pos Rank": "RB 17",
+        "TIER": 6,
+        "VALUE": 1.4
+    },
+    {
+        "Rank": 60,
+        "Player": "Tyler Warren",
         "Pos": "TE",
-        "Pos Rank": "TE 3",
+        "Pos Rank": "TE 4",
         "TIER": 6,
-        "VALUE": 1.2
+        "VALUE": 1.4
     },
     {
-        "Rank": 50,
+        "Rank": 61,
         "Player": "Rome Odunze",
         "Pos": "WR",
         "Pos Rank": "WR 19",
         "TIER": 6,
-        "VALUE": 1.2
-    },
-    {
-        "Rank": 51,
-        "Player": "Chris Olave",
-        "Pos": "WR",
-        "Pos Rank": "WR 20",
-        "TIER": 6,
-        "VALUE": 1.2
-    },
-    {
-        "Rank": 52,
-        "Player": "Jaxson Dart",
-        "Pos": "QB",
-        "Pos Rank": "QB 20",
-        "TIER": 6,
-        "VALUE": 1.2
-    },
-    {
-        "Rank": 53,
-        "Player": "Emeka Egbuka",
-        "Pos": "WR",
-        "Pos Rank": "WR 21",
-        "TIER": 6,
-        "VALUE": 1.2
-    },
-    {
-        "Rank": 54,
-        "Player": "Brandon Aiyuk",
-        "Pos": "WR",
-        "Pos Rank": "WR 22",
-        "TIER": 6,
-        "VALUE": 1.2
-    },
-    {
-        "Rank": 55,
-        "Player": "Kaleb Johnson",
-        "Pos": "RB",
-        "Pos Rank": "RB 10",
-        "TIER": 6,
-        "VALUE": 1.2
-    },
-    {
-        "Rank": 56,
-        "Player": "TreVeyon Henderson",
-        "Pos": "RB",
-        "Pos Rank": "RB 11",
-        "TIER": 6,
-        "VALUE": 1.2
-    },
-    {
-        "Rank": 57,
-        "Player": "Quinshon Judkins",
-        "Pos": "RB",
-        "Pos Rank": "RB 12",
-        "TIER": 6,
-        "VALUE": 1.2
-    },
-    {
-        "Rank": 58,
-        "Player": "Josh Jacobs",
-        "Pos": "RB",
-        "Pos Rank": "RB 13",
-        "TIER": 6,
-        "VALUE": 1.2
-    },
-    {
-        "Rank": 59,
-        "Player": "Kenneth Walker III",
-        "Pos": "RB",
-        "Pos Rank": "RB 14",
-        "TIER": 6,
-        "VALUE": 1.2
-    },
-    {
-        "Rank": 60,
-        "Player": "Kyren Williams",
-        "Pos": "RB",
-        "Pos Rank": "RB 15",
-        "TIER": 6,
-        "VALUE": 1.2
-    },
-    {
-        "Rank": 61,
-        "Player": "Jonathan Taylor",
-        "Pos": "RB",
-        "Pos Rank": "RB 16",
-        "TIER": 6,
-        "VALUE": 1.2
+        "VALUE": 1.4
     },
     {
         "Rank": 62,
-        "Player": "James Cook",
-        "Pos": "RB",
-        "Pos Rank": "RB 17",
-        "TIER": 6,
-        "VALUE": 1.2
-    },
-    {
-        "Rank": 63,
         "Player": "Chase Brown",
         "Pos": "RB",
         "Pos Rank": "RB 18",
         "TIER": 6,
-        "VALUE": 1.2
+        "VALUE": 1.4
     },
     {
-        "Rank": 64,
-        "Player": "RJ Harvey",
-        "Pos": "RB",
-        "Pos Rank": "RB 19",
-        "TIER": 6,
-        "VALUE": 1.2
-    },
-    {
-        "Rank": 65,
+        "Rank": 63,
         "Player": "George Kittle",
-        "Pos": "TE",
-        "Pos Rank": "TE 4",
-        "TIER": 6,
-        "VALUE": 1.2
-    },
-    {
-        "Rank": 66,
-        "Player": "Tyler Warren",
         "Pos": "TE",
         "Pos Rank": "TE 5",
         "TIER": 6,
-        "VALUE": 1.2
+        "VALUE": 1.4
+    },
+    {
+        "Rank": 64,
+        "Player": "DeVonta Smith",
+        "Pos": "WR",
+        "Pos Rank": "WR 20",
+        "TIER": 6,
+        "VALUE": 1.4
+    },
+    {
+        "Rank": 65,
+        "Player": "Kenneth Walker",
+        "Pos": "RB",
+        "Pos Rank": "RB 19",
+        "TIER": 6,
+        "VALUE": 1.4
+    },
+    {
+        "Rank": 66,
+        "Player": "Kaleb Johnson",
+        "Pos": "RB",
+        "Pos Rank": "RB 20",
+        "TIER": 6,
+        "VALUE": 1.4
     },
     {
         "Rank": 67,
-        "Player": "DeVonta Smith",
-        "Pos": "WR",
-        "Pos Rank": "WR 24",
-        "TIER": 7,
-        "VALUE": 1.1
+        "Player": "Bryce Young",
+        "Pos": "QB",
+        "Pos Rank": "QB 22",
+        "TIER": 6,
+        "VALUE": 1.4
     },
     {
         "Rank": 68,
-        "Player": "Luther Burden",
-        "Pos": "WR",
-        "Pos Rank": "WR 25",
-        "TIER": 7,
-        "VALUE": 1.1
+        "Player": "Colston Loveland",
+        "Pos": "TE",
+        "Pos Rank": "TE 6",
+        "TIER": 6,
+        "VALUE": 1.35
     },
     {
         "Rank": 69,
-        "Player": "Matthew Golden",
+        "Player": "Emeka Egbuka",
         "Pos": "WR",
-        "Pos Rank": "WR 26",
-        "TIER": 7,
-        "VALUE": 1.1
+        "Pos Rank": "WR 21",
+        "TIER": 6,
+        "VALUE": 1.35
     },
     {
         "Rank": 70,
-        "Player": "Josh Downs",
+        "Player": "Chris Olave",
         "Pos": "WR",
-        "Pos Rank": "WR 27",
-        "TIER": 7,
-        "VALUE": 1.1
+        "Pos Rank": "WR 22",
+        "TIER": 6,
+        "VALUE": 1.35
     },
     {
         "Rank": 71,
-        "Player": "Jayden Reed",
+        "Player": "DJ Moore",
         "Pos": "WR",
-        "Pos Rank": "WR 28",
-        "TIER": 7,
-        "VALUE": 1.1
+        "Pos Rank": "WR 23",
+        "TIER": 6,
+        "VALUE": 1.35
     },
     {
         "Rank": 72,
-        "Player": "Jaylen Waddle",
+        "Player": "Xavier Worthy",
+        "Pos": "WR",
+        "Pos Rank": "WR 24",
+        "TIER": 6,
+        "VALUE": 1.35
+    },
+    {
+        "Rank": 73,
+        "Player": "Jameson Williams",
+        "Pos": "WR",
+        "Pos Rank": "WR 25",
+        "TIER": 7,
+        "VALUE": 1.3
+    },
+    {
+        "Rank": 74,
+        "Player": "Terry McLaurin",
+        "Pos": "WR",
+        "Pos Rank": "WR 26",
+        "TIER": 7,
+        "VALUE": 1.3
+    },
+    {
+        "Rank": 75,
+        "Player": "DK Metcalf",
+        "Pos": "WR",
+        "Pos Rank": "WR 27",
+        "TIER": 7,
+        "VALUE": 1.2
+    },
+    {
+        "Rank": 76,
+        "Player": "Zay Flowers",
+        "Pos": "WR",
+        "Pos Rank": "WR 28",
+        "TIER": 7,
+        "VALUE": 1.2
+    },
+    {
+        "Rank": 77,
+        "Player": "Matthew Golden",
         "Pos": "WR",
         "Pos Rank": "WR 29",
         "TIER": 7,
         "VALUE": 1.1
     },
     {
-        "Rank": 73,
-        "Player": "George Pickens",
-        "Pos": "WR",
-        "Pos Rank": "WR 23",
+        "Rank": 78,
+        "Player": "Jaxson Dart",
+        "Pos": "QB",
+        "Pos Rank": "QB 23",
         "TIER": 7,
-        "VALUE": 1
+        "VALUE": 1.1
     },
     {
-        "Rank": 74,
-        "Player": "Xavier Worthy",
+        "Rank": 79,
+        "Player": "Jordan Addison",
         "Pos": "WR",
         "Pos Rank": "WR 30",
         "TIER": 7,
-        "VALUE": 1
+        "VALUE": 1.1
     },
     {
-        "Rank": 75,
-        "Player": "DK Metcalf",
+        "Rank": 80,
+        "Player": "Jaylen Waddle",
         "Pos": "WR",
         "Pos Rank": "WR 31",
         "TIER": 7,
         "VALUE": 1
     },
     {
-        "Rank": 76,
-        "Player": "Ricky Pearsall",
-        "Pos": "WR",
-        "Pos Rank": "WR 32",
-        "TIER": 7,
-        "VALUE": 1
-    },
-    {
-        "Rank": 77,
-        "Player": "Jordan Addison",
-        "Pos": "WR",
-        "Pos Rank": "WR 33",
-        "TIER": 7,
-        "VALUE": 1
-    },
-    {
-        "Rank": 78,
-        "Player": "Zay Flowers",
-        "Pos": "WR",
-        "Pos Rank": "WR 34",
-        "TIER": 7,
-        "VALUE": 1
-    },
-    {
-        "Rank": 79,
-        "Player": "D.J. Moore",
-        "Pos": "WR",
-        "Pos Rank": "WR 35",
-        "TIER": 7,
-        "VALUE": 1
-    },
-    {
-        "Rank": 80,
-        "Player": "Jared Goff",
-        "Pos": "QB",
-        "Pos Rank": "QB 21",
-        "TIER": 7,
-        "VALUE": 1
-    },
-    {
         "Rank": 81,
-        "Player": "Derrick Henry",
-        "Pos": "RB",
-        "Pos Rank": "RB 20",
+        "Player": "Tua Tagovailoa",
+        "Pos": "QB",
+        "Pos Rank": "QB 24",
+        "TIER": 7,
+        "VALUE": 1
+    },
+    {
+        "Rank": 82,
+        "Player": "T.J. Hockenson",
+        "Pos": "TE",
+        "Pos Rank": "TE 7",
+        "TIER": 7,
+        "VALUE": 1
+    },
+    {
+        "Rank": 83,
+        "Player": "Justin Fields",
+        "Pos": "QB",
+        "Pos Rank": "QB 25",
         "TIER": 8,
         "VALUE": 0.9
     },
     {
-        "Rank": 82,
+        "Rank": 84,
+        "Player": "Tyreek Hill",
+        "Pos": "WR",
+        "Pos Rank": "WR 32",
+        "TIER": 8,
+        "VALUE": 0.9
+    },
+    {
+        "Rank": 85,
         "Player": "Chuba Hubbard",
         "Pos": "RB",
         "Pos Rank": "RB 21",
@@ -656,7 +680,15 @@
         "VALUE": 0.9
     },
     {
-        "Rank": 83,
+        "Rank": 86,
+        "Player": "George Pickens",
+        "Pos": "WR",
+        "Pos Rank": "WR 33",
+        "TIER": 8,
+        "VALUE": 0.9
+    },
+    {
+        "Rank": 87,
         "Player": "Alvin Kamara",
         "Pos": "RB",
         "Pos Rank": "RB 22",
@@ -664,476 +696,444 @@
         "VALUE": 0.9
     },
     {
-        "Rank": 84,
-        "Player": "Terry McLaurin",
-        "Pos": "WR",
-        "Pos Rank": "WR 36",
-        "TIER": 8,
-        "VALUE": 0.9
-    },
-    {
-        "Rank": 85,
-        "Player": "Chris Godwin",
-        "Pos": "WR",
-        "Pos Rank": "WR 37",
-        "TIER": 8,
-        "VALUE": 0.9
-    },
-    {
-        "Rank": 86,
-        "Player": "Mike Evans",
-        "Pos": "WR",
-        "Pos Rank": "WR 38",
-        "TIER": 8,
-        "VALUE": 0.9
-    },
-    {
-        "Rank": 87,
-        "Player": "Davante Adams",
-        "Pos": "WR",
-        "Pos Rank": "WR 39",
-        "TIER": 8,
-        "VALUE": 0.9
-    },
-    {
         "Rank": 88,
-        "Player": "Joe Mixon",
-        "Pos": "RB",
-        "Pos Rank": "RB 23",
+        "Player": "Jayden Higgins",
+        "Pos": "WR",
+        "Pos Rank": "WR 34",
         "TIER": 8,
         "VALUE": 0.9
     },
     {
         "Rank": 89,
-        "Player": "Bryce Young",
-        "Pos": "QB",
-        "Pos Rank": "QB 22",
+        "Player": "Luther Burden",
+        "Pos": "WR",
+        "Pos Rank": "WR 35",
         "TIER": 8,
         "VALUE": 0.9
     },
     {
         "Rank": 90,
-        "Player": "Tua Tagovailoa",
-        "Pos": "QB",
-        "Pos Rank": "QB 23",
+        "Player": "Joe Mixon",
+        "Pos": "RB",
+        "Pos Rank": "RB 23",
         "TIER": 8,
-        "VALUE": 0.9
+        "VALUE": 0.8
     },
     {
         "Rank": 91,
-        "Player": "Justin Fields",
-        "Pos": "QB",
-        "Pos Rank": "QB 24",
-        "TIER": 8,
-        "VALUE": 0.7
-    },
-    {
-        "Rank": 92,
-        "Player": "Tyreek Hill",
-        "Pos": "WR",
-        "Pos Rank": "WR 40",
-        "TIER": 8,
-        "VALUE": 0.7
-    },
-    {
-        "Rank": 93,
-        "Player": "Michael Penix",
-        "Pos": "QB",
-        "Pos Rank": "QB 25",
-        "TIER": 8,
-        "VALUE": 0.7
-    },
-    {
-        "Rank": 94,
-        "Player": "Sam Darnold",
+        "Player": "Anthony Richardson",
         "Pos": "QB",
         "Pos Rank": "QB 26",
         "TIER": 8,
-        "VALUE": 0.7
+        "VALUE": 0.8
+    },
+    {
+        "Rank": 92,
+        "Player": "Cam Skattebo",
+        "Pos": "RB",
+        "Pos Rank": "RB 24",
+        "TIER": 8,
+        "VALUE": 0.8
+    },
+    {
+        "Rank": 93,
+        "Player": "Davante Adams",
+        "Pos": "WR",
+        "Pos Rank": "WR 36",
+        "TIER": 8,
+        "VALUE": 0.8
+    },
+    {
+        "Rank": 94,
+        "Player": "Jerry Jeudy",
+        "Pos": "WR",
+        "Pos Rank": "WR 37",
+        "TIER": 8,
+        "VALUE": 0.8
     },
     {
         "Rank": 95,
-        "Player": "Sam Laporta",
-        "Pos": "TE",
-        "Pos Rank": "TE 6",
+        "Player": "Ricky Pearsall",
+        "Pos": "WR",
+        "Pos Rank": "WR 38",
+        "TIER": 8,
+        "VALUE": 0.8
+    },
+    {
+        "Rank": 96,
+        "Player": "Jayden Reed",
+        "Pos": "WR",
+        "Pos Rank": "WR 39",
         "TIER": 8,
         "VALUE": 0.7
     },
     {
-        "Rank": 96,
-        "Player": "David Montgomery",
-        "Pos": "RB",
-        "Pos Rank": "RB 24",
-        "TIER": 9,
-        "VALUE": 0.65
-    },
-    {
         "Rank": 97,
-        "Player": "Tony Pollard",
-        "Pos": "RB",
-        "Pos Rank": "RB 25",
-        "TIER": 9,
-        "VALUE": 0.65
+        "Player": "Sam Darnold",
+        "Pos": "QB",
+        "Pos Rank": "QB 27",
+        "TIER": 8,
+        "VALUE": 0.7
     },
     {
         "Rank": 98,
-        "Player": "Jack Bech",
+        "Player": "Tre Harris",
         "Pos": "WR",
-        "Pos Rank": "WR 41",
+        "Pos Rank": "WR 40",
         "TIER": 9,
-        "VALUE": 0.65
+        "VALUE": 0.6
     },
     {
         "Rank": 99,
-        "Player": "Kyle Williams",
-        "Pos": "WR",
-        "Pos Rank": "WR 42",
+        "Player": "David Montgomery",
+        "Pos": "RB",
+        "Pos Rank": "RB 25",
         "TIER": 9,
-        "VALUE": 0.65
+        "VALUE": 0.6
     },
     {
         "Rank": 100,
-        "Player": "Courtland Sutton",
+        "Player": "Mike Evans",
         "Pos": "WR",
-        "Pos Rank": "WR 43",
+        "Pos Rank": "WR 41",
         "TIER": 9,
-        "VALUE": 0.65
+        "VALUE": 0.6
     },
     {
         "Rank": 101,
-        "Player": "Tre Harris",
-        "Pos": "WR",
-        "Pos Rank": "WR 44",
+        "Player": "Jalen Milroe",
+        "Pos": "QB",
+        "Pos Rank": "QB 28",
         "TIER": 9,
-        "VALUE": 0.58
+        "VALUE": 0.6
     },
     {
         "Rank": 102,
-        "Player": "Khalil Shakir",
+        "Player": "Brandon Aiyuk",
         "Pos": "WR",
-        "Pos Rank": "WR 45",
+        "Pos Rank": "WR 42",
         "TIER": 9,
-        "VALUE": 0.58
+        "VALUE": 0.6
     },
     {
         "Rank": 103,
-        "Player": "Jameson Williams",
-        "Pos": "WR",
-        "Pos Rank": "WR 46",
+        "Player": "Geno Smith",
+        "Pos": "QB",
+        "Pos Rank": "QB 29",
         "TIER": 9,
-        "VALUE": 0.58
+        "VALUE": 0.6
     },
     {
         "Rank": 104,
-        "Player": "Jerry Jeudy",
+        "Player": "Khalil Shakir",
         "Pos": "WR",
-        "Pos Rank": "WR 47",
+        "Pos Rank": "WR 43",
         "TIER": 9,
-        "VALUE": 0.58
+        "VALUE": 0.6
     },
     {
         "Rank": 105,
-        "Player": "Mark Andrews",
-        "Pos": "TE",
-        "Pos Rank": "TE 7",
-        "TIER": 9,
-        "VALUE": 0.58
-    },
-    {
-        "Rank": 106,
-        "Player": "Michael Pittman Jr.",
-        "Pos": "WR",
-        "Pos Rank": "WR 48",
-        "TIER": 9,
-        "VALUE": 0.45
-    },
-    {
-        "Rank": 107,
-        "Player": "Stefon Diggs",
-        "Pos": "WR",
-        "Pos Rank": "WR 49",
-        "TIER": 9,
-        "VALUE": 0.45
-    },
-    {
-        "Rank": 108,
-        "Player": "Deebo Samuel",
-        "Pos": "WR",
-        "Pos Rank": "WR 50",
-        "TIER": 9,
-        "VALUE": 0.45
-    },
-    {
-        "Rank": 109,
-        "Player": "James Conner",
-        "Pos": "RB",
-        "Pos Rank": "RB 26",
-        "TIER": 9,
-        "VALUE": 0.45
-    },
-    {
-        "Rank": 110,
-        "Player": "Geno Smith",
-        "Pos": "QB",
-        "Pos Rank": "QB 27",
-        "TIER": 9,
-        "VALUE": 0.45
-    },
-    {
-        "Rank": 111,
-        "Player": "Tucker Kraft",
+        "Player": "Kyle Pitts",
         "Pos": "TE",
         "Pos Rank": "TE 8",
         "TIER": 9,
-        "VALUE": 0.4
+        "VALUE": 0.6
     },
     {
-        "Rank": 112,
+        "Rank": 106,
         "Player": "Dalton Kincaid",
         "Pos": "TE",
         "Pos Rank": "TE 9",
         "TIER": 9,
-        "VALUE": 0.4
+        "VALUE": 0.6
+    },
+    {
+        "Rank": 107,
+        "Player": "Josh Downs",
+        "Pos": "WR",
+        "Pos Rank": "WR 44",
+        "TIER": 9,
+        "VALUE": 0.6
+    },
+    {
+        "Rank": 108,
+        "Player": "Tucker Kraft",
+        "Pos": "TE",
+        "Pos Rank": "TE 10",
+        "TIER": 9,
+        "VALUE": 0.6
+    },
+    {
+        "Rank": 109,
+        "Player": "Matthew Stafford",
+        "Pos": "QB",
+        "Pos Rank": "QB 30",
+        "TIER": 9,
+        "VALUE": 0.6
+    },
+    {
+        "Rank": 110,
+        "Player": "Courtland Sutton",
+        "Pos": "WR",
+        "Pos Rank": "WR 45",
+        "TIER": 9,
+        "VALUE": 0.6
+    },
+    {
+        "Rank": 111,
+        "Player": "Jack Bech",
+        "Pos": "WR",
+        "Pos Rank": "WR 46",
+        "TIER": 9,
+        "VALUE": 0.5
+    },
+    {
+        "Rank": 112,
+        "Player": "Isiah Pacheco",
+        "Pos": "RB",
+        "Pos Rank": "RB 26",
+        "TIER": 9,
+        "VALUE": 0.5
     },
     {
         "Rank": 113,
-        "Player": "David Njoku",
-        "Pos": "TE",
-        "Pos Rank": "TE 10",
+        "Player": "Chris Godwin",
+        "Pos": "WR",
+        "Pos Rank": "WR 47",
+        "TIER": 9,
+        "VALUE": 0.5
+    },
+    {
+        "Rank": 114,
+        "Player": "Kyle Williams",
+        "Pos": "WR",
+        "Pos Rank": "WR 48",
+        "TIER": 9,
+        "VALUE": 0.5
+    },
+    {
+        "Rank": 115,
+        "Player": "D'Andre Swift",
+        "Pos": "RB",
+        "Pos Rank": "RB 27",
         "TIER": 9,
         "VALUE": 0.4
     },
     {
-        "Rank": 114,
-        "Player": "T.J. Hockenson",
+        "Rank": 116,
+        "Player": "Mark Andrews",
         "Pos": "TE",
         "Pos Rank": "TE 11",
         "TIER": 9,
         "VALUE": 0.4
     },
     {
-        "Rank": 115,
-        "Player": "Matthew Stafford",
-        "Pos": "QB",
-        "Pos Rank": "QB 28",
+        "Rank": 117,
+        "Player": "Keon Coleman",
+        "Pos": "WR",
+        "Pos Rank": "WR 49",
         "TIER": 9,
         "VALUE": 0.4
     },
     {
-        "Rank": 116,
-        "Player": "Bhayshul Tuten",
-        "Pos": "RB",
-        "Pos Rank": "RB 27",
-        "TIER": 9,
-        "VALUE": 0.33
-    },
-    {
-        "Rank": 117,
-        "Player": "Jauan Jennings",
-        "Pos": "WR",
-        "Pos Rank": "WR 51",
-        "TIER": 9,
-        "VALUE": 0.33
-    },
-    {
         "Rank": 118,
-        "Player": "Jalen Milroe",
-        "Pos": "QB",
-        "Pos Rank": "QB 29",
-        "TIER": 9,
-        "VALUE": 0.33
-    },
-    {
-        "Rank": 119,
-        "Player": "Isiah Pacheco",
+        "Player": "James Conner",
         "Pos": "RB",
         "Pos Rank": "RB 28",
         "TIER": 9,
-        "VALUE": 0.33
+        "VALUE": 0.4
     },
     {
-        "Rank": 120,
-        "Player": "Tyrone Tracy",
+        "Rank": 119,
+        "Player": "Bhayshul Tuten",
         "Pos": "RB",
         "Pos Rank": "RB 29",
         "TIER": 9,
-        "VALUE": 0.33
+        "VALUE": 0.35
+    },
+    {
+        "Rank": 120,
+        "Player": "Tyler Shough",
+        "Pos": "QB",
+        "Pos Rank": "QB 31",
+        "TIER": 9,
+        "VALUE": 0.35
     },
     {
         "Rank": 121,
-        "Player": "Cam Skattebo",
-        "Pos": "RB",
-        "Pos Rank": "RB 30",
+        "Player": "Mason Taylor",
+        "Pos": "TE",
+        "Pos Rank": "TE 12",
         "TIER": 9,
-        "VALUE": 0.33
+        "VALUE": 0.35
     },
     {
         "Rank": 122,
-        "Player": "Keon Coleman",
-        "Pos": "WR",
-        "Pos Rank": "WR 52",
+        "Player": "Shedeur Sanders",
+        "Pos": "QB",
+        "Pos Rank": "QB 32",
         "TIER": 10,
-        "VALUE": 0.25
+        "VALUE": 0.3
     },
     {
         "Rank": 123,
-        "Player": "Evan Engram",
+        "Player": "David Njoku",
         "Pos": "TE",
-        "Pos Rank": "TE 12",
+        "Pos Rank": "TE 13",
         "TIER": 10,
-        "VALUE": 0.25
+        "VALUE": 0.3
     },
     {
         "Rank": 124,
+        "Player": "Jaydon Blue",
+        "Pos": "RB",
+        "Pos Rank": "RB 30",
+        "TIER": 10,
+        "VALUE": 0.3
+    },
+    {
+        "Rank": 125,
+        "Player": "Brian Robinson",
+        "Pos": "RB",
+        "Pos Rank": "RB 31",
+        "TIER": 10,
+        "VALUE": 0.3
+    },
+    {
+        "Rank": 126,
+        "Player": "Zach Charbonnet",
+        "Pos": "RB",
+        "Pos Rank": "RB 32",
+        "TIER": 10,
+        "VALUE": 0.3
+    },
+    {
+        "Rank": 127,
+        "Player": "Evan Engram",
+        "Pos": "TE",
+        "Pos Rank": "TE 14",
+        "TIER": 10,
+        "VALUE": 0.3
+    },
+    {
+        "Rank": 128,
+        "Player": "Travis Kelce",
+        "Pos": "TE",
+        "Pos Rank": "TE 15",
+        "TIER": 10,
+        "VALUE": 0.3
+    },
+    {
+        "Rank": 129,
+        "Player": "Deebo Samuel",
+        "Pos": "WR",
+        "Pos Rank": "WR 50",
+        "TIER": 10,
+        "VALUE": 0.3
+    },
+    {
+        "Rank": 130,
+        "Player": "Isaiah Likely",
+        "Pos": "TE",
+        "Pos Rank": "TE 16",
+        "TIER": 10,
+        "VALUE": 0.3
+    },
+    {
+        "Rank": 131,
+        "Player": "Travis Etienne",
+        "Pos": "RB",
+        "Pos Rank": "RB 33",
+        "TIER": 10,
+        "VALUE": 0.3
+    },
+    {
+        "Rank": 132,
+        "Player": "Michael Pittman",
+        "Pos": "WR",
+        "Pos Rank": "WR 51",
+        "TIER": 10,
+        "VALUE": 0.3
+    },
+    {
+        "Rank": 133,
+        "Player": "Jakobi Meyers",
+        "Pos": "WR",
+        "Pos Rank": "WR 52",
+        "TIER": 10,
+        "VALUE": 0.3
+    },
+    {
+        "Rank": 134,
         "Player": "Calvin Ridley",
         "Pos": "WR",
         "Pos Rank": "WR 53",
         "TIER": 10,
-        "VALUE": 0.25
-    },
-    {
-        "Rank": 125,
-        "Player": "Jakobi Meyers",
-        "Pos": "WR",
-        "Pos Rank": "WR 54",
-        "TIER": 10,
-        "VALUE": 0.25
-    },
-    {
-        "Rank": 126,
-        "Player": "Jonnu Smith",
-        "Pos": "TE",
-        "Pos Rank": "TE 13",
-        "TIER": 10,
-        "VALUE": 0.25
-    },
-    {
-        "Rank": 127,
-        "Player": "Travis Kelce",
-        "Pos": "TE",
-        "Pos Rank": "TE 14",
-        "TIER": 10,
-        "VALUE": 0.25
-    },
-    {
-        "Rank": 128,
-        "Player": "Cooper Kupp",
-        "Pos": "WR",
-        "Pos Rank": "WR 55",
-        "TIER": 10,
-        "VALUE": 0.25
-    },
-    {
-        "Rank": 129,
-        "Player": "Tyler Shough",
-        "Pos": "QB",
-        "Pos Rank": "QB 30",
-        "TIER": 10,
-        "VALUE": 0.25
-    },
-    {
-        "Rank": 130,
-        "Player": "D'Andre Swift",
-        "Pos": "RB",
-        "Pos Rank": "RB 31",
-        "TIER": 10,
-        "VALUE": 0.25
-    },
-    {
-        "Rank": 131,
-        "Player": "Brian Robinson Jr.",
-        "Pos": "RB",
-        "Pos Rank": "RB 32",
-        "TIER": 10,
-        "VALUE": 0.25
-    },
-    {
-        "Rank": 132,
-        "Player": "Jaylin Noel",
-        "Pos": "WR",
-        "Pos Rank": "WR 56",
-        "TIER": 10,
-        "VALUE": 0.25
-    },
-    {
-        "Rank": 133,
-        "Player": "Jaylen Warren",
-        "Pos": "RB",
-        "Pos Rank": "RB 33",
-        "TIER": 10,
-        "VALUE": 0.25
-    },
-    {
-        "Rank": 134,
-        "Player": "Zach Charbonnet",
-        "Pos": "RB",
-        "Pos Rank": "RB 34",
-        "TIER": 10,
-        "VALUE": 0.25
+        "VALUE": 0.3
     },
     {
         "Rank": 135,
-        "Player": "Travis Etienne",
-        "Pos": "RB",
-        "Pos Rank": "RB 35",
-        "TIER": 10,
-        "VALUE": 0.25
-    },
-    {
-        "Rank": 136,
-        "Player": "Jalen Coker",
-        "Pos": "WR",
-        "Pos Rank": "WR 57",
-        "TIER": 10,
-        "VALUE": 0.25
-    },
-    {
-        "Rank": 137,
-        "Player": "Jake Ferguson",
-        "Pos": "TE",
-        "Pos Rank": "TE 15",
-        "TIER": 10,
-        "VALUE": 0.25
-    },
-    {
-        "Rank": 138,
-        "Player": "Harold Fannin Jr.",
-        "Pos": "TE",
-        "Pos Rank": "TE 16",
-        "TIER": 10,
-        "VALUE": 0.25
-    },
-    {
-        "Rank": 139,
-        "Player": "Terrance Ferguson",
+        "Player": "Jonnu Smith",
         "Pos": "TE",
         "Pos Rank": "TE 17",
         "TIER": 10,
-        "VALUE": 0.25
+        "VALUE": 0.3
     },
     {
-        "Rank": 140,
-        "Player": "Cedric Tillman",
-        "Pos": "WR",
-        "Pos Rank": "WR 58",
+        "Rank": 136,
+        "Player": "Aaron Jones",
+        "Pos": "RB",
+        "Pos Rank": "RB 34",
         "TIER": 10,
-        "VALUE": 0.25
+        "VALUE": 0.3
     },
     {
-        "Rank": 141,
-        "Player": "Dallas Goedert",
+        "Rank": 137,
+        "Player": "Terrance Ferguson",
         "Pos": "TE",
         "Pos Rank": "TE 18",
         "TIER": 10,
-        "VALUE": 0.25
+        "VALUE": 0.3
     },
     {
-        "Rank": 142,
-        "Player": "Kyle Pitts",
+        "Rank": 138,
+        "Player": "Jake Ferguson",
         "Pos": "TE",
         "Pos Rank": "TE 19",
         "TIER": 10,
-        "VALUE": 0.25
+        "VALUE": 0.3
+    },
+    {
+        "Rank": 139,
+        "Player": "Tony Pollard",
+        "Pos": "RB",
+        "Pos Rank": "RB 35",
+        "TIER": 10,
+        "VALUE": 0.3
+    },
+    {
+        "Rank": 140,
+        "Player": "Jauan Jennings",
+        "Pos": "WR",
+        "Pos Rank": "WR 54",
+        "TIER": 10,
+        "VALUE": 0.3
+    },
+    {
+        "Rank": 141,
+        "Player": "Jaylin Noel",
+        "Pos": "WR",
+        "Pos Rank": "WR 55",
+        "TIER": 10,
+        "VALUE": 0.3
+    },
+    {
+        "Rank": 142,
+        "Player": "Stefon Diggs",
+        "Pos": "WR",
+        "Pos Rank": "WR 56",
+        "TIER": 10,
+        "VALUE": 0.3
     },
     {
         "Rank": 143,
@@ -1141,130 +1141,170 @@
         "Pos": "RB",
         "Pos Rank": "RB 36",
         "TIER": 10,
-        "VALUE": 0.25
+        "VALUE": 0.2
     },
     {
         "Rank": 144,
-        "Player": "Aaron Jones",
+        "Player": "Tyrone Tracy",
         "Pos": "RB",
         "Pos Rank": "RB 37",
         "TIER": 10,
-        "VALUE": 0.25
+        "VALUE": 0.2
     },
     {
         "Rank": 145,
-        "Player": "Daniel Jones",
-        "Pos": "QB",
-        "Pos Rank": "QB 31",
+        "Player": "Cooper Kupp",
+        "Pos": "WR",
+        "Pos Rank": "WR 57",
         "TIER": 10,
-        "VALUE": 0.25
+        "VALUE": 0.2
     },
     {
         "Rank": 146,
-        "Player": "JK Dobbins",
+        "Player": "Najee Harris",
         "Pos": "RB",
         "Pos Rank": "RB 38",
         "TIER": 10,
-        "VALUE": 0.15
+        "VALUE": 0.2
     },
     {
         "Rank": 147,
-        "Player": "Tyjae Spears",
+        "Player": "Jordan Mason",
         "Pos": "RB",
         "Pos Rank": "RB 39",
         "TIER": 10,
-        "VALUE": 0.15
+        "VALUE": 0.2
     },
     {
         "Rank": 148,
-        "Player": "Tank Bigsby",
+        "Player": "Dylan Sampson",
         "Pos": "RB",
         "Pos Rank": "RB 40",
         "TIER": 10,
-        "VALUE": 0.15
+        "VALUE": 0.1
     },
     {
         "Rank": 149,
-        "Player": "Rashod Bateman",
-        "Pos": "WR",
-        "Pos Rank": "WR 59",
+        "Player": "Pat Freiermuth",
+        "Pos": "TE",
+        "Pos Rank": "TE 20",
         "TIER": 10,
-        "VALUE": 0.15
+        "VALUE": 0.1
     },
     {
         "Rank": 150,
-        "Player": "Shedeur Sanders",
-        "Pos": "QB",
-        "Pos Rank": "QB 32",
+        "Player": "Elijah Arroyo",
+        "Pos": "TE",
+        "Pos Rank": "TE 21",
         "TIER": 10,
-        "VALUE": 0.05
+        "VALUE": 0.1
     },
     {
         "Rank": 151,
-        "Player": "Aaron Rodgers",
-        "Pos": "QB",
-        "Pos Rank": "QB 33",
+        "Player": "Jalen Royals",
+        "Pos": "WR",
+        "Pos Rank": "WR 58",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 152,
+        "Player": "Devin Neal",
+        "Pos": "RB",
+        "Pos Rank": "RB 41",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 153,
+        "Player": "Jaylen Warren",
+        "Pos": "RB",
+        "Pos Rank": "RB 42",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 154,
+        "Player": "Javonte Williams",
+        "Pos": "RB",
+        "Pos Rank": "RB 43",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 155,
+        "Player": "Darnell Mooney",
+        "Pos": "WR",
+        "Pos Rank": "WR 59",
+        "TIER": 10,
+        "VALUE": 0.1
+    },
+    {
+        "Rank": 156,
+        "Player": "Tyjae Spears",
+        "Pos": "RB",
+        "Pos Rank": "RB 44",
         "TIER": 10,
         "VALUE": 0.05
     },
     {
-        "Rank": 152,
-        "Player": "Darnell Mooney",
+        "Rank": 157,
+        "Player": "Pat Bryant",
         "Pos": "WR",
         "Pos Rank": "WR 60",
         "TIER": 10,
         "VALUE": 0.05
     },
     {
-        "Rank": 153,
-        "Player": "Roschon Johnson",
+        "Rank": 158,
+        "Player": "Rachaad White",
         "Pos": "RB",
-        "Pos Rank": "RB 41",
+        "Pos Rank": "RB 45",
+        "TIER": 10,
+        "VALUE": 0.05
+    },
+    {
+        "Rank": 159,
+        "Player": "Harold Fannin",
+        "Pos": "TE",
+        "Pos Rank": "TE 22",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 154,
-        "Player": "Adonai Mitchell",
+        "Rank": 160,
+        "Player": "Elic Ayomanor",
         "Pos": "WR",
         "Pos Rank": "WR 61",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 155,
-        "Player": "Mason Taylor",
-        "Pos": "TE",
-        "Pos Rank": "TE 20",
+        "Rank": 161,
+        "Player": "Will Howard",
+        "Pos": "QB",
+        "Pos Rank": "QB 33",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 156,
-        "Player": "Christian Kirk",
+        "Rank": 162,
+        "Player": "Brenton Strange",
+        "Pos": "TE",
+        "Pos Rank": "TE 23",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 163,
+        "Player": "Xavier Legette",
         "Pos": "WR",
         "Pos Rank": "WR 62",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 157,
-        "Player": "Elic Ayomanor",
-        "Pos": "WR",
-        "Pos Rank": "WR 63",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 158,
-        "Player": "Brenton Strange",
-        "Pos": "TE",
-        "Pos Rank": "TE 21",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 159,
+        "Rank": 164,
         "Player": "Russell Wilson",
         "Pos": "QB",
         "Pos Rank": "QB 34",
@@ -1272,120 +1312,80 @@
         "VALUE": 0
     },
     {
-        "Rank": 160,
-        "Player": "Jordan Mason",
-        "Pos": "RB",
-        "Pos Rank": "RB 42",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 161,
-        "Player": "Isaac Guerrendo",
-        "Pos": "RB",
-        "Pos Rank": "RB 43",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 162,
-        "Player": "Braelon Allen",
-        "Pos": "RB",
-        "Pos Rank": "RB 44",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 163,
-        "Player": "Ray Davis",
-        "Pos": "RB",
-        "Pos Rank": "RB 45",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 164,
-        "Player": "Jonathan Brooks",
-        "Pos": "RB",
-        "Pos Rank": "RB 46",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
         "Rank": 165,
-        "Player": "Rachaad White",
-        "Pos": "RB",
-        "Pos Rank": "RB 47",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 166,
-        "Player": "Rhamondre Stevenson",
-        "Pos": "RB",
-        "Pos Rank": "RB 48",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 167,
-        "Player": "Najee Harris",
-        "Pos": "RB",
-        "Pos Rank": "RB 49",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 168,
-        "Player": "Tyler Allgeier",
-        "Pos": "RB",
-        "Pos Rank": "RB 50",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 169,
-        "Player": "Kirk Cousins",
+        "Player": "Daniel Jones",
         "Pos": "QB",
         "Pos Rank": "QB 35",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 170,
-        "Player": "Pat Freiermuth",
-        "Pos": "TE",
-        "Pos Rank": "TE 22",
+        "Rank": 166,
+        "Player": "Tank Bigsby",
+        "Pos": "RB",
+        "Pos Rank": "RB 46",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 171,
-        "Player": "Xavier Legette",
+        "Rank": 167,
+        "Player": "Dallas Goedert",
+        "Pos": "TE",
+        "Pos Rank": "TE 24",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 168,
+        "Player": "Jalen McMillan",
+        "Pos": "WR",
+        "Pos Rank": "WR 63",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 169,
+        "Player": "Rashid Shaheed",
         "Pos": "WR",
         "Pos Rank": "WR 64",
         "TIER": 11,
         "VALUE": 0
     },
     {
+        "Rank": 170,
+        "Player": "Cade Otton",
+        "Pos": "TE",
+        "Pos Rank": "TE 25",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 171,
+        "Player": "Rhamondre Stevenson",
+        "Pos": "RB",
+        "Pos Rank": "RB 47",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
         "Rank": 172,
-        "Player": "Jalen McMillan",
+        "Player": "Ray Davis",
+        "Pos": "RB",
+        "Pos Rank": "RB 48",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 173,
+        "Player": "Tank Dell",
         "Pos": "WR",
         "Pos Rank": "WR 65",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 173,
-        "Player": "Michael Mayer",
-        "Pos": "TE",
-        "Pos Rank": "TE 23",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
         "Rank": 174,
-        "Player": "Dontayvion Wicks",
+        "Player": "Cedric Tillman",
         "Pos": "WR",
         "Pos Rank": "WR 66",
         "TIER": 11,
@@ -1393,7 +1393,7 @@
     },
     {
         "Rank": 175,
-        "Player": "Tank Dell",
+        "Player": "Marvin Mims",
         "Pos": "WR",
         "Pos Rank": "WR 67",
         "TIER": 11,
@@ -1401,190 +1401,166 @@
     },
     {
         "Rank": 176,
-        "Player": "Christian Watson",
+        "Player": "Jonathon Brooks",
+        "Pos": "RB",
+        "Pos Rank": "RB 49",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 177,
+        "Player": "Isaac Guerendo",
+        "Pos": "RB",
+        "Pos Rank": "RB 50",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 178,
+        "Player": "Rashod Bateman",
         "Pos": "WR",
         "Pos Rank": "WR 68",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 177,
-        "Player": "Hollywood Brown",
-        "Pos": "WR",
-        "Pos Rank": "WR 69",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 178,
-        "Player": "Rashid Shaheed",
-        "Pos": "WR",
-        "Pos Rank": "WR 70",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
         "Rank": 179,
-        "Player": "Demario Douglas",
-        "Pos": "WR",
-        "Pos Rank": "WR 71",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 180,
-        "Player": "Alec Pierce",
-        "Pos": "WR",
-        "Pos Rank": "WR 72",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 181,
-        "Player": "Jalen Royals",
-        "Pos": "WR",
-        "Pos Rank": "WR 73",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 182,
-        "Player": "Elijah Arroyo",
-        "Pos": "TE",
-        "Pos Rank": "TE 24",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 183,
-        "Player": "Jaydon Blue",
+        "Player": "Braelon Allen",
         "Pos": "RB",
         "Pos Rank": "RB 51",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 184,
-        "Player": "Jordan Whittington",
-        "Pos": "WR",
-        "Pos Rank": "WR 74",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 185,
-        "Player": "Dylan Sampson",
-        "Pos": "RB",
-        "Pos Rank": "RB 52",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 186,
-        "Player": "Cole Kmet",
-        "Pos": "TE",
-        "Pos Rank": "TE 25",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 187,
-        "Player": "Tory Horton",
-        "Pos": "WR",
-        "Pos Rank": "WR 75",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 188,
-        "Player": "Jarquez Hunter",
-        "Pos": "RB",
-        "Pos Rank": "RB 53",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 189,
-        "Player": "Blake Corum",
-        "Pos": "RB",
-        "Pos Rank": "RB 54",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 190,
-        "Player": "Keenan Allen",
-        "Pos": "WR",
-        "Pos Rank": "WR 76",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 191,
-        "Player": "Hunter Henry",
+        "Rank": 180,
+        "Player": "Ben Sinnott",
         "Pos": "TE",
         "Pos Rank": "TE 26",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 192,
+        "Rank": 181,
+        "Player": "Ollie Gordon",
+        "Pos": "RB",
+        "Pos Rank": "RB 52",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 182,
+        "Player": "Blake Corum",
+        "Pos": "RB",
+        "Pos Rank": "RB 53",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 183,
+        "Player": "Adonai Mitchell",
+        "Pos": "WR",
+        "Pos Rank": "WR 69",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 184,
         "Player": "Jaylen Wright",
+        "Pos": "RB",
+        "Pos Rank": "RB 54",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 185,
+        "Player": "Joe Milton",
+        "Pos": "QB",
+        "Pos Rank": "QB 36",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 186,
+        "Player": "Quentin Johnston",
+        "Pos": "WR",
+        "Pos Rank": "WR 70",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 187,
+        "Player": "Roschon Johnson",
         "Pos": "RB",
         "Pos Rank": "RB 55",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 193,
-        "Player": "MarShawn Lloyd",
+        "Rank": 188,
+        "Player": "Wan'Dale Robinson",
+        "Pos": "WR",
+        "Pos Rank": "WR 71",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 189,
+        "Player": "Hollywood Brown",
+        "Pos": "WR",
+        "Pos Rank": "WR 72",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 190,
+        "Player": "Jarquez Hunter",
         "Pos": "RB",
         "Pos Rank": "RB 56",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 194,
-        "Player": "Kendre Miller",
+        "Rank": 191,
+        "Player": "Tyler Allgeier",
         "Pos": "RB",
         "Pos Rank": "RB 57",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 195,
-        "Player": "Devin Neal",
-        "Pos": "RB",
-        "Pos Rank": "RB 58",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 196,
-        "Player": "DJ Giddens",
-        "Pos": "RB",
-        "Pos Rank": "RB 59",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 197,
-        "Player": "Sean Tucker",
-        "Pos": "RB",
-        "Pos Rank": "RB 60",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 198,
-        "Player": "Juwan Johnson",
+        "Rank": 192,
+        "Player": "Cole Kmet",
         "Pos": "TE",
         "Pos Rank": "TE 27",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 199,
+        "Rank": 193,
+        "Player": "Aaron Rodgers",
+        "Pos": "QB",
+        "Pos Rank": "QB 37",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 194,
+        "Player": "DJ Giddens",
+        "Pos": "RB",
+        "Pos Rank": "RB 58",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 195,
+        "Player": "Christian Kirk",
+        "Pos": "WR",
+        "Pos Rank": "WR 73",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 196,
         "Player": "Dalton Schultz",
         "Pos": "TE",
         "Pos Rank": "TE 28",
@@ -1592,131 +1568,6043 @@
         "VALUE": 0
     },
     {
-        "Rank": 200,
+        "Rank": 197,
         "Player": "Romeo Doubs",
         "Pos": "WR",
-        "Pos Rank": "WR 77",
+        "Pos Rank": "WR 74",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 201,
-        "Player": "Josh Palmer",
+        "Rank": 198,
+        "Player": "Roman Wilson",
         "Pos": "WR",
-        "Pos Rank": "WR 78",
+        "Pos Rank": "WR 75",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 202,
-        "Player": "Quentin Johnston",
+        "Rank": 199,
+        "Player": "Jalen Coker",
         "Pos": "WR",
-        "Pos Rank": "WR 79",
+        "Pos Rank": "WR 76",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 203,
-        "Player": "Adam Thielen",
-        "Pos": "WR",
-        "Pos Rank": "WR 80",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 204,
-        "Player": "Noah Fant",
+        "Rank": 200,
+        "Player": "Ja'Tavion Sanders",
         "Pos": "TE",
         "Pos Rank": "TE 29",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 205,
-        "Player": "Javonte Williams",
-        "Pos": "RB",
-        "Pos Rank": "RB 61",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 206,
-        "Player": "Miles Sanders",
-        "Pos": "RB",
-        "Pos Rank": "RB 62",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 207,
-        "Player": "Rico Dowdle",
-        "Pos": "RB",
-        "Pos Rank": "RB 63",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 208,
-        "Player": "Brashard Smith",
-        "Pos": "RB",
-        "Pos Rank": "RB 64",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 209,
-        "Player": "Jordan James",
-        "Pos": "RB",
-        "Pos Rank": "RB 65",
-        "TIER": 11,
-        "VALUE": 0
-    },
-    {
-        "Rank": 210,
-        "Player": "Oronde Gadsden II",
+        "Rank": 201,
+        "Player": "Theo Johnson",
         "Pos": "TE",
         "Pos Rank": "TE 30",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 211,
-        "Player": "Pat Bryant",
+        "Rank": 202,
+        "Player": "Mike Gesicki",
+        "Pos": "TE",
+        "Pos Rank": "TE 31",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 203,
+        "Player": "Zach Ertz",
+        "Pos": "TE",
+        "Pos Rank": "TE 32",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 204,
+        "Player": "Isaac TeSlaa",
         "Pos": "WR",
-        "Pos Rank": "WR 81",
+        "Pos Rank": "WR 77",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 205,
+        "Player": "Nick Chubb",
+        "Pos": "RB",
+        "Pos Rank": "RB 59",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 206,
+        "Player": "Jordan James",
+        "Pos": "RB",
+        "Pos Rank": "RB 60",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 207,
+        "Player": "Kirk Cousins",
+        "Pos": "QB",
+        "Pos Rank": "QB 38",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 208,
+        "Player": "Trevor Etienne",
+        "Pos": "RB",
+        "Pos Rank": "RB 61",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 209,
+        "Player": "DeMario Douglas",
+        "Pos": "WR",
+        "Pos Rank": "WR 78",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 210,
+        "Player": "MarShawn Lloyd",
+        "Pos": "RB",
+        "Pos Rank": "RB 62",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 211,
+        "Player": "Hunter Henry",
+        "Pos": "TE",
+        "Pos Rank": "TE 33",
         "TIER": 11,
         "VALUE": 0
     },
     {
         "Rank": 212,
-        "Player": "Troy Franklin",
-        "Pos": "WR",
-        "Pos Rank": "WR 82",
+        "Player": "J.K. Dobbins",
+        "Pos": "RB",
+        "Pos Rank": "RB 63",
         "TIER": 11,
         "VALUE": 0
     },
     {
         "Rank": 213,
-        "Player": "Wan'Dale Robinson",
-        "Pos": "WR",
-        "Pos Rank": "WR 83",
+        "Player": "Austin Ekeler",
+        "Pos": "RB",
+        "Pos Rank": "RB 64",
         "TIER": 11,
         "VALUE": 0
     },
     {
         "Rank": 214,
-        "Player": "Isaiah Davis",
+        "Player": "Spencer Rattler",
+        "Pos": "QB",
+        "Pos Rank": "QB 39",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 215,
+        "Player": "Tory Horton",
+        "Pos": "WR",
+        "Pos Rank": "WR 79",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 216,
+        "Player": "Woody Marks",
+        "Pos": "RB",
+        "Pos Rank": "RB 65",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 217,
+        "Player": "Dontayvion Wicks",
+        "Pos": "WR",
+        "Pos Rank": "WR 80",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 218,
+        "Player": "Chig Okonkwo",
+        "Pos": "TE",
+        "Pos Rank": "TE 34",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 219,
+        "Player": "Rico Dowdle",
         "Pos": "RB",
         "Pos Rank": "RB 66",
         "TIER": 11,
         "VALUE": 0
     },
     {
-        "Rank": 215,
+        "Rank": 220,
         "Player": "Audric Estime",
         "Pos": "RB",
         "Pos Rank": "RB 67",
         "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 221,
+        "Player": "Kendre Miller",
+        "Pos": "RB",
+        "Pos Rank": "RB 68",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 222,
+        "Player": "Troy Franklin",
+        "Pos": "WR",
+        "Pos Rank": "WR 81",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 223,
+        "Player": "DeAndre Hopkins",
+        "Pos": "WR",
+        "Pos Rank": "WR 82",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 224,
+        "Player": "Christian Watson",
+        "Pos": "WR",
+        "Pos Rank": "WR 83",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 225,
+        "Player": "Jerome Ford",
+        "Pos": "RB",
+        "Pos Rank": "RB 69",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 226,
+        "Player": "Michael Mayer",
+        "Pos": "TE",
+        "Pos Rank": "TE 35",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 227,
+        "Player": "Will Shipley",
+        "Pos": "RB",
+        "Pos Rank": "RB 70",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 228,
+        "Player": "Brashard Smith",
+        "Pos": "RB",
+        "Pos Rank": "RB 71",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 229,
+        "Player": "Joshua Palmer",
+        "Pos": "WR",
+        "Pos Rank": "WR 84",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 230,
+        "Player": "Dillon Gabriel",
+        "Pos": "QB",
+        "Pos Rank": "QB 40",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 231,
+        "Player": "Alec Pierce",
+        "Pos": "WR",
+        "Pos Rank": "WR 85",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 232,
+        "Player": "Adam Thielen",
+        "Pos": "WR",
+        "Pos Rank": "WR 86",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 233,
+        "Player": "Michael Wilson",
+        "Pos": "WR",
+        "Pos Rank": "WR 87",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 234,
+        "Player": "Xavier Restrepo",
+        "Pos": "WR",
+        "Pos Rank": "WR 88",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 235,
+        "Player": "Quinn Ewers",
+        "Pos": "QB",
+        "Pos Rank": "QB 41",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 236,
+        "Player": "Joe Flacco",
+        "Pos": "QB",
+        "Pos Rank": "QB 42",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 237,
+        "Player": "Keaton Mitchell",
+        "Pos": "RB",
+        "Pos Rank": "RB 72",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 238,
+        "Player": "Kayshon Boutte",
+        "Pos": "WR",
+        "Pos Rank": "WR 89",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 239,
+        "Player": "Kareem Hunt",
+        "Pos": "RB",
+        "Pos Rank": "RB 73",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 240,
+        "Player": "Zack Moss",
+        "Pos": "RB",
+        "Pos Rank": "RB 74",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 241,
+        "Player": "Jordan Whittington",
+        "Pos": "WR",
+        "Pos Rank": "WR 90",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 242,
+        "Player": "Kyle Monangai",
+        "Pos": "RB",
+        "Pos Rank": "RB 75",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 243,
+        "Player": "Amari Cooper",
+        "Pos": "WR",
+        "Pos Rank": "WR 91",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 244,
+        "Player": "Jaleel McLaughlin",
+        "Pos": "RB",
+        "Pos Rank": "RB 76",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 245,
+        "Player": "Tyler Lockett",
+        "Pos": "WR",
+        "Pos Rank": "WR 92",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 246,
+        "Player": "Oronde Gadsden",
+        "Pos": "TE",
+        "Pos Rank": "TE 36",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 247,
+        "Player": "Tahj Brooks",
+        "Pos": "RB",
+        "Pos Rank": "RB 77",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 248,
+        "Player": "Will Levis",
+        "Pos": "QB",
+        "Pos Rank": "QB 43",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 249,
+        "Player": "Ja'Lynn Polk",
+        "Pos": "WR",
+        "Pos Rank": "WR 93",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 250,
+        "Player": "Andrei Iosivas",
+        "Pos": "WR",
+        "Pos Rank": "WR 94",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 251,
+        "Player": "Tai Felton",
+        "Pos": "WR",
+        "Pos Rank": "WR 95",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 252,
+        "Player": "Keenan Allen",
+        "Pos": "WR",
+        "Pos Rank": "WR 96",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 253,
+        "Player": "Diontae Johnson",
+        "Pos": "WR",
+        "Pos Rank": "WR 97",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 254,
+        "Player": "Elijah Moore",
+        "Pos": "WR",
+        "Pos Rank": "WR 98",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 255,
+        "Player": "Noah Gray",
+        "Pos": "TE",
+        "Pos Rank": "TE 37",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 256,
+        "Player": "Isaiah Davis",
+        "Pos": "RB",
+        "Pos Rank": "RB 78",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 257,
+        "Player": "Luke Musgrave",
+        "Pos": "TE",
+        "Pos Rank": "TE 38",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 258,
+        "Player": "Jacory Croskey-Merritt",
+        "Pos": "RB",
+        "Pos Rank": "RB 79",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 259,
+        "Player": "Noah Fant",
+        "Pos": "TE",
+        "Pos Rank": "TE 39",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 260,
+        "Player": "Sam Howell",
+        "Pos": "QB",
+        "Pos Rank": "QB 44",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 261,
+        "Player": "Gunnar Helm",
+        "Pos": "TE",
+        "Pos Rank": "TE 40",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 262,
+        "Player": "Savion Williams",
+        "Pos": "WR",
+        "Pos Rank": "WR 99",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 263,
+        "Player": "Malik Willis",
+        "Pos": "QB",
+        "Pos Rank": "QB 45",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 264,
+        "Player": "Mason Rudolph",
+        "Pos": "QB",
+        "Pos Rank": "QB 46",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 265,
+        "Player": "Jermaine Burton",
+        "Pos": "WR",
+        "Pos Rank": "WR 100",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 266,
+        "Player": "Calvin Austin",
+        "Pos": "WR",
+        "Pos Rank": "WR 101",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 267,
+        "Player": "Sean Tucker",
+        "Pos": "RB",
+        "Pos Rank": "RB 80",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 268,
+        "Player": "Jimmy Horn",
+        "Pos": "WR",
+        "Pos Rank": "WR 102",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 269,
+        "Player": "Malik Washington",
+        "Pos": "WR",
+        "Pos Rank": "WR 103",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 270,
+        "Player": "Justice Hill",
+        "Pos": "RB",
+        "Pos Rank": "RB 81",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 271,
+        "Player": "Juwan Johnson",
+        "Pos": "TE",
+        "Pos Rank": "TE 41",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 272,
+        "Player": "Luke McCaffrey",
+        "Pos": "WR",
+        "Pos Rank": "WR 104",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 273,
+        "Player": "Jameis Winston",
+        "Pos": "QB",
+        "Pos Rank": "QB 47",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 274,
+        "Player": "Dont'e Thornton",
+        "Pos": "WR",
+        "Pos Rank": "WR 105",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 275,
+        "Player": "Raheem Mostert",
+        "Pos": "RB",
+        "Pos Rank": "RB 82",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 276,
+        "Player": "Miles Sanders",
+        "Pos": "RB",
+        "Pos Rank": "RB 83",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 277,
+        "Player": "Damien Martinez",
+        "Pos": "RB",
+        "Pos Rank": "RB 84",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 278,
+        "Player": "Chimere Dike",
+        "Pos": "WR",
+        "Pos Rank": "WR 106",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 279,
+        "Player": "Jalen Tolbert",
+        "Pos": "WR",
+        "Pos Rank": "WR 107",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 280,
+        "Player": "Mac Jones",
+        "Pos": "QB",
+        "Pos Rank": "QB 48",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 281,
+        "Player": "Tyler Conklin",
+        "Pos": "TE",
+        "Pos Rank": "TE 42",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 282,
+        "Player": "Jaylin Lane",
+        "Pos": "WR",
+        "Pos Rank": "WR 108",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 283,
+        "Player": "Dameon Pierce",
+        "Pos": "RB",
+        "Pos Rank": "RB 85",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 284,
+        "Player": "Darius Slayton",
+        "Pos": "WR",
+        "Pos Rank": "WR 109",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 285,
+        "Player": "Malachi Corley",
+        "Pos": "WR",
+        "Pos Rank": "WR 110",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 286,
+        "Player": "Zach Wilson",
+        "Pos": "QB",
+        "Pos Rank": "QB 49",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 287,
+        "Player": "Devaughn Vele",
+        "Pos": "WR",
+        "Pos Rank": "WR 111",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 288,
+        "Player": "Elijah Mitchell",
+        "Pos": "RB",
+        "Pos Rank": "RB 86",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 289,
+        "Player": "Tyler Higbee",
+        "Pos": "TE",
+        "Pos Rank": "TE 43",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 290,
+        "Player": "Devin Singletary",
+        "Pos": "RB",
+        "Pos Rank": "RB 87",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 291,
+        "Player": "Khalil Herbert",
+        "Pos": "RB",
+        "Pos Rank": "RB 88",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 292,
+        "Player": "Dyami Brown",
+        "Pos": "WR",
+        "Pos Rank": "WR 112",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 293,
+        "Player": "Cade Stover",
+        "Pos": "TE",
+        "Pos Rank": "TE 44",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 294,
+        "Player": "Tre Tucker",
+        "Pos": "WR",
+        "Pos Rank": "WR 113",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 295,
+        "Player": "Kenny Pickett",
+        "Pos": "QB",
+        "Pos Rank": "QB 50",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 296,
+        "Player": "Zamir White",
+        "Pos": "RB",
+        "Pos Rank": "RB 89",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 297,
+        "Player": "Arian Smith",
+        "Pos": "WR",
+        "Pos Rank": "WR 114",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 298,
+        "Player": "A.J. Dillon",
+        "Pos": "RB",
+        "Pos Rank": "RB 90",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 299,
+        "Player": "Gabe Davis",
+        "Pos": "WR",
+        "Pos Rank": "WR 115",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 300,
+        "Player": "Deshaun Watson",
+        "Pos": "QB",
+        "Pos Rank": "QB 51",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 301,
+        "Player": "Antonio Gibson",
+        "Pos": "RB",
+        "Pos Rank": "RB 91",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 302,
+        "Player": "Emanuel Wilson",
+        "Pos": "RB",
+        "Pos Rank": "RB 92",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 303,
+        "Player": "Nick Nash",
+        "Pos": "WR",
+        "Pos Rank": "WR 116",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 304,
+        "Player": "Taysom Hill",
+        "Pos": "TE",
+        "Pos Rank": "TE 45",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 305,
+        "Player": "Aidan O'Connell",
+        "Pos": "QB",
+        "Pos Rank": "QB 52",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 306,
+        "Player": "Alexander Mattison",
+        "Pos": "RB",
+        "Pos Rank": "RB 93",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 307,
+        "Player": "Hendon Hooker",
+        "Pos": "QB",
+        "Pos Rank": "QB 53",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 308,
+        "Player": "Cooper Rush",
+        "Pos": "QB",
+        "Pos Rank": "QB 54",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 309,
+        "Player": "Tutu Atwell",
+        "Pos": "WR",
+        "Pos Rank": "WR 117",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 310,
+        "Player": "Erick All",
+        "Pos": "TE",
+        "Pos Rank": "TE 46",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 311,
+        "Player": "John Metchie",
+        "Pos": "WR",
+        "Pos Rank": "WR 118",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 312,
+        "Player": "Kimani Vidal",
+        "Pos": "RB",
+        "Pos Rank": "RB 94",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 313,
+        "Player": "Jalen Nailor",
+        "Pos": "WR",
+        "Pos Rank": "WR 119",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 314,
+        "Player": "Jacob Cowing",
+        "Pos": "WR",
+        "Pos Rank": "WR 120",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 315,
+        "Player": "Will Dissly",
+        "Pos": "TE",
+        "Pos Rank": "TE 47",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 316,
+        "Player": "Kenneth Gainwell",
+        "Pos": "RB",
+        "Pos Rank": "RB 95",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 317,
+        "Player": "Javon Baker",
+        "Pos": "WR",
+        "Pos Rank": "WR 121",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 318,
+        "Player": "Jahan Dotson",
+        "Pos": "WR",
+        "Pos Rank": "WR 122",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 319,
+        "Player": "Mike Williams",
+        "Pos": "WR",
+        "Pos Rank": "WR 123",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 320,
+        "Player": "Dawson Knox",
+        "Pos": "TE",
+        "Pos Rank": "TE 48",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 321,
+        "Player": "AJ Barner",
+        "Pos": "TE",
+        "Pos Rank": "TE 49",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 322,
+        "Player": "Parker Washington",
+        "Pos": "WR",
+        "Pos Rank": "WR 124",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 323,
+        "Player": "Trey Lance",
+        "Pos": "QB",
+        "Pos Rank": "QB 55",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 324,
+        "Player": "Jonathan Mingo",
+        "Pos": "WR",
+        "Pos Rank": "WR 125",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 325,
+        "Player": "Jake Browning",
+        "Pos": "QB",
+        "Pos Rank": "QB 56",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 326,
+        "Player": "Riley Leonard",
+        "Pos": "QB",
+        "Pos Rank": "QB 57",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 327,
+        "Player": "Luke Schoonmaker",
+        "Pos": "TE",
+        "Pos Rank": "TE 50",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 328,
+        "Player": "Ray-Ray McCloud",
+        "Pos": "WR",
+        "Pos Rank": "WR 126",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 329,
+        "Player": "Allen Lazard",
+        "Pos": "WR",
+        "Pos Rank": "WR 127",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 330,
+        "Player": "Brandin Cooks",
+        "Pos": "WR",
+        "Pos Rank": "WR 128",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 331,
+        "Player": "Marquez Valdes-Scantling",
+        "Pos": "WR",
+        "Pos Rank": "WR 129",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 332,
+        "Player": "Treylon Burks",
+        "Pos": "WR",
+        "Pos Rank": "WR 130",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 333,
+        "Player": "Curtis Samuel",
+        "Pos": "WR",
+        "Pos Rank": "WR 131",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 334,
+        "Player": "Tyrod Taylor",
+        "Pos": "QB",
+        "Pos Rank": "QB 58",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 335,
+        "Player": "Jacoby Brissett",
+        "Pos": "QB",
+        "Pos Rank": "QB 59",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 336,
+        "Player": "Jimmy Garoppolo",
+        "Pos": "QB",
+        "Pos Rank": "QB 60",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 337,
+        "Player": "Sincere McCormick",
+        "Pos": "RB",
+        "Pos Rank": "RB 96",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 338,
+        "Player": "Devontez Walker",
+        "Pos": "WR",
+        "Pos Rank": "WR 132",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 339,
+        "Player": "Marcus Mariota",
+        "Pos": "QB",
+        "Pos Rank": "QB 61",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 340,
+        "Player": "Isaiah Bond",
+        "Pos": "WR",
+        "Pos Rank": "WR 133",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 341,
+        "Player": "Grant Calcaterra",
+        "Pos": "TE",
+        "Pos Rank": "TE 51",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 342,
+        "Player": "Nick Westbrook-Ikhine",
+        "Pos": "WR",
+        "Pos Rank": "WR 134",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 343,
+        "Player": "Demarcus Robinson",
+        "Pos": "WR",
+        "Pos Rank": "WR 135",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 344,
+        "Player": "Ty Johnson",
+        "Pos": "RB",
+        "Pos Rank": "RB 97",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 345,
+        "Player": "Derek Carr",
+        "Pos": "QB",
+        "Pos Rank": "QB 62",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 346,
+        "Player": "Drew Lock",
+        "Pos": "QB",
+        "Pos Rank": "QB 63",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 347,
+        "Player": "Cam Akers",
+        "Pos": "RB",
+        "Pos Rank": "RB 98",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 348,
+        "Player": "Bub Means",
+        "Pos": "WR",
+        "Pos Rank": "WR 136",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 349,
+        "Player": "Samaje Perine",
+        "Pos": "RB",
+        "Pos Rank": "RB 99",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 350,
+        "Player": "Gardner Minshew",
+        "Pos": "QB",
+        "Pos Rank": "QB 64",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 351,
+        "Player": "Andy Dalton",
+        "Pos": "QB",
+        "Pos Rank": "QB 65",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 352,
+        "Player": "Austin Hooper",
+        "Pos": "TE",
+        "Pos Rank": "TE 52",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 353,
+        "Player": "Darnell Washington",
+        "Pos": "TE",
+        "Pos Rank": "TE 53",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 354,
+        "Player": "Jalin Hyatt",
+        "Pos": "WR",
+        "Pos Rank": "WR 137",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 355,
+        "Player": "Olamide Zaccheaus",
+        "Pos": "WR",
+        "Pos Rank": "WR 138",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 356,
+        "Player": "Chris Rodriguez",
+        "Pos": "RB",
+        "Pos Rank": "RB 100",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 357,
+        "Player": "Stone Smartt",
+        "Pos": "TE",
+        "Pos Rank": "TE 54",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 358,
+        "Player": "Jared Wiley",
+        "Pos": "TE",
+        "Pos Rank": "TE 55",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 359,
+        "Player": "Rasheen Ali",
+        "Pos": "RB",
+        "Pos Rank": "RB 101",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 360,
+        "Player": "KaVontae Turpin",
+        "Pos": "WR",
+        "Pos Rank": "WR 139",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 361,
+        "Player": "Tim Patrick",
+        "Pos": "WR",
+        "Pos Rank": "WR 140",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 362,
+        "Player": "Brenden Rice",
+        "Pos": "WR",
+        "Pos Rank": "WR 141",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 363,
+        "Player": "Tanner McKee",
+        "Pos": "QB",
+        "Pos Rank": "QB 66",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 364,
+        "Player": "Kalel Mullings",
+        "Pos": "RB",
+        "Pos Rank": "RB 102",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 365,
+        "Player": "Joshua Dobbs",
+        "Pos": "QB",
+        "Pos Rank": "QB 67",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 366,
+        "Player": "Tommy Tremble",
+        "Pos": "TE",
+        "Pos Rank": "TE 56",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 367,
+        "Player": "JuJu Smith-Schuster",
+        "Pos": "WR",
+        "Pos Rank": "WR 142",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 368,
+        "Player": "Rondale Moore",
+        "Pos": "WR",
+        "Pos Rank": "WR 143",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 369,
+        "Player": "Jake Bobo",
+        "Pos": "WR",
+        "Pos Rank": "WR 144",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 370,
+        "Player": "Dorian Thompson-Robinson",
+        "Pos": "QB",
+        "Pos Rank": "QB 68",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 371,
+        "Player": "Kendrick Bourne",
+        "Pos": "WR",
+        "Pos Rank": "WR 145",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 372,
+        "Player": "Tyson Bagent",
+        "Pos": "QB",
+        "Pos Rank": "QB 69",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 373,
+        "Player": "Frank Gore",
+        "Pos": "RB",
+        "Pos Rank": "RB 103",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 374,
+        "Player": "Ty Chandler",
+        "Pos": "RB",
+        "Pos Rank": "RB 104",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 375,
+        "Player": "Brevin Jordan",
+        "Pos": "TE",
+        "Pos Rank": "TE 57",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 376,
+        "Player": "Nick Mullens",
+        "Pos": "QB",
+        "Pos Rank": "QB 70",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 377,
+        "Player": "Ezekiel Elliott",
+        "Pos": "RB",
+        "Pos Rank": "RB 105",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 378,
+        "Player": "Sione Vaki",
+        "Pos": "RB",
+        "Pos Rank": "RB 106",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 379,
+        "Player": "Hunter Renfrow",
+        "Pos": "WR",
+        "Pos Rank": "WR 146",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 380,
+        "Player": "Mitchell Trubisky",
+        "Pos": "QB",
+        "Pos Rank": "QB 71",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 381,
+        "Player": "Mack Hollins",
+        "Pos": "WR",
+        "Pos Rank": "WR 147",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 382,
+        "Player": "Jeremy Ruckert",
+        "Pos": "TE",
+        "Pos Rank": "TE 58",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 383,
+        "Player": "Jarrett Stidham",
+        "Pos": "QB",
+        "Pos Rank": "QB 72",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 384,
+        "Player": "Xavier Gipson",
+        "Pos": "WR",
+        "Pos Rank": "WR 148",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 385,
+        "Player": "Deuce Vaughn",
+        "Pos": "RB",
+        "Pos Rank": "RB 107",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 386,
+        "Player": "Jamari Thrash",
+        "Pos": "WR",
+        "Pos Rank": "WR 149",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 387,
+        "Player": "Jamaal Williams",
+        "Pos": "RB",
+        "Pos Rank": "RB 108",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 388,
+        "Player": "Greg Dortch",
+        "Pos": "WR",
+        "Pos Rank": "WR 150",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 389,
+        "Player": "Dylan Laube",
+        "Pos": "RB",
+        "Pos Rank": "RB 109",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 390,
+        "Player": "Dallin Holker",
+        "Pos": "TE",
+        "Pos Rank": "TE 59",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 391,
+        "Player": "Michael Carter",
+        "Pos": "RB",
+        "Pos Rank": "RB 110",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 392,
+        "Player": "Josh Oliver",
+        "Pos": "TE",
+        "Pos Rank": "TE 60",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 393,
+        "Player": "Craig Reynolds",
+        "Pos": "RB",
+        "Pos Rank": "RB 111",
+        "TIER": 11,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
+        "VALUE": 0
+    },
+    {
+        "Rank": 0,
+        "Player": "",
+        "Pos": "",
+        "Pos Rank": "",
+        "TIER": 0,
         "VALUE": 0
     }
 ]
