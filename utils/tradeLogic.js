@@ -26,21 +26,7 @@ export function evaluateTrade(team1Assets, team2Assets, options = {}) {
     const team2Count = team2Assets.length;
     const diff = Math.abs(team1Count - team2Count);
 
-    // 📦 Quantity-for-quality / Roster Clogger Adjustment (3+ extra pieces)
-    if (diff >= 3) {
-        reasons.push('One side is trading 3+ more pieces — potential roster clogger');
-        const cloggerPenalty = 0.1;
-        const adjustmentFactor = 1 - cloggerPenalty * (diff - 2);
-        if (team1Count > team2Count) {
-            team1Total *= adjustmentFactor;
-            reasons.push(`Adjusted Team 1's value by (-${Math.round((1 - adjustmentFactor) * 100)}%).`);
-        } else {
-            team2Total *= adjustmentFactor;
-            reasons.push(`Adjusted Team 2's value by (-${Math.round((1 - adjustmentFactor) * 100)}%).`);
-        }
-    }
-
-    // 🧩 Roster Spot Value Adjustment
+    // 🧩 Roster Spot Value Adjustment helper
     const CURRENT_YEAR = new Date().getFullYear();
     const isActiveRosterAsset = item => {
         if (item.type !== 'Pick') return true;
@@ -54,6 +40,22 @@ export function evaluateTrade(team1Assets, team2Assets, options = {}) {
     const team1PlayerCount = team1Players.length;
     const team2PlayerCount = team2Players.length;
 
+    // 📦 Quantity-for-quality / Roster Clogger Adjustment (3+ extra *players*)
+    const playerDiff = Math.abs(team1PlayerCount - team2PlayerCount);
+    if (playerDiff >= 3) {
+        reasons.push('One side is trading 3+ more players — potential roster clogger');
+        const cloggerPenalty = 0.1;
+        const adjustmentFactor = 1 - cloggerPenalty * (playerDiff - 2);
+        if (team1PlayerCount > team2PlayerCount) {
+            team1Total *= adjustmentFactor;
+            reasons.push(`Adjusted Team 1's value by (-${Math.round((1 - adjustmentFactor) * 100)}%).`);
+        } else {
+            team2Total *= adjustmentFactor;
+            reasons.push(`Adjusted Team 2's value by (-${Math.round((1 - adjustmentFactor) * 100)}%).`);
+        }
+    }
+
+    // 🧩 Roster Spot Value Adjustment
     if (team1PlayerCount !== team2PlayerCount) {
         const extraPlayers = Math.abs(team1PlayerCount - team2PlayerCount);
         const penalty = 1 - penaltyPerSpot * extraPlayers;
@@ -66,6 +68,7 @@ export function evaluateTrade(team1Assets, team2Assets, options = {}) {
             reasons.push(`Team 2 is receiving ${extraPlayers} more players — Roster spot value adjustment: (-${percent}%).`);
         }
     }
+
 
     // 🏈 QB Tax Adjustment
     function hasValuableQB(assets) {
@@ -99,7 +102,7 @@ export function evaluateTrade(team1Assets, team2Assets, options = {}) {
         const tierGap = Math.abs(top1 - top2);
         if (tierGap > 2) {
             const taxRate = 0.1 * (tierGap - 2);
-            reasons.push(`Tier Mismatch: Top asset gap is ${tierGap} tiers - Must be within 2 tiers to avoid tax [10% per each extra tier] -`);
+            reasons.push(`Tier Mismatch: Top asset gap is ${tierGap} tiers - Must be within 2 tiers to avoid tax [10% per each] -`);
             if (top1 < top2) {
                 team2Total *= 1 - taxRate;
                 reasons.push(`Team 2 Adjustment: (-${Math.round(taxRate * 100)}%).`);

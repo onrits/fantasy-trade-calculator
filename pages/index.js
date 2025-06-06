@@ -202,11 +202,14 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.headerTitle}>TI-CALC</h1>
+      <div className={styles.headerContainer}>
+        <h1 className={styles.headerTitle}>TI‑CALC</h1>
+        <p className={styles.tagline}>Your Personal Calculator</p>
+      </div>
 
-      <p className={styles.tagline}>
-        Edit the rankings and tiers to create your own personal calculator.
-      </p> <br />
+
+
+
 
       <div className={styles.authControls} style={{ marginBottom: '1rem' }}>
         {user ? (
@@ -335,6 +338,8 @@ export default function Home() {
                     <ul style={{ marginTop: '0.5rem' }}>
                       {(() => {
                         const valueGap = Math.abs(adjustedTeam1Total - adjustedTeam2Total);
+                        const team1Wins = adjustedTeam1Total > adjustedTeam2Total;
+                        const teamToAddValue = team1Wins ? 'Team 2' : 'Team 1';
 
                         const sortedPickOptions = draftPickValues
                           .map(p => ({
@@ -342,16 +347,19 @@ export default function Home() {
                             value: parseFloat(p.Value),
                           }))
                           .filter(p => !isNaN(p.value))
-                          .sort((a, b) => Math.abs(b.value - valueGap) - Math.abs(a.value - valueGap));
+                          .sort((a, b) => Math.abs(a.value - valueGap) - Math.abs(b.value - valueGap));
 
-                        const closestPick = sortedPickOptions.find(p => Math.abs(p.value - valueGap) < 0.3);
+                        const closestPick = sortedPickOptions.find(p => p.value >= valueGap) || sortedPickOptions[0];
 
                         return (
                           <>
-                            {closestPick && <li>{closestPick.label} ({closestPick.value.toFixed(2)})</li>}
+                            {closestPick && (
+                              <li>{closestPick.label} ({closestPick.value.toFixed(2)})</li>
+                            )}
                           </>
                         );
                       })()}
+
                     </ul>
 
                     <p style={{ marginTop: '0.5rem' }}>
@@ -383,6 +391,7 @@ export default function Home() {
 
         <aside className={styles.rankings}>
           <h2 className={styles.sectionTitle}>Edit Rankings</h2>
+          <p>Drag & drop to create your own rankings to be used in the calculator</p>
 
           {isClient && (
             <>
