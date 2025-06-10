@@ -52,22 +52,22 @@ export default function RankingsTable({ rankings }) {
             </thead>
             <tbody>
                 {sortedRankings.map((player, i) => {
-                    const showTierHeader = player.TIER !== lastTier;
-                    lastTier = player.TIER;
+                    const showTierHeader = player.tier !== lastTier;
+                    lastTier = player.tier;
 
                     return (
                         <React.Fragment key={player.id || i}>
                             {showTierHeader && (
                                 <tr
                                     style={{
-                                        backgroundColor: tierColors[player.TIER] || "#444",
+                                        backgroundColor: tierColors[player.tier] || "#444",
                                         color: "#fff",
                                         fontWeight: "bold",
                                         textAlign: "center",
                                     }}
                                 >
                                     <td colSpan={5} style={{ padding: "8px", border: "1px solid #444" }}>
-                                        {tierNames[player.TIER] || `Tier ${player.TIER}`}
+                                        {tierNames[player.tier] || `Tier ${player.tier}`}
                                     </td>
                                 </tr>
                             )}
@@ -85,18 +85,18 @@ export default function RankingsTable({ rankings }) {
                                     {player.Position}
                                 </td>
                                 <td style={{ padding: "8px", border: "1px solid #444", textAlign: "center" }}>
-                                    {typeof player.VALUE === "number" ? player.VALUE.toFixed(3) : "-"}
+                                    {typeof player.value === "number" ? player.value.toFixed(3) : "-"}
                                 </td>
                                 <td
                                     style={{
                                         padding: "8px",
                                         border: "1px solid #444",
                                         textAlign: "center",
-                                        color: tierColors[player.TIER] || "#eee",
+                                        color: tierColors[player.tier] || "#eee",
                                         fontWeight: "bold",
                                     }}
                                 >
-                                    {player.TIER}
+                                    {player.tier}
                                 </td>
                             </tr>
                         </React.Fragment>

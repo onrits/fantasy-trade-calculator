@@ -32,7 +32,7 @@ export default function SortableItem({ player, id, index }) {
             <div style={{ textAlign: "center" }}>{player.Position}</div>
             <div style={{ textAlign: "center" }}>{player["Pos Rank"]}</div>
             <div style={{ textAlign: "center" }}>
-                {typeof player.VALUE === "number" ? player.VALUE.toFixed(2) : "-"}
+                {typeof player.value === "number" ? player.value.toFixed(2) : "-"}
             </div>
         </div>
     );

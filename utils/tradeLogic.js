@@ -5,7 +5,7 @@ function parseTier(tier) {
 }
 
 function getTierForAsset(asset) {
-    return parseTier(asset.tier || asset.TIER || null);
+    return parseTier(asset.tier || asset.tier || null);
 }
 
 export function evaluateTrade(team1Assets, team2Assets, options = {}) {

@@ -14,6 +14,7 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
+// Tier color and name maps
 const tierColors = {
     1: "#b33a3a",
     2: "#cc7a33",
@@ -46,109 +47,91 @@ const tierNames = {
     13: "Cut Plz - Tier 13",
 };
 
-function getTierColor(tier) {
-    return tierColors[parseInt(tier, 10)] || "#444";
-}
+const getTierColor = (tier) => tierColors[parseInt(tier, 10)] || "#444";
+const getTierName = (tier) => tierNames[parseInt(tier, 10)] || `Tier ${tier}`;
 
-function getTierName(tier) {
-    return tierNames[parseInt(tier, 10)] || `Tier ${tier}`;
-}
-
-// Convert hex color to rgba with opacity
-function hexToRGBA(hex, alpha = 1) {
-    let r = 0,
-        g = 0,
-        b = 0;
-
-    if (hex[0] === "#") {
-        hex = hex.slice(1);
-    }
-
+const hexToRGBA = (hex, alpha = 1) => {
+    let r = 0, g = 0, b = 0;
+    hex = hex.replace("#", "");
     if (hex.length === 3) {
         r = parseInt(hex[0] + hex[0], 16);
         g = parseInt(hex[1] + hex[1], 16);
         b = parseInt(hex[2] + hex[2], 16);
-    } else if (hex.length === 6) {
+    } else {
         r = parseInt(hex.substring(0, 2), 16);
         g = parseInt(hex.substring(2, 4), 16);
         b = parseInt(hex.substring(4, 6), 16);
     }
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-}
+};
 
 function SortableItem({ player, tier }) {
-    const {
-        attributes,
-        listeners,
-        setNodeRef,
-        transform,
-        transition,
-        isDragging,
-    } = useSortable({ id: player.id });
-
+    const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: player.id });
     const tierColor = getTierColor(tier);
 
-    const style = {
-        transform: CSS.Transform.toString(transform),
-        transition,
-        backgroundColor: "#f5ecdf", // cream background
-        color: "#0a0a0a", // dark text
-        padding: "8px 20px",
-        borderRadius: 0,
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        border: `2px solid ${tierColor}`,
-        fontSize: "13px",
-        lineHeight: 1.4,
-        fontFamily: "'Playfair Display', serif",
-        cursor: "grab",
-        userSelect: "none",
-        boxShadow: isDragging ? `0 0 0 3px ${tierColor}` : "none",
-        overflowWrap: "break-word",
-        width: "100%",
-        boxSizing: "border-box",
-    };
-
-    const textStyle = {
-        flex: 1,
-        overflow: "hidden",
-        textOverflow: "ellipsis",
-        whiteSpace: "nowrap",
-        fontWeight: 700,
-        fontFamily: "'Playfair Display', serif",
-        letterSpacing: "0.04em",
-        textTransform: "uppercase",
-        fontSize: "12px",
-    };
-
-    const posStyle = {
-        color: tierColor,
-        marginLeft: 10,
-        fontWeight: 600,
-        fontFamily: "'Montserrat', sans-serif",
-        textTransform: "uppercase",
-        letterSpacing: "0.02em",
-        fontSize: "11px",
-    };
-
-    const valueStyle = {
-        fontVariantNumeric: "tabular-nums",
-        marginLeft: 14,
-        fontWeight: 700,
-        color: tierColor,
-        minWidth: 56,
-        textAlign: "right",
-        fontSize: "12px",
-    };
-
     return (
-        <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-            <div style={textStyle}>
+        <div
+            ref={setNodeRef}
+            style={{
+                transform: CSS.Transform.toString(transform),
+                transition,
+                backgroundColor: "#f5ecdf",
+                color: "#0a0a0a",
+                padding: "8px 20px",
+                borderRadius: 0,
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                border: `2px solid ${tierColor}`,
+                fontSize: "13px",
+                fontFamily: "'Playfair Display', serif",
+                cursor: "grab",
+                userSelect: "none",
+                boxShadow: isDragging ? `0 0 0 3px ${tierColor}` : "none",
+                width: "100%",
+                boxSizing: "border-box",
+            }}
+            {...attributes}
+            {...listeners}
+        >
+            <div
+                style={{
+                    flex: 1,
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    whiteSpace: "nowrap",
+                    fontWeight: 700,
+                    fontFamily: "'Playfair Display', serif",
+                    textTransform: "uppercase",
+                    fontSize: "12px",
+                }}
+            >
                 <strong>{player.Rank}. </strong>
-                {player.Player}{" "}
-                <span style={posStyle}>({player.Pos || player.Position || "?"})</span>
-                <span style={valueStyle}>{player.VALUE.toFixed(2)}</span>
+                {player.Player}
+                <span
+                    style={{
+                        color: tierColor,
+                        marginLeft: 10,
+                        fontWeight: 600,
+                        fontFamily: "'Montserrat', sans-serif",
+                        textTransform: "uppercase",
+                        fontSize: "11px",
+                    }}
+                >
+                    ({player.Pos || player.Position || "?"})
+                </span>
+                <span
+                    style={{
+                        marginLeft: 14,
+                        fontWeight: 700,
+                        color: tierColor,
+                        minWidth: 56,
+                        textAlign: "right",
+                        fontSize: "12px",
+                    }}
+                >
+                    {player.value.toFixed(2)}
+                </span>
             </div>
         </div>
     );
@@ -160,138 +143,102 @@ export default function EditableRankings({ players, onChange }) {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        const tierMap = {};
-        players.forEach((p) => {
-            const tier = p.TIER || 99;
-            if (!tierMap[tier]) tierMap[tier] = [];
-            tierMap[tier].push(p);
+        if (!players || players.length === 0) return;
+        const normalized = players.map(p => ({
+            ...p,
+            id: p.id || p.name || `${p.Player}-${p.Pos || p.position || "??"}`,
+            tier: p.tier ?? p.tier ?? 99,
+            value: p.value ?? p.value ?? 0,
+            Rank: p.Rank ?? p.rank ?? 99,
+        }));
+
+        normalized.sort((a, b) => a.Rank - b.Rank);
+        const grouped = {};
+        normalized.forEach(p => {
+            const t = p.tier;
+            if (!grouped[t]) grouped[t] = [];
+            grouped[t].push(p);
         });
-        for (const tier in tierMap) {
-            tierMap[tier].sort((a, b) => a.Rank - b.Rank);
-        }
-        setTiers(tierMap);
+        setTiers(grouped);
     }, [players]);
 
-    // Detect mobile via window width, update on resize
     useEffect(() => {
-        function handleResize() {
-            setIsMobile(window.innerWidth < 600);
-        }
-        handleResize(); // initial check
+        const handleResize = () => setIsMobile(window.innerWidth < 600);
+        handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const sensors = useSensors(
-        useSensor(PointerSensor, { activationConstraint: { distance: 5 } })
-    );
+    const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 5 } }));
 
-    const findContainer = (id) =>
+    const findTier = (id) =>
         Object.keys(tiers).find((tier) =>
             tiers[tier].some((player) => player.id === id)
         );
 
-    const handleDragStart = (event) => {
-        setActiveId(event.active.id);
-    };
+    const handleDragStart = ({ active }) => setActiveId(active.id);
 
-    const handleDragOver = (event) => {
-        const { active, over } = event;
+    const handleDragOver = ({ active, over }) => {
         if (!over) return;
+        const from = findTier(active.id);
+        const to = findTier(over.id);
+        if (!from || !to || from === to) return;
 
-        const sourceTier = findContainer(active.id);
-        const destTier = findContainer(over.id);
+        const source = [...tiers[from]];
+        const dest = [...tiers[to]];
+        const idx = source.findIndex(p => p.id === active.id);
+        const moved = source[idx];
 
-        if (!sourceTier || !destTier || sourceTier === destTier) return;
+        source.splice(idx, 1);
+        dest.unshift({ ...moved, tier: parseInt(to) });
 
-        const sourceItems = [...tiers[sourceTier]];
-        const destItems = [...tiers[destTier]];
-
-        const activeIndex = sourceItems.findIndex((p) => p.id === active.id);
-        const movedPlayer = sourceItems[activeIndex];
-
-        sourceItems.splice(activeIndex, 1);
-        destItems.splice(0, 0, { ...movedPlayer, TIER: parseInt(destTier) });
-
-        const updated = {
+        setTiers({
             ...tiers,
-            [sourceTier]: sourceItems,
-            [destTier]: destItems,
-        };
-
-        setTiers(updated);
+            [from]: source,
+            [to]: dest,
+        });
     };
 
-    const handleDragEnd = (event) => {
-        const { active, over } = event;
+    const handleDragEnd = ({ active, over }) => {
         setActiveId(null);
         if (!over) return;
 
-        const sourceTier = findContainer(active.id);
-        const destTier = findContainer(over.id);
-        if (!sourceTier || !destTier) return;
+        const from = findTier(active.id);
+        const to = findTier(over.id);
+        if (!from || !to) return;
 
-        if (sourceTier === destTier) {
-            const oldIndex = tiers[sourceTier].findIndex((p) => p.id === active.id);
-            const newIndex = tiers[destTier].findIndex((p) => p.id === over.id);
+        if (from === to) {
+            const reordered = [...tiers[from]];
+            const oldIdx = reordered.findIndex(p => p.id === active.id);
+            const newIdx = reordered.findIndex(p => p.id === over.id);
+            const [moved] = reordered.splice(oldIdx, 1);
 
-            const reordered = [...tiers[sourceTier]];
-            const [moved] = reordered.splice(oldIndex, 1);
-            reordered.splice(newIndex, 0, moved);
-
-            // Update moved player's VALUE based on neighbors for smooth ordering
-            const updatedMoved = { ...moved };
-            if (newIndex === 0) {
-                const nextPlayer = reordered[1];
-                updatedMoved.VALUE = nextPlayer ? nextPlayer.VALUE : moved.VALUE;
-            } else if (newIndex === reordered.length - 1) {
-                const prevPlayer = reordered[newIndex - 1];
-                updatedMoved.VALUE = prevPlayer ? prevPlayer.VALUE : moved.VALUE;
+            let newValue = moved.value;
+            if (newIdx === 0) {
+                newValue = reordered[0]?.value ?? moved.value;
+            } else if (newIdx === reordered.length) {
+                newValue = reordered[newIdx - 1]?.value ?? moved.value;
             } else {
-                const prevPlayer = reordered[newIndex - 1];
-                const nextPlayer = reordered[newIndex + 1];
-                if (prevPlayer && nextPlayer) {
-                    updatedMoved.VALUE = (prevPlayer.VALUE + nextPlayer.VALUE) / 2;
-                } else {
-                    updatedMoved.VALUE = moved.VALUE;
-                }
+                const before = reordered[newIdx - 1];
+                const after = reordered[newIdx];
+                newValue = before && after ? (before.value + after.value) / 2 : moved.value;
             }
-            reordered[newIndex] = updatedMoved;
 
-            const updated = {
-                ...tiers,
-                [sourceTier]: reordered,
-            };
+            reordered.splice(newIdx, 0, { ...moved, value: newValue });
 
+            const updated = { ...tiers, [from]: reordered };
             setTiers(updated);
             onChange(flattenTiers(updated));
         } else {
-            const sourceItems = [...tiers[sourceTier]];
-            const destItems = [...tiers[destTier]];
+            const src = [...tiers[from]];
+            const dst = [...tiers[to]];
+            const idx = src.findIndex(p => p.id === active.id);
+            const moved = src[idx];
 
-            const oldIndex = sourceItems.findIndex((p) => p.id === active.id);
-            const movedPlayer = sourceItems[oldIndex];
+            src.splice(idx, 1);
+            dst.unshift({ ...moved, tier: parseInt(to), value: dst[1]?.value ?? moved.value });
 
-            // When dragging to a new tier, insert at top (index 0)
-            destItems.splice(0, 0, { ...movedPlayer, TIER: parseInt(destTier) });
-            sourceItems.splice(oldIndex, 1);
-
-            // Recalculate VALUE for moved player
-            const updatedMoved = { ...movedPlayer, TIER: parseInt(destTier) };
-            if (destItems.length === 1) {
-                updatedMoved.VALUE = movedPlayer.VALUE;
-            } else {
-                const nextPlayer = destItems[1];
-                updatedMoved.VALUE = nextPlayer ? nextPlayer.VALUE : movedPlayer.VALUE;
-            }
-            destItems[0] = updatedMoved;
-
-            const updated = {
-                ...tiers,
-                [sourceTier]: sourceItems,
-                [destTier]: destItems,
-            };
-
+            const updated = { ...tiers, [from]: src, [to]: dst };
             setTiers(updated);
             onChange(flattenTiers(updated));
         }
@@ -299,25 +246,18 @@ export default function EditableRankings({ players, onChange }) {
 
     const flattenTiers = (tierMap) => {
         const result = [];
-        const sorted = Object.keys(tierMap)
-            .map(Number)
-            .sort((a, b) => a - b);
-        sorted.forEach((tier) => {
-            tierMap[tier].forEach((p) => {
-                result.push({ ...p, Rank: result.length + 1 });
-            });
+        Object.keys(tierMap).sort((a, b) => a - b).forEach(tier => {
+            tierMap[tier].forEach((p) =>
+                result.push({ ...p, Rank: result.length + 1 })
+            );
         });
         return result;
     };
 
     const activePlayer = activeId
-        ? Object.values(tiers)
-            .flat()
-            .find((p) => p.id === activeId)
+        ? Object.values(tiers).flat().find(p => p.id === activeId)
         : null;
 
-    // Responsive styles depend on isMobile:
-    // Adjust container padding, font sizes, gaps, etc.
     const containerStyle = {
         backgroundColor: "#f5ecdf",
         color: "#2e2e2e",
@@ -329,50 +269,7 @@ export default function EditableRankings({ players, onChange }) {
     const tierWrapperStyle = {
         marginBottom: "2rem",
         maxWidth: isMobile ? "100%" : "720px",
-        marginLeft: "auto",
-        marginRight: "auto",
-    };
-
-    const tierHeaderStyle = (tierId) => ({
-        color: getTierColor(tierId),
-        marginBottom: isMobile ? "0.75rem" : "1rem",
-        fontWeight: 900,
-        fontSize: isMobile ? "0.9rem" : "1rem",
-        fontFamily: "'Playfair Display', serif",
-        letterSpacing: "0.1em",
-        textTransform: "uppercase",
-        userSelect: "none",
-        borderBottom: `2px solid ${getTierColor(tierId)}`,
-        paddingBottom: "6px",
-        width: "100%",
-        boxSizing: "border-box",
-    });
-
-    const tierListStyle = (tierId) => ({
-        backgroundColor: hexToRGBA(getTierColor(tierId), 0.1),
-        padding: isMobile ? "12px" : "20px",
-        borderRadius: 0,
-        display: "flex",
-        flexDirection: "column",
-        gap: isMobile ? "8px" : "12px",
-        borderLeft: `4px solid ${getTierColor(tierId)}`,
-        borderRight: "2px solid #333",
-        boxShadow: "none",
-        width: "100%",
-        boxSizing: "border-box",
-    });
-
-    const dragOverlayStyle = {
-        backgroundColor: "#475ee6",
-        color: "#f5ecdf",
-        padding: isMobile ? "8px 12px" : "12px 18px",
-        borderRadius: "10px",
-        boxShadow: "0 6px 14px rgba(71, 94, 230, 0.3)",
-        fontWeight: "900",
-        fontSize: isMobile ? "12px" : "14px",
-        userSelect: "none",
-        fontFamily: "'Montserrat Black', 'Montserrat', sans-serif",
-        whiteSpace: "nowrap",
+        margin: "0 auto",
     };
 
     return (
@@ -388,32 +285,57 @@ export default function EditableRankings({ players, onChange }) {
                     .sort((a, b) => a - b)
                     .map((tierId) => (
                         <div key={tierId} style={tierWrapperStyle}>
-                            <h3 style={tierHeaderStyle(tierId)}>
+                            <h3 style={{
+                                color: getTierColor(tierId),
+                                marginBottom: isMobile ? "0.75rem" : "1rem",
+                                fontWeight: 900,
+                                fontSize: isMobile ? "0.9rem" : "1rem",
+                                fontFamily: "'Playfair Display', serif",
+                                letterSpacing: "0.1em",
+                                textTransform: "uppercase",
+                                userSelect: "none",
+                                borderBottom: `2px solid ${getTierColor(tierId)}`,
+                                paddingBottom: "6px",
+                                width: "100%",
+                            }}>
                                 {getTierName(tierId)}
                             </h3>
                             <SortableContext
-                                items={tiers[tierId].map((p) => p.id)}
+                                items={tiers[tierId]?.map((p) => p.id) || []}
                                 strategy={verticalListSortingStrategy}
                             >
-                                <div style={tierListStyle(tierId)}>
-                                    {tiers[tierId].map((player) => (
-                                        <SortableItem
-                                            key={player.id}
-                                            player={player}
-                                            tier={tierId}
-                                        />
+                                <div style={{
+                                    backgroundColor: hexToRGBA(getTierColor(tierId), 0.1),
+                                    padding: isMobile ? "12px" : "20px",
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: isMobile ? "8px" : "12px",
+                                    borderLeft: `4px solid ${getTierColor(tierId)}`,
+                                    borderRight: "2px solid #333",
+                                    boxSizing: "border-box",
+                                }}>
+                                    {tiers[tierId]?.map((player) => (
+                                        <SortableItem key={player.id} player={player} tier={tierId} />
                                     ))}
                                 </div>
                             </SortableContext>
                         </div>
                     ))}
-
                 <DragOverlay>
                     {activePlayer ? (
-                        <div style={dragOverlayStyle}>
-                            {activePlayer.Rank}. {activePlayer.Player} (
-                            {activePlayer.Position}) -{" "}
-                            {activePlayer.VALUE.toFixed(2)}
+                        <div style={{
+                            backgroundColor: "#475ee6",
+                            color: "#f5ecdf",
+                            padding: isMobile ? "8px 12px" : "12px 18px",
+                            borderRadius: "10px",
+                            boxShadow: "0 6px 14px rgba(71, 94, 230, 0.3)",
+                            fontWeight: "900",
+                            fontSize: isMobile ? "12px" : "14px",
+                            userSelect: "none",
+                            fontFamily: "'Montserrat Black', 'Montserrat', sans-serif",
+                            whiteSpace: "nowrap",
+                        }}>
+                            {activePlayer.Rank}. {activePlayer.Player} ({activePlayer.Position || activePlayer.Pos || "?"}) - {activePlayer.value.toFixed(2)}
                         </div>
                     ) : null}
                 </DragOverlay>

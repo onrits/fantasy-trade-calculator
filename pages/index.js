@@ -8,173 +8,129 @@ import { evaluateTrade } from '../utils/tradeLogic';
 import { useAuth } from '../contexts/AuthContext';
 import { db } from '../utils/firebase';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
-
+import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
+  const { user, loading, signInWithGoogle, logout } = useAuth();
+
   const [players, setPlayers] = useState([]);
+  const [loadedInitialRankings, setLoadedInitialRankings] = useState(false);
   const [team1Assets, setTeam1Assets] = useState([]);
   const [team2Assets, setTeam2Assets] = useState([]);
-  const { user, loading, signInWithGoogle, logout } = useAuth();
   const [isClient, setIsClient] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [showResetMenu, setShowResetMenu] = useState(false);
 
+  useEffect(() => setIsClient(true), []);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  const normalizePlayers = (data) =>
+    data.map((p, index) => ({
+      ...p,
+      id: `player-${p.Player || p.name}`,
+      name: p.Player || p.name,
+      value: Number(p.value ?? p.value ?? 0),
+      type: 'Player',
+      position: p.Position || p.position || '',
+      tier: p.tier ?? p.tier ?? null,
+      rank: index + 1,
+    }));
 
-  // Load user rankings or default players on mount or user change
   useEffect(() => {
     const loadUserRankings = async () => {
       if (user) {
-        const docRef = doc(db, 'userRankings', user.uid);
-        const docSnap = await getDoc(docRef);
-
-        if (docSnap.exists()) {
-          setPlayers(docSnap.data().players);
-          return;
+        try {
+          const docSnap = await getDoc(doc(db, 'userRankings', user.uid));
+          if (docSnap.exists()) {
+            setPlayers(docSnap.data().players || []);
+            setLoadedInitialRankings(true);
+            return;
+          }
+        } catch (err) {
+          console.error('Failed to load rankings:', err);
         }
       }
-
-      // Fallback: use default player values for guests or first-time users
-      const normalizedPlayers = playerValues.map(p => ({
-        ...p,
-        id: `player-${p.Player}`,
-        name: p.Player,
-        value: p.VALUE || 0,
-        type: 'Player',
-        position: p.Position || '',
-      }));
-      setPlayers(normalizedPlayers);
+      setPlayers(normalizePlayers(playerValues));
+      setLoadedInitialRankings(true);
     };
 
     loadUserRankings();
   }, [user]);
 
-  // === Remove auto-save effect ===
-  // useEffect(() => {
-  //   if (!user || players.length === 0) return;
-  //
-  //   const saveRankings = async () => {
-  //     const docRef = doc(db, 'userRankings', user.uid);
-  //     await setDoc(docRef, { players });
-  //   };
-  //
-  //   saveRankings();
-  // }, [players, user]);
-
-  // Manual save handler
   const handleSave = async () => {
     if (!user) return;
     setIsSaving(true);
     setSaveSuccess(false);
     try {
-      const docRef = doc(db, 'userRankings', user.uid);
-      await setDoc(docRef, { players });
+      await setDoc(doc(db, 'userRankings', user.uid), { players });
       setSaveSuccess(true);
-    } catch (error) {
-      console.error('Error saving rankings:', error);
+    } catch (err) {
+      console.error('Save failed:', err);
     } finally {
       setIsSaving(false);
-      setTimeout(() => setSaveSuccess(false), 2000); // hide success message after 2 seconds
-    }
-  };
-
-  const handleResetRankings = async () => {
-    if (user) {
-      try {
-        const docRef = doc(db, 'userRankings', user.uid);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          setPlayers(docSnap.data().players);
-        } else {
-          // No saved data, fallback to default
-          setPlayers(playerValues.map(p => ({
-            ...p,
-            id: `player-${p.Player}`,
-            name: p.Player,
-            value: p.VALUE || 0,
-            type: 'Player',
-            position: p.Position || '',
-          })));
-        }
-      } catch (error) {
-        console.error('Error resetting rankings:', error);
-      }
-    } else {
-      // Guest fallback: reset to default rankings
-      setPlayers(playerValues.map(p => ({
-        ...p,
-        id: `player-${p.Player}`,
-        name: p.Player,
-        value: p.VALUE || 0,
-        type: 'Player',
-        position: p.Position || '',
-      })));
+      setTimeout(() => setSaveSuccess(false), 2000);
     }
   };
 
   const handleResetToDefault = () => {
-    const defaultPlayers = playerValues.map(p => ({
-      ...p,
-      id: `player-${p.Player}`,
-      name: p.Player,
-      value: p.VALUE || 0,
-      type: 'Player',
-      position: p.Position || '',
-      tier: p.TIER || p.tier || null,
-    }));
-    setPlayers(defaultPlayers);
+    setPlayers(normalizePlayers(playerValues));
   };
 
+  const handleResetRankings = async () => {
+    try {
+      if (!user) return handleResetToDefault();
+      const docSnap = await getDoc(doc(db, 'userRankings', user.uid));
+      if (docSnap.exists()) {
+        setPlayers(docSnap.data().players || []);
+      } else {
+        handleResetToDefault();
+      }
+    } catch (err) {
+      console.error('Reset failed:', err);
+    }
+  };
 
   const draftPickValueMap = useMemo(() => {
-    return draftPickValues.reduce((acc, pick) => {
-      if (pick['Draft Pick']) acc[pick['Draft Pick']] = pick.Value || 0;
+    return draftPickValues.reduce((acc, p) => {
+      if (p['Draft Pick']) acc[p['Draft Pick']] = Number(p.Value || 0);
       return acc;
     }, {});
   }, []);
 
   const allItems = useMemo(() => {
-    const normalizedPicks = draftPickValues
-      .filter(p => p["Draft Pick"])
-      .map(p => ({
-        id: `pick-${p["Draft Pick"]}`,
-        label: p["Draft Pick"],
-        value: draftPickValueMap[p["Draft Pick"]] || 0,
-        type: 'Pick',
-        tier: p.TIER ?? p.tier ?? null,
-        season: parseInt(p["Draft Pick"]?.split(' ')[0]) || null,
-      }));
+    const normalizedPicks = draftPickValues.map(p => ({
+      id: `pick-${p['Draft Pick']}`,
+      label: p['Draft Pick'],
+      value: draftPickValueMap[p['Draft Pick']] || 0,
+      type: 'Pick',
+      tier: p.tier || p.tier || null,
+      season: parseInt(p['Draft Pick']?.split(' ')[0]) || null,
+    }));
 
-    const normalizedPlayers = players.map(p => ({
+    const normalizedPlayers = players.map((p, index) => ({
       ...p,
-      id: `player-${p.Player}`,
-      name: p.Player,
-      value: p.VALUE || 0,
+      id: `player-${p.name}`,
+      name: p.name,
+      value: Number(p.value || 0),
       type: 'Player',
-      position: p.Position || '',
-      tier: p.TIER || p.tier || null,
+      position: p.position || '',
+      tier: p.tier || null,
+      rank: index + 1,
     }));
 
     return [...normalizedPlayers, ...normalizedPicks];
   }, [players, draftPickValueMap]);
 
-  function addToTeam1(item) {
-    setTeam1Assets(prev => (prev.find(i => i.id === item.id) ? prev : [...prev, item]));
-  }
-  function addToTeam2(item) {
-    setTeam2Assets(prev => (prev.find(i => i.id === item.id) ? prev : [...prev, item]));
-  }
-  function removeFromTeam1(id) {
-    setTeam1Assets(prev => prev.filter(i => i.id !== id));
-  }
-  function removeFromTeam2(id) {
-    setTeam2Assets(prev => prev.filter(i => i.id !== id));
-  }
+  const addToTeam = (teamSetter, assets) => (item) => {
+    if (!assets.find(i => i.id === item.id)) {
+      teamSetter([...assets, item]);
+    }
+  };
+
+  const removeFromTeam = (teamSetter, assets) => (id) => {
+    teamSetter(assets.filter(i => i.id !== id));
+  };
 
   const {
     rawTeam1Total,
@@ -191,7 +147,6 @@ export default function Home() {
     allItems,
   });
 
-
   if (loading) {
     return (
       <div className={styles.container}>
@@ -202,126 +157,90 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.headerContainer}>
+      {/* Navigation Menu */}
+      <nav style={{ marginBottom: '2rem' }}>
+        <ul style={{ display: 'flex', listStyle: 'none', padding: 0, gap: '1.5rem' }}>
+          <li>
+            <Link href="/" style={{ fontWeight: 'bold', textDecoration: 'underline' }}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/rankings">Rankings</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <header className={styles.headerContainer}>
         <h1 className={styles.headerTitle}>TI‑CALC</h1>
-        <p className={styles.tagline}>Your Personal Calculator</p>
-      </div>
+        <p className={styles.tagline}>Your Personal Trade Calculator</p>
+      </header>
 
-
-
-
-
-      <div className={styles.authControls} style={{ marginBottom: '1rem' }}>
+      <div className={styles.authControls}>
         {user ? (
           <>
             <span>Signed in as <strong>{user.displayName || user.email}</strong></span>
-            <button
-              onClick={logout}
-              className={styles.buttonSecondary}
-              style={{ marginLeft: '1rem' }}
-            >
-              Sign Out
-            </button>
+            <button onClick={logout} className={styles.buttonSecondary}>Sign Out</button>
           </>
         ) : (
           <button onClick={signInWithGoogle} className={styles.buttonPrimary}>
             Sign In with Google
           </button>
         )}
-
       </div>
 
-      <div className={styles.mainLayout}>
-        <div className={styles.leftColumn}>
-          <section className={styles.calculator}>
-            <div className={styles.teamSection}>
-              {/* TEAM 1 */}
-              <div className={`${styles.teamBox} ${styles.team1Box}`}>
-                <h2 className={styles.teamLabel}>Team 1</h2>
-                <TradeInput allItems={allItems} selectedAssets={team1Assets} onSelect={addToTeam1} />
-                <ul className={styles.assetList}>
-                  {team1Assets.map(asset => (
-                    <li key={asset.id} className={`${styles.assetItem} ${styles.team1}`}>
-                      <span>
-                        {(asset.name || asset.label)}{' '}
-                        ({asset.position || asset.Pos || asset.Position || asset.type || 'Pick'}, Tier {parseInt(asset.tier || asset.TIER || '?')})
-                        {' '} - {asset.value?.toFixed(2) || '0.00'}
-                      </span>
-                      <button
-                        onClick={() => removeFromTeam1(asset.id)}
-                        className={`${styles.removeButton} ${styles.team1}`}
-                        aria-label={`Remove ${asset.name || asset.label} from Team 1`}
-                      >
-                        ✕
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-                <div className={styles.teamTotals}>
-                  <br /> <strong>Total:</strong> {rawTeam1Total.toFixed(3)}<br />
-                  <strong>Adjusted:</strong> {adjustedTeam1Total.toFixed(3)}
+      <main className={styles.mainLayout}>
+        <section className={styles.leftColumn}>
+          <div className={styles.calculator}>
+            {[1, 2].map(team => {
+              const assets = team === 1 ? team1Assets : team2Assets;
+              const setAssets = team === 1 ? setTeam1Assets : setTeam2Assets;
+              const label = `Team ${team}`;
+              const teamClass = styles[`team${team}`];
+
+              return (
+                <div key={team} className={`${styles.teamBox} ${styles[`team${team}Box`]}`}>
+                  <h2 className={styles.teamLabel}>{label}</h2>
+                  <TradeInput
+                    allItems={allItems}
+                    selectedAssets={assets || []}
+                    onSelect={addToTeam(setAssets, assets || [])}
+                  />
+                  <ul className={styles.assetList}>
+                    {(assets || []).map(asset => (
+                      <li key={asset.id} className={`${styles.assetItem} ${teamClass}`}>
+                        <span>
+                          {asset.name || asset.label} ({asset.position || asset.type}, Tier {asset.tier ?? '?'}) – {asset.value?.toFixed(2)}
+                        </span>
+                        <button
+                          onClick={() => removeFromTeam(setAssets, assets || [])(asset.id)}
+                          className={`${styles.removeButton} ${teamClass}`}
+                        >
+                          ✕
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className={styles.teamTotals}>
+                    <br /><strong>Total:</strong> {team === 1 ? rawTeam1Total : rawTeam2Total}<br />
+                    <strong>Adjusted:</strong> {team === 1 ? adjustedTeam1Total : adjustedTeam2Total}
+                  </div>
                 </div>
-              </div>
+              );
+            })}
 
-              {/* TEAM 2 */}
-              <div className={`${styles.teamBox} ${styles.team2Box}`}>
-                <h2 className={styles.teamLabel}>Team 2</h2>
-                <TradeInput allItems={allItems} selectedAssets={team2Assets} onSelect={addToTeam2} />
-                <ul className={styles.assetList}>
-                  {team2Assets.map(asset => (
-                    <li key={asset.id} className={`${styles.assetItem} ${styles.team2}`}>
-                      <span>
-                        {(asset.name || asset.label)}{' '}
-                        ({asset.position || asset.Pos || asset.Position || asset.type || 'Pick'}, Tier {asset.tier ?? '?'})
-                        {' '} - {asset.value?.toFixed(2) || '0.00'}
-                      </span>
-                      <button
-                        onClick={() => removeFromTeam2(asset.id)}
-                        className={`${styles.removeButton} ${styles.team2}`}
-                        aria-label={`Remove ${asset.name || asset.label} from Team 2`}
-                      >
-                        ✕
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-                <div className={styles.teamTotals}>
-                  <br /> <strong>Total:</strong> {rawTeam2Total.toFixed(3)}<br />
-                  <strong>Adjusted:</strong> {adjustedTeam2Total.toFixed(3)}
-                </div>
-              </div>
-            </div>
-
-            {/* TRADE BAR */}
-
-            {/* TRADE BAR */}
-            {(team1Assets.length > 0 || team2Assets.length > 0) && (
+            {(team1Assets.length || team2Assets.length) > 0 && (
               <div className={styles.tradeComparisonContainer}>
                 <div className={styles.tradeComparisonBarWrapper}>
                   <div className={styles.bufferBar} />
-                  <div
-                    className={styles.evenZone}
-                    style={{ left: `${50 - 7.5}%`, width: `15%` }}
-                  />
+                  <div className={styles.evenZone} style={{ left: '42.5%', width: '15%' }} />
                   <div className={styles.foregroundBar}>
                     {isEvenTrade ? (
-                      <div
-                        className={styles.teamEvenBar}
-                        style={{ width: '15%', left: '42.5%', position: 'absolute' }}
-                        title={`Even Trade: ${adjustedTeam1Total.toFixed(2)} / ${adjustedTeam2Total.toFixed(2)}`}
-                      />
+                      <div className={styles.teamEvenBar} style={{ width: '15%', left: '42.5%' }} />
                     ) : (
                       <>
-                        <div
-                          className={styles.team1Bar}
-                          style={{ width: `${team1Percent}%` }}
-                          title={`Team 1: ${adjustedTeam1Total.toFixed(2)}`}
-                        />
-                        <div
-                          className={styles.team2Bar}
-                          style={{ width: `${team2Percent}%` }}
-                          title={`Team 2: ${adjustedTeam2Total.toFixed(2)}`}
-                        />
+                        <div className={styles.team1Bar} style={{ width: `${team1Percent}%` }} />
+                        <div className={styles.team2Bar} style={{ width: `${team2Percent}%` }} />
                       </>
                     )}
                   </div>
@@ -329,42 +248,22 @@ export default function Home() {
                 </div>
 
                 <div className={styles.tradeComparisonLabel}>{winner}</div>
+
                 {!isEvenTrade && (
-                  <div className={styles.reasonBox} style={{ marginTop: '1rem' }}>
+                  <div className={styles.reasonBox}>
                     <strong>{winner} by {Math.abs(adjustedTeam1Total - adjustedTeam2Total).toFixed(2)} First Round Picks</strong>
-                    <p style={{ marginTop: '0.5rem' }}>
-                      That's roughly equivalent to:
-                    </p>
-                    <ul style={{ marginTop: '0.5rem' }}>
+                    <p>That’s roughly equivalent to:</p>
+                    <ul>
                       {(() => {
                         const valueGap = Math.abs(adjustedTeam1Total - adjustedTeam2Total);
-                        const team1Wins = adjustedTeam1Total > adjustedTeam2Total;
-                        const teamToAddValue = team1Wins ? 'Team 2' : 'Team 1';
-
-                        const sortedPickOptions = draftPickValues
-                          .map(p => ({
-                            label: p["Draft Pick"],
-                            value: parseFloat(p.Value),
-                          }))
+                        const closest = draftPickValues
+                          .map(p => ({ label: p['Draft Pick'], value: parseFloat(p.Value) }))
                           .filter(p => !isNaN(p.value))
-                          .sort((a, b) => Math.abs(a.value - valueGap) - Math.abs(b.value - valueGap));
-
-                        const closestPick = sortedPickOptions.find(p => p.value >= valueGap) || sortedPickOptions[0];
-
-                        return (
-                          <>
-                            {closestPick && (
-                              <li>{closestPick.label} ({closestPick.value.toFixed(2)})</li>
-                            )}
-                          </>
-                        );
+                          .sort((a, b) => Math.abs(a.value - valueGap) - Math.abs(b.value - valueGap))[0];
+                        return closest ? <li>{closest.label} ({closest.value.toFixed(2)})</li> : null;
                       })()}
-
                     </ul>
-
-                    <p style={{ marginTop: '0.5rem' }}>
-                      Consider adding a draft pick or a player worth <strong>{Math.abs(adjustedTeam1Total - adjustedTeam2Total).toFixed(2)}</strong> to even things out.
-                    </p>
+                    <p>Consider adding a player or pick worth <strong>{Math.abs(adjustedTeam1Total - adjustedTeam2Total).toFixed(2)}</strong>.</p>
                   </div>
                 )}
 
@@ -380,86 +279,59 @@ export default function Home() {
                 )}
               </div>
             )}
+          </div>
 
-          </section>
-
-
-          <section className={styles.legend}>
-            <Legend />
-          </section>
-        </div>
+          <Legend />
+        </section>
 
         <aside className={styles.rankings}>
           <h2 className={styles.sectionTitle}>Edit Rankings</h2>
-          <p>Drag & drop to create your own rankings to be used in the calculator</p>
 
-          {isClient && (
+          {/* More visible generation prompt */}
+          <p style={{ fontWeight: '600', marginBottom: '0.25rem' }}>
+            Quickly generate new rankings based on your preferences:{' '}
+            <Link
+              href="/rankings"
+              style={{
+                backgroundColor: '#0070f3',
+                color: 'white',
+                padding: '6px 12px',
+                borderRadius: '4px',
+                textDecoration: 'none',
+                fontWeight: '600',
+                cursor: 'pointer',
+                display: 'inline-block',
+              }}
+            >
+              Generate Rankings &raquo;
+            </Link>
+          </p>
+
+          {/* Follow-up about customizing */}
+          <p style={{ fontStyle: 'italic', color: '#aaa', marginTop: 0, marginBottom: '1rem' }}>
+            Then fine-tune by dragging and dropping players to your liking.
+          </p>
+
+          {isClient && loadedInitialRankings && (
             <>
               {user ? (
-                <div style={{ display: 'flex', gap: '4%', marginBottom: '1rem' }}>
-                  {/* Save Rankings Button */}
-                  <button
-                    className={styles.buttonPrimary}
-                    onClick={handleSave}
-                    style={{ flex: 1 }}
-                  >
+                <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+                  <button className={styles.buttonPrimary} onClick={handleSave}>
                     {isSaving ? 'Saving...' : saveSuccess ? 'Saved!' : 'Save Rankings'}
                   </button>
-
-                  {/* Reset Dropdown Button */}
-                  <div style={{ position: 'relative', flex: 1 }}>
+                  <div style={{ position: 'relative' }}>
                     <button
                       className={styles.buttonSecondary}
                       onClick={() => setShowResetMenu(prev => !prev)}
-                      style={{ width: '100%' }}
                     >
                       Reset ▼
                     </button>
-
                     {showResetMenu && (
-                      <div
-                        style={{
-                          position: 'absolute',
-                          top: '100%',
-                          left: 0,
-                          width: '100%',
-                          backgroundColor: '#222',
-                          border: '1px solid #444',
-                          zIndex: 10,
-                        }}
-                      >
-                        <button
-                          onClick={() => {
-                            handleResetRankings();
-                            setShowResetMenu(false);
-                          }}
-                          style={{
-                            width: '100%',
-                            padding: '0.5rem',
-                            textAlign: 'left',
-                            color: '#eee',
-                            background: 'none',
-                            border: 'none',
-                            cursor: 'pointer',
-                          }}
-                        >
+                      <div className={styles.resetMenu}>
+                        <button onClick={() => { handleResetRankings(); setShowResetMenu(false); }}>
                           Reset to Last Save
                         </button>
-                        <button
-                          onClick={() => {
-                            handleResetToDefault();
-                            setShowResetMenu(false);
-                          }}
-                          style={{
-                            width: '100%',
-                            padding: '0.5rem',
-                            textAlign: 'left',
-                            color: '#eee',
-                            background: 'none',
-                            border: 'none',
-                            cursor: 'pointer',
-                          }}
-                        >
+                        <button onClick={() => { handleResetToDefault(); setShowResetMenu(false); }}>
                           Reset to Default
                         </button>
                       </div>
@@ -467,20 +339,15 @@ export default function Home() {
                   </div>
                 </div>
               ) : (
-                <p style={{ color: '#aaa', fontStyle: 'italic', marginBottom: '1rem' }}>
-                  Sign in to save your rankings.
-                </p>
+                <p style={{ color: '#aaa', fontStyle: 'italic' }}>Sign in to save your rankings.</p>
               )}
-
-
-
               <EditableRankings players={players} onChange={setPlayers} />
             </>
           )}
         </aside>
 
 
-      </div>
+      </main>
     </div>
   );
 }
