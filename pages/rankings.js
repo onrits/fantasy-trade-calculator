@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import EditableRankings from '../components/EditableRankings';
 import EasySetup from '../components/EasySetup';
-import ValueTunerPopup from '../components/ValueTunerPopup';  // <-- import your popup
+import ValueTunerPopup from '../components/ValueTunerPopup';
 import playerValues from '../data/playerValues.json';
 import { useAuth } from '../contexts/AuthContext';
 import { db } from '../utils/firebase';
@@ -94,6 +94,18 @@ export default function Rankings() {
     // NEW STATE: show/hide the ValueTunerPopup modal
     const [showValueTuner, setShowValueTuner] = useState(false);
 
+    // Initialize tunedPlayers, seenPlayers, adjustments based on players
+    const [tunedPlayers, setTunedPlayers] = useState([]);
+    const [seenPlayers, setSeenPlayers] = useState([]);
+    const [adjustments, setAdjustments] = useState([]);
+
+    // Sync tunedPlayers, seenPlayers, and adjustments when players change
+    useEffect(() => {
+        setTunedPlayers(players.map(p => ({ ...p })));
+        setSeenPlayers(players.map(() => false));
+        setAdjustments(players.map(() => null));
+    }, [players]);
+
     // Load saved rankings from Firestore on user or setupDone change
     useEffect(() => {
         if (user && !setupDone) {
@@ -148,7 +160,6 @@ export default function Rankings() {
     };
 
     // Generate rankings based on sliders/weights from EasySetup
-    // NO confirmDiscard here — always generate fresh rankings immediately
     const generateBaseRankings = async (weights) => {
         console.log('Generating rankings with weights:', weights);
 
@@ -199,7 +210,7 @@ export default function Rankings() {
                 ...player,
                 tier,
                 value,
-                Rank: rank,  // assign rank here
+                Rank: rank,
             };
         });
 
@@ -208,7 +219,6 @@ export default function Rankings() {
             try {
                 const docRef = doc(db, 'userRankings', user.uid);
 
-                // Clean old keys tier and value before saving
                 const playersToSave = basePlayers.map(p => {
                     const { tier, value, ...rest } = p;
                     return {
@@ -227,9 +237,9 @@ export default function Rankings() {
 
         setPlayers(basePlayers);
         setSetupDone(true);
-        setUnsavedChanges(false); // fresh generate = no unsaved changes
-        setShowValueTuner(true);
+        setUnsavedChanges(false);
 
+        setShowValueTuner(true);
     };
 
     // Save current rankings to Firestore
@@ -240,20 +250,18 @@ export default function Rankings() {
         try {
             const docRef = doc(db, 'userRankings', user.uid);
 
-            // Update ranks based on current order
             const playersToSave = players.map((p, index) => {
                 const { tier, value, ...rest } = p;
                 return {
                     ...rest,
                     tier: p.tier,
                     value: p.value,
-                    Rank: index + 1,  // update Rank to current position
+                    Rank: index + 1,
                 };
             });
 
             await setDoc(docRef, { players: playersToSave });
 
-            // Also update local state with new ranks to keep UI consistent
             setPlayers(playersToSave);
 
             setSaveSuccess(true);
@@ -266,7 +274,6 @@ export default function Rankings() {
         }
     };
 
-
     // Reset rankings to last saved state in Firestore
     const handleResetRankings = async () => {
         if (!confirmDiscardChanges()) return;
@@ -278,7 +285,6 @@ export default function Rankings() {
                 if (docSnap.exists()) {
                     const loadedPlayers = docSnap.data().players;
 
-                    // Normalize casing and fix ranks on reset too
                     const normalizedPlayers = loadedPlayers.map((p, idx) => ({
                         ...p,
                         tier: p.tier ?? 11,
@@ -336,7 +342,6 @@ export default function Rankings() {
         setUnsavedChanges(true);
         setShowValueTuner(false);
     };
-
 
     return (
         <div className={styles.container}>
@@ -463,7 +468,6 @@ export default function Rankings() {
                                 </div>
                             </div>
 
-                            {/* Unsaved changes notice */}
                             {unsavedChanges && (
                                 <p style={{ color: '#f39c12', fontStyle: 'italic', marginBottom: '1rem' }}>
                                     You have unsaved changes. Don’t forget to save!
@@ -478,7 +482,6 @@ export default function Rankings() {
 
                     <h2 className={styles.sectionTitle}>Your Rankings</h2>
 
-                    {/* RENDER PLAYERS USING EditableRankings STYLE */}
                     {players.length === 0 ? (
                         <p>No rankings yet. Generate or import rankings.</p>
                     ) : (
@@ -487,10 +490,15 @@ export default function Rankings() {
                 </>
             )}
 
-            {/* RENDER ValueTunerPopup MODAL */}
+            {/* Render ValueTunerPopup modal */}
             {showValueTuner && (
                 <ValueTunerPopup
-                    players={players}
+                    tunedPlayers={tunedPlayers}
+                    setTunedPlayers={setTunedPlayers}
+                    seenPlayers={seenPlayers}
+                    setSeenPlayers={setSeenPlayers}
+                    adjustments={adjustments}
+                    setAdjustments={setAdjustments}
                     onClose={() => setShowValueTuner(false)}
                     onSave={handleValueTunerSave}
                 />

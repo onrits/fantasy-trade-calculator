@@ -1,94 +1,100 @@
-// /components/ValueTunerPopup.js
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from '../styles/ValueTunerPopup.module.css';
 
-// Tier info lookup by tier number
 const TIER_INFO = {
-    1: { label: 'Prometheus', valueRange: '4+ 1sts', description: 'Are they are worth 4+ First Round Picks?' },
-    2: { label: 'Franchise Altering', valueRange: '3+ 1sts', description: 'Are they are worth 3+ First Round Picks?' },
-    3: { label: 'Cornerstones', valueRange: '2-3 1sts', description: 'Are they are worth 2-3 First Round Picks?' },
-    4: { label: 'Portfolio Pillars', valueRange: '2+ 1sts', description: 'Are they are worth 2+ First Round Picks?' },
-    5: { label: 'Hopeful Elites', valueRange: '1-2 1sts', description: 'Are they are worth 1-2 First Round Picks?' },
-    6: { label: 'Kind of Exciting', valueRange: '1st+', description: 'Are they are worth a bit more than a First Round Pick?' },
-    7: { label: 'Solid Pieces', valueRange: 'Late 1st', description: 'Are they are worth about a First Round Pick?' },
-    8: { label: 'Bridge Players', valueRange: 'Early 2nd', description: 'Are they are worth an Early 2nd Round Pick?' },
-    9: { label: 'Rentals', valueRange: 'Mid 2nd', description: 'Are they are worth a Mid 2nd Round Pick?' },
-    10: { label: 'Bench Fodder', valueRange: 'Mid 3rd', description: 'Are they are worth a Mid 3rd Round Pick?' },
-    11: { label: 'Roster Cloggers', valueRange: 'Mid 4th', description: 'Are they are worth a 4th Round Pick' },
+    1: { label: 'Prometheus', valueRange: '4+ 1sts', description: 'Are they worth 4+ First Round Picks?' },
+    2: { label: 'Franchise Altering', valueRange: '3+ 1sts', description: 'Are they worth 3+ First Round Picks?' },
+    3: { label: 'Cornerstones', valueRange: '2-3 1sts', description: 'Are they worth 2-3 First Round Picks?' },
+    4: { label: 'Portfolio Pillars', valueRange: '2+ 1sts', description: 'Are they worth 2+ First Round Picks?' },
+    5: { label: 'Hopeful Elites', valueRange: '1-2 1sts', description: 'Are they worth 1-2 First Round Picks?' },
+    6: { label: 'Kind of Exciting', valueRange: '1st+', description: 'Are they worth a bit more than a First Round Pick?' },
+    7: { label: 'Solid Pieces', valueRange: 'Late 1st', description: 'Are they worth about a First Round Pick?' },
+    8: { label: 'Bridge Players', valueRange: 'Early 2nd', description: 'Are they worth an Early 2nd Round Pick?' },
+    9: { label: 'Rentals', valueRange: 'Mid 2nd', description: 'Are they worth a Mid 2nd Round Pick?' },
+    10: { label: 'Bench Fodder', valueRange: 'Mid 3rd', description: 'Are they worth a Mid 3rd Round Pick?' },
+    11: { label: 'Roster Cloggers', valueRange: 'Mid 4th', description: 'Are they worth a 4th Round Pick' },
 };
-
-
 
 const MIN_TIER = 1;
 const MAX_TIER = 11;
 
-// Map tier adjustment choice to tier delta
 const ADJUSTMENTS = {
-    'wayLower': 2,
-    'lower': 1,
-    'aboutRight': 0,
-    'higher': -1,
-    'wayHigher': -2,
+    wayLower: 2,
+    lower: 1,
+    aboutRight: 0,
+    higher: -1,
+    wayHigher: -2,
 };
 
-export default function ValueTunerPopup({ players, onClose, onSave }) {
-
+export default function ValueTunerPopup({
+    tunedPlayers,
+    setTunedPlayers,
+    seenPlayers,
+    setSeenPlayers,
+    adjustments,
+    setAdjustments,
+    onClose,
+    onSave,
+}) {
+    const [skipAboutRights, setSkipAboutRights] = useState(true);
     const [currentIndex, setCurrentIndex] = useState(0);
-    // Copy players to local state for editing
-    const [tunedPlayers, setTunedPlayers] = useState(() =>
-        players.map(p => ({ ...p })) // shallow copy to avoid mutating props
-    );
-    // Track user selections per player, default to 'aboutRight'
-    const [adjustments, setAdjustments] = useState(() =>
-        players.map(() => 'aboutRight')
-    );
 
-    if (!players || players.length === 0) return null;
+    const hasInitialized = useRef(false);
+
+    // Load saved adjustments and seenPlayers from localStorage once on mount
+    useEffect(() => {
+        if (hasInitialized.current) return;
+
+        try {
+            const savedAdjustments = JSON.parse(localStorage.getItem('adjustments') || '[]');
+            const savedSeenPlayers = JSON.parse(localStorage.getItem('seenPlayers') || '[]');
+
+            if (savedAdjustments.length === tunedPlayers.length && savedSeenPlayers.length === tunedPlayers.length) {
+                setAdjustments(savedAdjustments);
+                setSeenPlayers(savedSeenPlayers);
+
+                const firstIndex = savedAdjustments.findIndex(
+                    (adj, i) => !(adj === 'aboutRight' && savedSeenPlayers[i])
+                );
+
+                setCurrentIndex(firstIndex === -1 ? 0 : firstIndex);
+            } else {
+                setAdjustments(Array(tunedPlayers.length).fill(null));
+                setSeenPlayers(Array(tunedPlayers.length).fill(false));
+                setCurrentIndex(0);
+            }
+        } catch (e) {
+            setAdjustments(Array(tunedPlayers.length).fill(null));
+            setSeenPlayers(Array(tunedPlayers.length).fill(false));
+            setCurrentIndex(0);
+        }
+
+        hasInitialized.current = true;
+    }, [tunedPlayers, setAdjustments, setSeenPlayers]);
+
+    if (!tunedPlayers || tunedPlayers.length === 0) return null;
 
     const currentPlayer = tunedPlayers[currentIndex];
     const currentAdjustment = adjustments[currentIndex];
 
-    // Clamp tier to valid range and update value to midpoint of tier range (simplified)
-    function getTierValue(tier) {
-        // Approximate value per tier midpoint:
-        // Using average of the ranges from your tier table
-        const tierMidpoints = {
-            1: 4.2,
-            2: 3.65,
-            3: 3.0,
-            4: 2.415,
-            5: 1.915,
-            6: 1.5,
-            7: 1.165,
-            8: 0.83,
-            9: 0.495,
-            10: 0.21,
-            11: 0.05,
-        };
-        return tierMidpoints[tier] || 0;
-    }
+    const tierMidpoints = {
+        1: 4.2, 2: 3.65, 3: 3.0, 4: 2.415, 5: 1.915, 6: 1.5,
+        7: 1.165, 8: 0.83, 9: 0.495, 10: 0.21, 11: 0.05,
+    };
 
-    function handleAdjustmentChange(e) {
-        const choice = e.target.value;
-        setAdjustments((adj) => {
-            const newAdj = [...adj];
-            newAdj[currentIndex] = choice;
-            return newAdj;
-        });
-    }
+    const getTierValue = (tier) => tierMidpoints[tier] || 0;
 
-    function applyAdjustmentToPlayer(index) {
+    const applyAdjustmentToPlayer = (index) => {
         const adj = adjustments[index];
+        if (!adj) return;
+
         const delta = ADJUSTMENTS[adj] || 0;
         let newTier = tunedPlayers[index].tier + delta;
-
-        if (newTier < MIN_TIER) newTier = MIN_TIER;
-        if (newTier > MAX_TIER) newTier = MAX_TIER;
-
+        newTier = Math.max(MIN_TIER, Math.min(MAX_TIER, newTier));
         const newValue = getTierValue(newTier);
 
-        setTunedPlayers((players) => {
-            const updated = [...players];
+        setTunedPlayers((prev) => {
+            const updated = [...prev];
             updated[index] = {
                 ...updated[index],
                 tier: newTier,
@@ -96,49 +102,96 @@ export default function ValueTunerPopup({ players, onClose, onSave }) {
             };
             return updated;
         });
-    }
+    };
 
-    function handleNext() {
-        // Save adjustment for current player before moving on
-        applyAdjustmentToPlayer(currentIndex);
+    const markPlayerSeen = (index) => {
+        const updated = [...seenPlayers];
+        updated[index] = true;
+        setSeenPlayers(updated);
 
-        if (currentIndex < tunedPlayers.length - 1) {
-            setCurrentIndex(currentIndex + 1);
+        // Also save to localStorage so subsequent sessions can read it
+        localStorage.setItem('seenPlayers', JSON.stringify(updated));
+        localStorage.setItem('adjustments', JSON.stringify(adjustments));
+
+        return updated;
+    };
+
+    const handleAdjustmentChange = (e) => {
+        const choice = e.target.value;
+        setAdjustments((prev) => {
+            const updated = [...prev];
+            updated[currentIndex] = choice;
+
+            // Save to localStorage immediately so data is fresh
+            localStorage.setItem('adjustments', JSON.stringify(updated));
+
+            return updated;
+        });
+    };
+
+    const goToNextUnseenPlayer = (startIndex) => {
+        let nextIndex = startIndex + 1;
+        while (
+            skipAboutRights &&
+            nextIndex < tunedPlayers.length &&
+            adjustments[nextIndex] === 'aboutRight' &&
+            seenPlayers[nextIndex]
+        ) {
+            nextIndex++;
         }
-    }
+        return nextIndex < tunedPlayers.length ? nextIndex : startIndex;
+    };
 
-    function handleBack() {
-        // Save adjustment for current player before moving back
-        applyAdjustmentToPlayer(currentIndex);
-
-        if (currentIndex > 0) {
-            setCurrentIndex(currentIndex - 1);
+    const goToPrevUnseenPlayer = (startIndex) => {
+        let prevIndex = startIndex - 1;
+        while (
+            skipAboutRights &&
+            prevIndex >= 0 &&
+            adjustments[prevIndex] === 'aboutRight' &&
+            seenPlayers[prevIndex]
+        ) {
+            prevIndex--;
         }
-    }
+        return prevIndex >= 0 ? prevIndex : startIndex;
+    };
 
-    function handleSave() {
-        // Apply adjustment to current player before saving
+    const handleNext = () => {
+        if (adjustments[currentIndex] === null) return;
+
         applyAdjustmentToPlayer(currentIndex);
+        const updatedSeen = markPlayerSeen(currentIndex);
 
-        // Give a tiny delay to ensure setState is complete
-        setTimeout(() => {
-            onSave(tunedPlayers);
-        }, 50);
-    }
+        const nextIndex = goToNextUnseenPlayer(currentIndex);
+        setCurrentIndex(nextIndex);
+    };
 
-    function handleCancel() {
-        onClose();
-    }
+    const handleBack = () => {
+        if (adjustments[currentIndex] === null) return;
 
-    function handleDone() {
-        // Apply adjustment to current player before finishing
         applyAdjustmentToPlayer(currentIndex);
+        markPlayerSeen(currentIndex);
 
-        setTimeout(() => {
-            onSave(tunedPlayers);
-        }, 50);
-    }
+        const prevIndex = goToPrevUnseenPlayer(currentIndex);
+        setCurrentIndex(prevIndex);
+    };
 
+    const handleDone = () => {
+        if (adjustments[currentIndex] === null) return;
+
+        applyAdjustmentToPlayer(currentIndex);
+        markPlayerSeen(currentIndex);
+
+        setTimeout(() => onSave(tunedPlayers), 50);
+    };
+
+    const handleSave = () => {
+        if (adjustments[currentIndex] !== null) {
+            applyAdjustmentToPlayer(currentIndex);
+        }
+        setTimeout(() => onSave(tunedPlayers), 50);
+    };
+
+    const handleCancel = () => onClose();
 
     const tierInfo = TIER_INFO[currentPlayer.tier] || {};
 
@@ -147,8 +200,18 @@ export default function ValueTunerPopup({ players, onClose, onSave }) {
             <div className={styles.popup}>
                 <h2>Fine Tune Player Value</h2>
 
-                <div className={styles.playerName}>{currentPlayer.Player}</div>
+                <div className={styles.skipToggle}>
+                    <label style={{ display: 'block', marginTop: '1rem' }}>
+                        <input
+                            type="checkbox"
+                            checked={skipAboutRights}
+                            onChange={(e) => setSkipAboutRights(e.target.checked)}
+                        />
+                        Skip players marked "About Right" that I've already reviewed
+                    </label>
+                </div>
 
+                <div className={styles.playerName}>{currentPlayer.Player}</div>
                 <div>
                     Current Tier: <strong>{currentPlayer.tier} — {tierInfo.label}</strong>
                 </div>
@@ -158,60 +221,22 @@ export default function ValueTunerPopup({ players, onClose, onSave }) {
                 <div className={styles.description}>{tierInfo.description}</div>
 
                 <form className={styles.options}>
-                    <label>
-                        <input
-                            type="radio"
-                            name="adjustment"
-                            value="wayLower"
-                            checked={currentAdjustment === 'wayLower'}
-                            onChange={handleAdjustmentChange}
-                        />
-                        Worth Much Less (-2 tiers)
-                    </label>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="adjustment"
-                            value="lower"
-                            checked={currentAdjustment === 'lower'}
-                            onChange={handleAdjustmentChange}
-                        />
-                        Worth Less (-1 tier)
-                    </label>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="adjustment"
-                            value="aboutRight"
-                            checked={currentAdjustment === 'aboutRight'}
-                            onChange={handleAdjustmentChange}
-                        />
-                        About Right (No Change)
-                    </label>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="adjustment"
-                            value="higher"
-                            checked={currentAdjustment === 'higher'}
-                            onChange={handleAdjustmentChange}
-                        />
-                        Worth More (+1 tier)
-                    </label>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="adjustment"
-                            value="wayHigher"
-                            checked={currentAdjustment === 'wayHigher'}
-                            onChange={handleAdjustmentChange}
-                        />
-                        Worth Much More (+2 tiers)
-                    </label>
+                    {['wayLower', 'lower', 'aboutRight', 'higher', 'wayHigher'].map((val) => (
+                        <label key={val}>
+                            <input
+                                type="radio"
+                                name="adjustment"
+                                value={val}
+                                checked={currentAdjustment === val}
+                                onChange={handleAdjustmentChange}
+                            />
+                            {val === 'wayLower' && 'Worth Much Less (-2 tiers)'}
+                            {val === 'lower' && 'Worth Less (-1 tier)'}
+                            {val === 'aboutRight' && 'About Right (No Change)'}
+                            {val === 'higher' && 'Worth More (+1 tier)'}
+                            {val === 'wayHigher' && 'Worth Much More (+2 tiers)'}
+                        </label>
+                    ))}
                 </form>
 
                 <div className={styles.buttonRow}>
@@ -220,12 +245,20 @@ export default function ValueTunerPopup({ players, onClose, onSave }) {
                     </button>
 
                     {currentIndex < tunedPlayers.length - 1 && (
-                        <button onClick={handleNext} className={styles.buttonPrimary}>
+                        <button
+                            onClick={handleNext}
+                            className={styles.buttonPrimary}
+                            disabled={adjustments[currentIndex] === null}
+                        >
                             Next
                         </button>
                     )}
 
-                    <button onClick={handleDone} className={styles.buttonSuccess}>
+                    <button
+                        onClick={handleDone}
+                        className={styles.buttonSuccess}
+                        disabled={adjustments[currentIndex] === null}
+                    >
                         Done
                     </button>
 
@@ -239,7 +272,6 @@ export default function ValueTunerPopup({ players, onClose, onSave }) {
                         Cancel
                     </button>
                 </div>
-
             </div>
         </div>
     );
