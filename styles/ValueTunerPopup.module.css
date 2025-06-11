@@ -1,0 +1,141 @@
+/* ValueTunerPopup.module.css */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup {
+    background-color: #f5ecdf;
+    /* cream bg */
+    border: 2px solid black;
+    padding: 2rem;
+    box-shadow: 6px 6px 0px black;
+    max-width: 600px;
+    width: 90%;
+    font-family: 'Space Mono', monospace;
+    color: black;
+
+}
+
+.h2 {
+    margin-top: 0;
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
+}
+
+.options label {
+    background-color: white;
+    padding: 0.75rem 1rem;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+
+}
+
+.options input[type="radio"] {
+    margin-right: 0.5rem;
+    transform: scale(1.2);
+}
+
+.options label:hover {
+    background-color: #eae0cf;
+}
+
+.buttonRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.buttonPrimary,
+.buttonSecondary,
+.buttonSuccess {
+    font-weight: 600;
+    border: 2px solid black;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 black;
+    transition: all 0.1s ease-in-out;
+    background-color: white;
+    color: black;
+}
+
+.buttonPrimary:hover {
+    background-color: #d5c9b2;
+}
+
+.buttonSecondary {
+    background-color: #f5ecdf;
+}
+
+.buttonSecondary:hover {
+    background-color: #e8dfce;
+}
+
+.buttonSuccess {
+    background-color: #b7f5b1;
+}
+
+.buttonSuccess:hover {
+    background-color: #a3e59d;
+}
+
+.description {
+    margin: 1rem 0 2rem;
+    padding: 1rem 1.25rem;
+    background-color: #475ee6;
+    border-left: 6px solid #475ee6;
+    /* royal blue anchor */
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ffffff;
+    box-shadow: 4px 4px 0px black;
+    line-height: 1.4;
+}
+
+
+.popup {
+    image-rendering: pixelated;
+    border: 4px double black;
+}
+
+.playerName {
+    font-size: 2.25rem;
+    /* Big and bold */
+    font-weight: 700;
+    color: #1a1a1a;
+    /* Deep black for contrast */
+    text-transform: uppercase;
+    /* Adds some punch */
+    letter-spacing: 0.05em;
+    /* Spacing for style */
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 0px #f5ecdf;
+    /* Creamy drop shadow for depth */
+}

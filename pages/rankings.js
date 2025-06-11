@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import EditableRankings from '../components/EditableRankings';
 import EasySetup from '../components/EasySetup';
+import ValueTunerPopup from '../components/ValueTunerPopup';  // <-- import your popup
 import playerValues from '../data/playerValues.json';
 import { useAuth } from '../contexts/AuthContext';
 import { db } from '../utils/firebase';
@@ -56,6 +57,30 @@ function interpolateValue(rank, tierInfo) {
     return max - (positionInTier / range) * (max - min);
 }
 
+function updatePlayersRanksAndTiers(players, { skipTiers = false } = {}) {
+    const sortedPlayers = [...players].sort((a, b) => b.value - a.value);
+
+    return sortedPlayers.map((player, index) => {
+        const rank = index + 1;
+
+        let tier = player.tier; // default: keep the existing tier
+        let interpolatedValue = player.value;
+
+        if (!skipTiers) {
+            const tierInfo = findTierForRank(rank);
+            tier = tierInfo ? tierInfo.tier : 11;
+            interpolatedValue = interpolateValue(rank, tierInfo);
+        }
+
+        return {
+            ...player,
+            Rank: rank,
+            tier,
+            value: interpolatedValue,
+        };
+    });
+}
+
 export default function Rankings() {
     const [players, setPlayers] = useState([]);
     const { user, signInWithGoogle } = useAuth();
@@ -66,6 +91,8 @@ export default function Rankings() {
     const [setupDone, setSetupDone] = useState(false);
     const [unsavedChanges, setUnsavedChanges] = useState(false);
 
+    // NEW STATE: show/hide the ValueTunerPopup modal
+    const [showValueTuner, setShowValueTuner] = useState(false);
 
     // Load saved rankings from Firestore on user or setupDone change
     useEffect(() => {
@@ -201,6 +228,8 @@ export default function Rankings() {
         setPlayers(basePlayers);
         setSetupDone(true);
         setUnsavedChanges(false); // fresh generate = no unsaved changes
+        setShowValueTuner(true);
+
     };
 
     // Save current rankings to Firestore
@@ -211,18 +240,22 @@ export default function Rankings() {
         try {
             const docRef = doc(db, 'userRankings', user.uid);
 
-            // Clean old keys on save here as well
-            const playersToSave = players.map(p => {
+            // Update ranks based on current order
+            const playersToSave = players.map((p, index) => {
                 const { tier, value, ...rest } = p;
                 return {
                     ...rest,
                     tier: p.tier,
                     value: p.value,
-                    Rank: p.Rank,
+                    Rank: index + 1,  // update Rank to current position
                 };
             });
 
             await setDoc(docRef, { players: playersToSave });
+
+            // Also update local state with new ranks to keep UI consistent
+            setPlayers(playersToSave);
+
             setSaveSuccess(true);
             setUnsavedChanges(false);
         } catch (error) {
@@ -232,6 +265,7 @@ export default function Rankings() {
             setTimeout(() => setSaveSuccess(false), 2000);
         }
     };
+
 
     // Reset rankings to last saved state in Firestore
     const handleResetRankings = async () => {
@@ -294,6 +328,14 @@ export default function Rankings() {
         setUnsavedChanges(true);
     };
 
+    // CALLBACK when ValueTunerPopup finishes tuning and returns updated players
+    const handleValueTunerSave = (updatedPlayers) => {
+        const updatedAndSortedPlayers = updatePlayersRanksAndTiers(updatedPlayers, { skipTiers: true });
+
+        setPlayers(updatedAndSortedPlayers);
+        setUnsavedChanges(true);
+        setShowValueTuner(false);
+    };
 
 
     return (
@@ -317,11 +359,8 @@ export default function Rankings() {
                             Sign In with Google
                         </button>
                     </div>
-
-
                 )
             ) : (
-
                 <>
                     {user ? (
                         <>
@@ -333,6 +372,14 @@ export default function Rankings() {
                                     style={{ flex: 1 }}
                                 >
                                     {isSaving ? 'Saving...' : saveSuccess ? 'Saved!' : 'Save Rankings'}
+                                </button>
+
+                                <button
+                                    className={styles.buttonSecondary}
+                                    onClick={() => setShowValueTuner(true)}
+                                    style={{ flex: 1 }}
+                                >
+                                    Quickly Edit Tiers
                                 </button>
 
                                 <div style={{ position: 'relative', flex: 1 }}>
@@ -438,6 +485,15 @@ export default function Rankings() {
                         <EditableRankings players={players} onChange={handlePlayersChange} />
                     )}
                 </>
+            )}
+
+            {/* RENDER ValueTunerPopup MODAL */}
+            {showValueTuner && (
+                <ValueTunerPopup
+                    players={players}
+                    onClose={() => setShowValueTuner(false)}
+                    onSave={handleValueTunerSave}
+                />
             )}
         </div>
     );

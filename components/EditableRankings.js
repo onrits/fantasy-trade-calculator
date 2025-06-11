@@ -118,7 +118,7 @@ function SortableItem({ player, tier }) {
                         fontSize: "11px",
                     }}
                 >
-                    ({player.Pos || player.Position || "?"})
+                    ({player.Position}{player.PosRank})
                 </span>
                 <span
                     style={{
@@ -144,21 +144,41 @@ export default function EditableRankings({ players, onChange }) {
 
     useEffect(() => {
         if (!players || players.length === 0) return;
+
         const normalized = players.map(p => ({
             ...p,
             id: p.id || p.name || `${p.Player}-${p.Pos || p.position || "??"}`,
-            tier: p.tier ?? p.tier ?? 99,
-            value: p.value ?? p.value ?? 0,
-            Rank: p.Rank ?? p.rank ?? 99,
+            tier: p.tier ?? 99,
+            value: p.value ?? 0,
+            Rank: p.Rank ?? 99,
+            Position: p.Position || p.Pos || "?",
         }));
 
+        // Group players by position
+        const positionGroups = {};
+        normalized.forEach(p => {
+            const pos = p.Position;
+            if (!positionGroups[pos]) positionGroups[pos] = [];
+            positionGroups[pos].push(p);
+        });
+
+        // Sort each position group by descending value and assign positional rank
+        Object.values(positionGroups).forEach(group => {
+            group.sort((a, b) => b.value - a.value);
+            group.forEach((player, i) => {
+                player.PosRank = i + 1;
+            });
+        });
+
         normalized.sort((a, b) => a.Rank - b.Rank);
+
         const grouped = {};
         normalized.forEach(p => {
             const t = p.tier;
             if (!grouped[t]) grouped[t] = [];
             grouped[t].push(p);
         });
+
         setTiers(grouped);
     }, [players]);
 
@@ -335,7 +355,7 @@ export default function EditableRankings({ players, onChange }) {
                             fontFamily: "'Montserrat Black', 'Montserrat', sans-serif",
                             whiteSpace: "nowrap",
                         }}>
-                            {activePlayer.Rank}. {activePlayer.Player} ({activePlayer.Position || activePlayer.Pos || "?"}) - {activePlayer.value.toFixed(2)}
+                            {activePlayer.Rank}. {activePlayer.Player} ({activePlayer.Position}{activePlayer.PosRank}) - {activePlayer.value.toFixed(2)}
                         </div>
                     ) : null}
                 </DragOverlay>

@@ -10,6 +10,7 @@ import { db } from '../utils/firebase';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
+import { useRouter } from 'next/router';
 
 export default function Home() {
   const { user, loading, signInWithGoogle, logout } = useAuth();
@@ -22,6 +23,7 @@ export default function Home() {
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [showResetMenu, setShowResetMenu] = useState(false);
+  const router = useRouter();
 
   useEffect(() => setIsClient(true), []);
 
@@ -290,21 +292,11 @@ export default function Home() {
           {/* More visible generation prompt */}
           <p style={{ fontWeight: '600', marginBottom: '0.25rem' }}>
             Quickly generate new rankings based on your preferences:{' '}
-            <Link
-              href="/rankings"
-              style={{
-                backgroundColor: '#0070f3',
-                color: 'white',
-                padding: '6px 12px',
-                borderRadius: '4px',
-                textDecoration: 'none',
-                fontWeight: '600',
-                cursor: 'pointer',
-                display: 'inline-block',
-              }}
+            <button className={styles.buttonPrimary}
+              onClick={() => router.push('/rankings')}
             >
               Generate Rankings &raquo;
-            </Link>
+            </button>
           </p>
 
           {/* Follow-up about customizing */}
