@@ -181,7 +181,7 @@ export default function Home() {
       <div className={styles.authControls}>
         {user ? (
           <>
-            <span>Signed in as <strong>{user.displayName || user.email}</strong></span>
+            <span>Signed in as <strong>{user.displayName || user.email}     </strong></span>
             <button onClick={logout} className={styles.buttonSecondary}>Sign Out</button>
           </>
         ) : (

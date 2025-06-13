@@ -32,8 +32,8 @@
 @media (max-width: 600px) {
     .popup {
         padding: 1rem;
-        width: 95%;
-        max-height: 85vh;
+        width: 90%;
+        max-height: 80vh;
         font-size: 0.95rem;
         top: 5% !important;
     }

@@ -78,11 +78,40 @@ export default function ValueTunerPopup({
     const currentAdjustment = adjustments[currentIndex];
 
     const tierMidpoints = {
-        1: 4.2, 2: 3.65, 3: 3.0, 4: 2.415, 5: 1.915, 6: 1.5,
-        7: 1.165, 8: 0.83, 9: 0.495, 10: 0.21, 11: 0.05,
+        1: { min: 4.0, max: 4.5 },
+        2: { min: 3.3, max: 4.0 },
+        3: { min: 2.67, max: 3.33 },
+        4: { min: 2.17, max: 2.66 },
+        5: { min: 1.67, max: 2.16 },
+        6: { min: 1.34, max: 1.66 },
+        7: { min: 1.0, max: 1.33 },
+        8: { min: 0.67, max: 0.99 },
+        9: { min: 0.33, max: 0.66 },
+        10: { min: 0.1, max: 0.32 },
+        11: { min: 0.01, max: 0.09 },
     };
 
-    const getTierValue = (tier) => tierMidpoints[tier] || 0;
+    const getTierValue = (tier, index, allPlayers) => {
+        const range = tierMidpoints[tier];
+        if (!range) return 0;
+
+        // Get all players in this tier
+        const playersInTier = allPlayers
+            .map((p, i) => ({ ...p, i }))
+            .filter((p) => p.tier === tier);
+
+        if (playersInTier.length === 1) return (range.min + range.max) / 2;
+
+        // Sort by original order (or you can change to sort by p.Player if needed)
+        playersInTier.sort((a, b) => a.i - b.i);
+
+        const position = playersInTier.findIndex((p) => p.i === index);
+        const pct = position / (playersInTier.length - 1);
+
+        const value = range.max - pct * (range.max - range.min);
+        return parseFloat(value.toFixed(3));
+    };
+
 
     const applyAdjustmentToPlayer = (index) => {
         const adj = adjustments[index];
@@ -91,7 +120,8 @@ export default function ValueTunerPopup({
         const delta = ADJUSTMENTS[adj] || 0;
         let newTier = tunedPlayers[index].tier + delta;
         newTier = Math.max(MIN_TIER, Math.min(MAX_TIER, newTier));
-        const newValue = getTierValue(newTier);
+        const newValue = getTierValue(newTier, index, tunedPlayers);
+
 
         setTunedPlayers((prev) => {
             const updated = [...prev];

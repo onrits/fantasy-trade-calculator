@@ -349,8 +349,8 @@ export default function Rankings() {
                 ← Back to Home
             </Link>
 
-            <h1>Edit Your Rankings</h1>
-            <p>Drag & drop to create your own rankings to be used in the calculator</p>
+            <h1>Edit Rankings</h1>
+            <p>Drag and drop to customize your rankings, or use the Tier Wizard to fine-tune one by one.</p> <br />
 
             {!setupDone ? (
                 user ? (
@@ -384,7 +384,7 @@ export default function Rankings() {
                                     onClick={() => setShowValueTuner(true)}
                                     style={{ flex: 1 }}
                                 >
-                                    Quickly Edit Tiers
+                                    Tiers Wizard
                                 </button>
 
                                 <div style={{ position: 'relative', flex: 1 }}>
