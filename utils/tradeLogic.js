@@ -100,9 +100,19 @@ export function evaluateTrade(team1Assets, team2Assets, options = {}) {
 
     if (top1 !== undefined && top2 !== undefined) {
         const tierGap = Math.abs(top1 - top2);
-        if (tierGap > 2) {
-            const taxRate = 0.1 * (tierGap - 2);
-            reasons.push(`Tier Mismatch: Top asset gap is ${tierGap} tiers - Must be within 2 tiers to avoid tax [10% per each] -`);
+
+        // Lower max allowed gap for top 3 tiers
+        const maxAllowedGap = (top1 <= 3 || top2 <= 3) ? 1 : 2;
+
+        if (tierGap > maxAllowedGap) {
+            let taxRate = 0.1 * (tierGap - maxAllowedGap);
+
+            // Extra multiplier if either is tier 1 star
+            const starMultiplier = (top1 === 1 || top2 === 1) ? 1.5 : 1;
+            taxRate *= starMultiplier;
+
+            reasons.push(`Tier Mismatch: Top asset gap is ${tierGap} tiers - Must be within ${maxAllowedGap} tiers to avoid tax [10% per tier over]${starMultiplier > 1 ? ' + 50% for tier 1 star' : ''} -`);
+
             if (top1 < top2) {
                 team2Total *= 1 - taxRate;
                 reasons.push(`Team 2 Adjustment: (-${Math.round(taxRate * 100)}%).`);
@@ -112,6 +122,8 @@ export function evaluateTrade(team1Assets, team2Assets, options = {}) {
             }
         }
     }
+
+
 
     // Even trade detection
     const allTiers = [...team1Assets, ...team2Assets].map(getTierForAsset).filter(t => t !== null);

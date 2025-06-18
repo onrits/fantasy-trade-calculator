@@ -10,6 +10,8 @@ import { db } from '../utils/firebase';
 import { doc, getDoc, setDoc, deleteDoc } from 'firebase/firestore';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
+import valuetunerStyles from '../styles/ValueTunerPopup.module.css';
+
 
 // Define tier boundaries (example data - adjust as needed)
 const tierBoundaries = [
@@ -43,6 +45,16 @@ const tierValueRanges = {
     9: { min: 0.33, max: 0.66 },
     10: { min: 0.1, max: 0.32 },
     11: { min: 0, max: 0.1 },
+};
+
+const dropdownStyle = {
+    width: '100%',
+    padding: '0.5rem',
+    textAlign: 'left',
+    color: '#eee',
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
 };
 
 function interpolateValue(rank, tierInfo) {
@@ -91,22 +103,22 @@ export default function Rankings() {
     const [setupDone, setSetupDone] = useState(false);
     const [unsavedChanges, setUnsavedChanges] = useState(false);
 
-    // NEW STATE: show/hide the ValueTunerPopup modal
     const [showValueTuner, setShowValueTuner] = useState(false);
-
-    // Initialize tunedPlayers, seenPlayers, adjustments based on players
     const [tunedPlayers, setTunedPlayers] = useState([]);
     const [seenPlayers, setSeenPlayers] = useState([]);
     const [adjustments, setAdjustments] = useState([]);
 
-    // Sync tunedPlayers, seenPlayers, and adjustments when players change
+    // NEW: toggle to show only outliers
+    const [showOutliersOnly, setShowOutliersOnly] = useState(false);
+    const [showOutlierPopup, setShowOutlierPopup] = useState(false);
+
+
     useEffect(() => {
         setTunedPlayers(players.map(p => ({ ...p })));
         setSeenPlayers(players.map(() => false));
         setAdjustments(players.map(() => null));
     }, [players]);
 
-    // Load saved rankings from Firestore on user or setupDone change
     useEffect(() => {
         if (user && !setupDone) {
             const loadUserRankings = async () => {
@@ -116,13 +128,11 @@ export default function Rankings() {
 
                     if (docSnap.exists()) {
                         const loadedPlayers = docSnap.data().players;
-
-                        // Normalize casing and fix ranks
                         const normalizedPlayers = loadedPlayers.map((p, idx) => ({
                             ...p,
                             tier: p.tier ?? 11,
                             value: p.value ?? 0,
-                            Rank: idx + 1,  // recalc rank by position in list
+                            Rank: idx + 1,
                         }));
 
                         setPlayers(normalizedPlayers);
@@ -133,12 +143,10 @@ export default function Rankings() {
                     console.error('Error loading user rankings:', error);
                 }
             };
-
             loadUserRankings();
         }
     }, [user, setupDone]);
 
-    // Helper to confirm discard if unsaved changes exist
     const confirmDiscardChanges = () => {
         if (unsavedChanges) {
             return window.confirm('You have unsaved changes. Are you sure you want to discard them?');
@@ -146,7 +154,6 @@ export default function Rankings() {
         return true;
     };
 
-    // Clear saved rankings in Firestore & reset local state
     const handleClearSavedRankings = async () => {
         if (!user) return;
         try {
@@ -159,17 +166,11 @@ export default function Rankings() {
         }
     };
 
-    // Generate rankings based on sliders/weights from EasySetup
     const generateBaseRankings = async (weights) => {
         console.log('Generating rankings with weights:', weights);
 
         const sliders = weights.sliders || {};
-        const positionWeights = weights.positionWeights || {
-            QB: 1,
-            RB: 1,
-            WR: 1,
-            TE: 1,
-        };
+        const positionWeights = weights.positionWeights || { QB: 1, RB: 1, WR: 1, TE: 1 };
 
         let basePlayers = playerValues.map((p) => {
             const ageScore = (p["Age Score"] ?? 0) / 10;
@@ -196,10 +197,8 @@ export default function Rankings() {
             };
         });
 
-        // Sort descending by computed score
         basePlayers.sort((a, b) => b.rawScore - a.rawScore);
 
-        // Add tier, interpolated value, and rank info
         basePlayers = basePlayers.map((player, index) => {
             const rank = index + 1;
             const tierInfo = findTierForRank(rank);
@@ -214,21 +213,15 @@ export default function Rankings() {
             };
         });
 
-        // Save to Firestore & update local state
         if (user) {
             try {
                 const docRef = doc(db, 'userRankings', user.uid);
-
-                const playersToSave = basePlayers.map(p => {
-                    const { tier, value, ...rest } = p;
-                    return {
-                        ...rest,
-                        tier: p.tier,
-                        value: p.value,
-                        Rank: p.Rank,
-                    };
-                });
-
+                const playersToSave = basePlayers.map(p => ({
+                    ...p,
+                    tier: p.tier,
+                    value: p.value,
+                    Rank: p.Rank,
+                }));
                 await setDoc(docRef, { players: playersToSave });
             } catch (error) {
                 console.error('Error saving generated rankings:', error);
@@ -238,11 +231,9 @@ export default function Rankings() {
         setPlayers(basePlayers);
         setSetupDone(true);
         setUnsavedChanges(false);
-
         setShowValueTuner(true);
     };
 
-    // Save current rankings to Firestore
     const handleSave = async () => {
         if (!user) return;
         setIsSaving(true);
@@ -261,7 +252,6 @@ export default function Rankings() {
             });
 
             await setDoc(docRef, { players: playersToSave });
-
             setPlayers(playersToSave);
 
             setSaveSuccess(true);
@@ -274,7 +264,6 @@ export default function Rankings() {
         }
     };
 
-    // Reset rankings to last saved state in Firestore
     const handleResetRankings = async () => {
         if (!confirmDiscardChanges()) return;
 
@@ -310,7 +299,6 @@ export default function Rankings() {
         }
     };
 
-    // Reset to default players from playerValues.json
     const handleResetToDefault = () => {
         if (!confirmDiscardChanges()) return;
 
@@ -328,13 +316,11 @@ export default function Rankings() {
         setUnsavedChanges(false);
     };
 
-    // Whenever players change, mark unsavedChanges true unless just loaded or saved
     const handlePlayersChange = (newPlayers) => {
         setPlayers(newPlayers);
         setUnsavedChanges(true);
     };
 
-    // CALLBACK when ValueTunerPopup finishes tuning and returns updated players
     const handleValueTunerSave = (updatedPlayers) => {
         const updatedAndSortedPlayers = updatePlayersRanksAndTiers(updatedPlayers, { skipTiers: true });
 
@@ -343,6 +329,32 @@ export default function Rankings() {
         setShowValueTuner(false);
     };
 
+    // Outlier detection threshold for value difference
+    const OUTLIER_VALUE_DIFF_THRESHOLD = 0.5;
+
+    // Filtered players based on outliers toggle
+    const filteredPlayers = players;
+
+
+    const HIGH_ON = [];
+    const LOW_ON = [];
+
+    players.forEach((player) => {
+        const marketPlayer = playerValues.find(p => p.Player === player.name);
+        if (!marketPlayer) return;
+
+        const delta = +(player.value - (marketPlayer.value ?? 0)).toFixed(2);
+
+        if (delta >= OUTLIER_VALUE_DIFF_THRESHOLD) {
+            HIGH_ON.push({ name: player.name, delta });
+        } else if (delta <= -OUTLIER_VALUE_DIFF_THRESHOLD) {
+            LOW_ON.push({ name: player.name, delta });
+        }
+    });
+
+    const topHighOn = HIGH_ON.sort((a, b) => b.delta - a.delta).slice(0, 5);
+    const topLowOn = LOW_ON.sort((a, b) => a.delta - b.delta).slice(0, 5);
+
     return (
         <div className={styles.container}>
             <Link href="/" className={styles.homeLink}>
@@ -350,7 +362,10 @@ export default function Rankings() {
             </Link>
 
             <h1>Edit Rankings</h1>
-            <p>Drag and drop to customize your rankings, or use the Tier Wizard to fine-tune one by one.</p> <br />
+            <p>
+                Drag and drop to customize your rankings, or use the Tier Wizard to fine-tune one by one.
+            </p>
+            <br />
 
             {!setupDone ? (
                 user ? (
@@ -369,12 +384,12 @@ export default function Rankings() {
                 <>
                     {user ? (
                         <>
-                            <div style={{ display: 'flex', gap: '4%', marginBottom: '1rem' }}>
+                            <div style={{ display: 'flex', gap: '2%', marginBottom: '1rem', flexWrap: 'wrap' }}>
                                 <button
                                     className={styles.buttonPrimary}
                                     onClick={handleSave}
                                     disabled={!unsavedChanges || isSaving}
-                                    style={{ flex: 1 }}
+                                    style={{ flex: '1 1 150px' }}
                                 >
                                     {isSaving ? 'Saving...' : saveSuccess ? 'Saved!' : 'Save Rankings'}
                                 </button>
@@ -382,12 +397,22 @@ export default function Rankings() {
                                 <button
                                     className={styles.buttonSecondary}
                                     onClick={() => setShowValueTuner(true)}
-                                    style={{ flex: 1 }}
+                                    style={{ flex: '1 1 150px' }}
                                 >
                                     Tiers Wizard
                                 </button>
 
-                                <div style={{ position: 'relative', flex: 1 }}>
+                                <button
+                                    className={styles.buttonSecondary}
+                                    onClick={() => setShowOutlierPopup(true)}
+                                    style={{ flex: '1 1 150px' }}
+                                >
+                                    View Outlier Summary
+                                </button>
+
+
+
+                                <div style={{ position: 'relative', flex: '1 1 150px' }}>
                                     <button
                                         className={styles.buttonSecondary}
                                         onClick={() => setShowResetMenu((prev) => !prev)}
@@ -413,53 +438,25 @@ export default function Rankings() {
                                                     handleResetRankings();
                                                     setShowResetMenu(false);
                                                 }}
-                                                style={{
-                                                    width: '100%',
-                                                    padding: '0.5rem',
-                                                    textAlign: 'left',
-                                                    color: '#eee',
-                                                    background: 'none',
-                                                    border: 'none',
-                                                    cursor: 'pointer',
-                                                }}
+                                                style={dropdownStyle}
                                             >
                                                 Reset to Last Save
                                             </button>
-
                                             <button
                                                 onClick={() => {
                                                     handleResetToDefault();
                                                     setShowResetMenu(false);
                                                 }}
-                                                style={{
-                                                    width: '100%',
-                                                    padding: '0.5rem',
-                                                    textAlign: 'left',
-                                                    color: '#eee',
-                                                    background: 'none',
-                                                    border: 'none',
-                                                    cursor: 'pointer',
-                                                    borderTop: '1px solid #444',
-                                                }}
+                                                style={{ ...dropdownStyle, borderTop: '1px solid #444' }}
                                             >
                                                 Reset to Default
                                             </button>
-
                                             <button
                                                 onClick={() => {
                                                     handleClearSavedRankings();
                                                     setShowResetMenu(false);
                                                 }}
-                                                style={{
-                                                    width: '100%',
-                                                    padding: '0.5rem',
-                                                    textAlign: 'left',
-                                                    color: '#eee',
-                                                    background: 'none',
-                                                    border: 'none',
-                                                    cursor: 'pointer',
-                                                    borderTop: '1px solid #444',
-                                                }}
+                                                style={{ ...dropdownStyle, borderTop: '1px solid #444' }}
                                             >
                                                 Generate New Rankings
                                             </button>
@@ -482,15 +479,17 @@ export default function Rankings() {
 
                     <h2 className={styles.sectionTitle}>Your Rankings</h2>
 
-                    {players.length === 0 ? (
-                        <p>No rankings yet. Generate or import rankings.</p>
+                    {filteredPlayers.length === 0 ? (
+                        <p>
+                            No rankings to display.{' '}
+                            {showOutliersOnly ? 'No outliers found.' : 'Generate or import rankings.'}
+                        </p>
                     ) : (
-                        <EditableRankings players={players} onChange={handlePlayersChange} />
+                        <EditableRankings players={filteredPlayers} onChange={handlePlayersChange} />
                     )}
                 </>
             )}
 
-            {/* Render ValueTunerPopup modal */}
             {showValueTuner && (
                 <ValueTunerPopup
                     tunedPlayers={tunedPlayers}
@@ -503,6 +502,55 @@ export default function Rankings() {
                     onSave={handleValueTunerSave}
                 />
             )}
+
+            {showOutlierPopup && (
+                <div className={valuetunerStyles.overlay}>
+                    <div className={valuetunerStyles.popup}>
+                        <h2 className={valuetunerStyles.h2}>Outlier Summary</h2>
+
+                        <h3>📈 Players You’re High On</h3>
+                        {topHighOn.length > 0 ? (
+                            <ul className={valuetunerStyles.outlierList}>
+                                {topHighOn.map((p) => (
+                                    <li key={p.name} className={valuetunerStyles.outlierItemHigh}>
+                                        {p.name} <span className={valuetunerStyles.outlierDelta}>(+{p.delta})</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        ) : (
+                            <p className={valuetunerStyles.description} style={{ fontStyle: 'italic', color: '#555' }}>
+                                No significant highs
+                            </p>
+                        )}
+
+                        <h3 style={{ marginTop: '1rem' }}>📉 Players You’re Low On</h3>
+                        {topLowOn.length > 0 ? (
+                            <ul className={valuetunerStyles.outlierList}>
+                                {topLowOn.map((p) => (
+                                    <li key={p.name} className={valuetunerStyles.outlierItemLow}>
+                                        {p.name} <span className={valuetunerStyles.outlierDelta}>({p.delta})</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        ) : (
+                            <p className={valuetunerStyles.description} style={{ fontStyle: 'italic', color: '#555' }}>
+                                No significant lows
+                            </p>
+                        )}
+
+                        <button
+                            onClick={() => setShowOutlierPopup(false)}
+                            className={valuetunerStyles.buttonSecondary}
+                            style={{ marginTop: '2rem' }}
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
+
+
         </div>
     );
+
 }

@@ -1,5 +1,8 @@
 /* ValueTunerPopup.module.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&display=swap');
+
+
 .overlay {
     position: fixed;
     top: 0;
@@ -146,4 +149,36 @@
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 0px #f5ecdf;
     /* Creamy drop shadow for depth */
+}
+
+/* Add at bottom of your CSS file */
+
+.outlierList {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 1rem 0;
+}
+
+.outlierItemHigh {
+    color: #00431c;
+    /* darker green */
+    margin-bottom: 0.5rem;
+    font-weight: 2000;
+    /* bolder */
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+    /* subtle shadow */
+}
+
+.outlierItemLow {
+    color: #b03030;
+    /* darker red */
+    margin-bottom: 0.5rem;
+    font-weight: 1000;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+}
+
+.outlierDelta {
+    opacity: 0.85;
+    margin-left: 0.5rem;
+    font-weight: 600;
 }
