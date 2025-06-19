@@ -384,35 +384,19 @@ export default function Rankings() {
                 <>
                     {user ? (
                         <>
-                            <div style={{ display: 'flex', gap: '2%', marginBottom: '1rem', flexWrap: 'wrap' }}>
+                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem' }}>
+                                {/* Save Button */}
                                 <button
                                     className={styles.buttonPrimary}
                                     onClick={handleSave}
                                     disabled={!unsavedChanges || isSaving}
-                                    style={{ flex: '1 1 150px' }}
+                                    style={{ flex: '1 1 180px' }}
                                 >
                                     {isSaving ? 'Saving...' : saveSuccess ? 'Saved!' : 'Save Rankings'}
                                 </button>
 
-                                <button
-                                    className={styles.buttonSecondary}
-                                    onClick={() => setShowValueTuner(true)}
-                                    style={{ flex: '1 1 150px' }}
-                                >
-                                    Tiers Wizard
-                                </button>
-
-                                <button
-                                    className={styles.buttonSecondary}
-                                    onClick={() => setShowOutlierPopup(true)}
-                                    style={{ flex: '1 1 150px' }}
-                                >
-                                    View Outlier Summary
-                                </button>
-
-
-
-                                <div style={{ position: 'relative', flex: '1 1 150px' }}>
+                                {/* Reset Dropdown */}
+                                <div style={{ position: 'relative', flex: '1 1 180px' }}>
                                     <button
                                         className={styles.buttonSecondary}
                                         onClick={() => setShowResetMenu((prev) => !prev)}
@@ -420,50 +404,46 @@ export default function Rankings() {
                                     >
                                         Reset ▼
                                     </button>
-
                                     {showResetMenu && (
-                                        <div
-                                            style={{
-                                                position: 'absolute',
-                                                top: '100%',
-                                                left: 0,
-                                                width: '100%',
-                                                backgroundColor: '#222',
-                                                border: '1px solid #444',
-                                                zIndex: 10,
-                                            }}
-                                        >
-                                            <button
-                                                onClick={() => {
-                                                    handleResetRankings();
-                                                    setShowResetMenu(false);
-                                                }}
-                                                style={dropdownStyle}
-                                            >
+                                        <div style={{
+                                            position: 'absolute',
+                                            top: '100%',
+                                            left: 0,
+                                            width: '100%',
+                                            backgroundColor: '#222',
+                                            border: '1px solid #444',
+                                            zIndex: 10,
+                                        }}>
+                                            <button onClick={() => { handleResetRankings(); setShowResetMenu(false); }} style={dropdownStyle}>
                                                 Reset to Last Save
                                             </button>
-                                            <button
-                                                onClick={() => {
-                                                    handleResetToDefault();
-                                                    setShowResetMenu(false);
-                                                }}
-                                                style={{ ...dropdownStyle, borderTop: '1px solid #444' }}
-                                            >
+                                            <button onClick={() => { handleResetToDefault(); setShowResetMenu(false); }} style={{ ...dropdownStyle, borderTop: '1px solid #444' }}>
                                                 Reset to Default
                                             </button>
-                                            <button
-                                                onClick={() => {
-                                                    handleClearSavedRankings();
-                                                    setShowResetMenu(false);
-                                                }}
-                                                style={{ ...dropdownStyle, borderTop: '1px solid #444' }}
-                                            >
+                                            <button onClick={() => { handleClearSavedRankings(); setShowResetMenu(false); }} style={{ ...dropdownStyle, borderTop: '1px solid #444' }}>
                                                 Generate New Rankings
                                             </button>
                                         </div>
                                     )}
                                 </div>
+
+                                {/* Tools Toggle */}
+                                <div style={{ flex: '1 1 100%', display: 'flex', justifyContent: 'flex-start', gap: '0.75rem', marginTop: '0.5rem' }}>
+                                    <button
+                                        className={styles.buttonGhost}
+                                        onClick={() => setShowValueTuner(true)}
+                                    >
+                                        Tiers Wizard
+                                    </button>
+                                    <button
+                                        className={styles.buttonGhost}
+                                        onClick={() => setShowOutlierPopup(true)}
+                                    >
+                                        Outlier Summary
+                                    </button>
+                                </div>
                             </div>
+
 
                             {unsavedChanges && (
                                 <p style={{ color: '#f39c12', fontStyle: 'italic', marginBottom: '1rem' }}>

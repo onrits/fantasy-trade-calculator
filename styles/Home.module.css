@@ -489,3 +489,36 @@
   position: relative;
   z-index: 1;
 }
+
+.buttonGhost {
+  background: none;
+  border: 1px dashed #000;
+  color: #000;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 #000;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.buttonGhost:hover {
+  background-color: #f0f0f0;
+  color: #475ee6;
+  border-color: #475ee6;
+  box-shadow: 1px 1px 0 #000;
+}
+
+@media (max-width: 600px) {
+  .buttonGhost {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}

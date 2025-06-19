@@ -159,19 +159,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      {/* Navigation Menu */}
-      <nav style={{ marginBottom: '2rem' }}>
-        <ul style={{ display: 'flex', listStyle: 'none', padding: 0, gap: '1.5rem' }}>
-          <li>
-            <Link href="/" style={{ fontWeight: 'bold', textDecoration: 'underline' }}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href="/rankings">Rankings</Link>
-          </li>
-        </ul>
-      </nav>
+      {/* Removed local Navigation Menu */}
 
       <header className={styles.headerContainer}>
         <h1 className={styles.headerTitle}>TI‑CALC</h1>
@@ -181,7 +169,7 @@ export default function Home() {
       <div className={styles.authControls}>
         {user ? (
           <>
-            <span>Signed in as <strong>{user.displayName || user.email}     </strong></span>
+            <span>Signed in as <strong>{user.displayName || user.email}</strong></span>
             <button onClick={logout} className={styles.buttonSecondary}>Sign Out</button>
           </>
         ) : (
