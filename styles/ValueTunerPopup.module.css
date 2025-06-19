@@ -182,3 +182,103 @@
     margin-left: 0.5rem;
     font-weight: 600;
 }
+
+@media (max-width: 600px) {
+    .popup {
+        padding: 1rem;
+        width: 95vw;
+        /* full-ish viewport width */
+        max-height: 90vh;
+        /* taller but limited */
+        font-size: 0.9rem;
+        /* smaller text to fit more */
+        overflow-y: hidden;
+        /* hide vertical scroll */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* space content vertically */
+    }
+
+    .options {
+        max-height: 35vh;
+        /* restrict options list height */
+        overflow-y: auto;
+        /* scroll inside options if needed */
+    }
+
+    .description {
+        max-height: 20vh;
+        /* limit height */
+        overflow-y: auto;
+        /* scroll if text is long */
+    }
+
+    .buttonRow {
+        flex-wrap: nowrap;
+        /* keep buttons in one row */
+        gap: 0.3rem;
+    }
+
+    .buttonPrimary,
+    .buttonSecondary,
+    .buttonSuccess {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .playerName {
+        font-size: 1.5rem;
+        margin-bottom: 0.3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .popup {
+        padding: 1rem;
+        width: 95vw;
+        /* full-ish viewport width */
+        max-height: 90vh;
+        /* taller but limited */
+        font-size: 0.9rem;
+        /* smaller text to fit more */
+        overflow-y: hidden;
+        /* hide vertical scroll */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* space content vertically */
+    }
+
+    .options {
+        max-height: 35vh;
+        /* restrict options list height */
+        overflow-y: auto;
+        /* scroll inside options if needed */
+    }
+
+    .description {
+        max-height: 20vh;
+        /* limit height */
+        overflow-y: auto;
+        /* scroll if text is long */
+    }
+
+    .buttonRow {
+        flex-wrap: nowrap;
+        /* keep buttons in one row */
+        gap: 0.3rem;
+    }
+
+    .buttonPrimary,
+    .buttonSecondary,
+    .buttonSuccess {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .playerName {
+        font-size: 1.5rem;
+        margin-bottom: 0.3rem;
+    }
+}
