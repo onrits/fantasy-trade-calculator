@@ -19,14 +19,33 @@ export default function MyTeamPage() {
     const [loadingRoster, setLoadingRoster] = useState(false);
     const [sleeperPlayers, setSleeperPlayers] = useState({});
 
-    // Sorting state
     const [sortKey, setSortKey] = useState('marketValue');
-    const [sortAsc, setSortAsc] = useState(false); // false = descending
+    const [sortAsc, setSortAsc] = useState(false);
 
     const playerMap = playerValues.reduce((acc, player) => {
         acc[player.Player] = player;
         return acc;
     }, {});
+
+    // Restore saved state
+    useEffect(() => {
+        const storedUsername = localStorage.getItem('sleeperUsername');
+        const storedLeague = localStorage.getItem('selectedLeague');
+        const storedRoster = localStorage.getItem('savedRoster');
+
+        if (storedUsername) setSleeperUsername(storedUsername);
+        if (storedLeague) setSelectedLeague(storedLeague);
+        if (storedRoster) {
+            try {
+                const parsedRoster = JSON.parse(storedRoster);
+                if (Array.isArray(parsedRoster)) {
+                    setRoster(parsedRoster);
+                }
+            } catch (e) {
+                console.error('Error parsing saved roster:', e);
+            }
+        }
+    }, []);
 
     useEffect(() => {
         if (user && !setupDone) {
@@ -69,6 +88,11 @@ export default function MyTeamPage() {
             const leaguesData = await leaguesRes.json();
 
             setLeagues(leaguesData);
+
+            const savedLeagueId = localStorage.getItem('selectedLeague');
+            if (savedLeagueId && leaguesData.some((l) => l.league_id === savedLeagueId)) {
+                setSelectedLeague(savedLeagueId);
+            }
         } catch (err) {
             console.error('Error fetching Sleeper leagues:', err);
         }
@@ -87,8 +111,11 @@ export default function MyTeamPage() {
             const sleeperUserData = await sleeperUserRes.json();
 
             const myRoster = rostersData.find((r) => r.owner_id === sleeperUserData.user_id);
+            const playerList = myRoster?.players || [];
 
-            setRoster(myRoster?.players || []);
+            setRoster(playerList);
+            localStorage.setItem('savedRoster', JSON.stringify(playerList));
+            localStorage.setItem('selectedLeague', selectedLeague);
         } catch (err) {
             console.error('Error fetching roster:', err);
         }
@@ -131,7 +158,6 @@ export default function MyTeamPage() {
 
     const playerDataList = roster.map(getPlayerData);
 
-    // Sort handler
     const toggleSort = (key) => {
         if (sortKey === key) {
             setSortAsc(!sortAsc);
@@ -173,9 +199,13 @@ export default function MyTeamPage() {
                     type="text"
                     placeholder="Enter Sleeper username"
                     value={sleeperUsername}
-                    onChange={(e) => setSleeperUsername(e.target.value)}
+                    onChange={(e) => {
+                        setSleeperUsername(e.target.value);
+                        localStorage.setItem('sleeperUsername', e.target.value);
+                    }}
                     className={styles.inputField}
                 />
+
                 <button onClick={loadLeagues} className={styles.buttonPrimary}>
                     {loadingLeagues ? 'Loading...' : 'Load Leagues'}
                 </button>
@@ -187,7 +217,10 @@ export default function MyTeamPage() {
                     <select
                         id="league-select"
                         value={selectedLeague}
-                        onChange={(e) => setSelectedLeague(e.target.value)}
+                        onChange={(e) => {
+                            setSelectedLeague(e.target.value);
+                            localStorage.setItem('selectedLeague', e.target.value);
+                        }}
                         className={styles.selectField}
                     >
                         <option value="">-- Choose a league --</option>
@@ -210,32 +243,16 @@ export default function MyTeamPage() {
                         <table className={styles.table}>
                             <thead>
                                 <tr>
-                                    <th
-                                        onClick={() => toggleSort('name')}
-                                        style={{ cursor: 'pointer' }}
-                                        title="Sort by Player"
-                                    >
+                                    <th onClick={() => toggleSort('name')} style={{ cursor: 'pointer' }}>
                                         Player{renderSortArrow('name')}
                                     </th>
-                                    <th
-                                        onClick={() => toggleSort('marketValue')}
-                                        style={{ cursor: 'pointer', textAlign: 'right' }}
-                                        title="Sort by Market Value"
-                                    >
+                                    <th onClick={() => toggleSort('marketValue')} style={{ cursor: 'pointer', textAlign: 'right' }}>
                                         Market Value{renderSortArrow('marketValue')}
                                     </th>
-                                    <th
-                                        onClick={() => toggleSort('personalValue')}
-                                        style={{ cursor: 'pointer', textAlign: 'right' }}
-                                        title="Sort by My Value"
-                                    >
+                                    <th onClick={() => toggleSort('personalValue')} style={{ cursor: 'pointer', textAlign: 'right' }}>
                                         My Value{renderSortArrow('personalValue')}
                                     </th>
-                                    <th
-                                        onClick={() => toggleSort('delta')}
-                                        style={{ cursor: 'pointer', textAlign: 'right' }}
-                                        title="Sort by Delta"
-                                    >
+                                    <th onClick={() => toggleSort('delta')} style={{ cursor: 'pointer', textAlign: 'right' }}>
                                         Delta{renderSortArrow('delta')}
                                     </th>
                                 </tr>
@@ -260,7 +277,6 @@ export default function MyTeamPage() {
                         </table>
                     </div>
 
-                    {/* Mobile sorting controls */}
                     <div className={styles.mobileSortWrapper}>
                         <label htmlFor="mobileSort">Sort by:</label>
                         <select
@@ -268,7 +284,7 @@ export default function MyTeamPage() {
                             value={sortKey}
                             onChange={(e) => {
                                 setSortKey(e.target.value);
-                                setSortAsc(true); // reset to ascending on new sort field
+                                setSortAsc(true);
                             }}
                         >
                             <option value="name">Player</option>
@@ -286,7 +302,6 @@ export default function MyTeamPage() {
                         </button>
                     </div>
 
-                    {/* Mobile Card List */}
                     <div className={styles.mobileCardList}>
                         {sortedPlayers.map((p) => (
                             <div key={p.name} className={styles.mobileCard}>
@@ -304,18 +319,13 @@ export default function MyTeamPage() {
                                 </div>
                                 <div className={styles.mobileCardRow}>
                                     <strong>Delta:</strong>
-                                    <span
-                                        className={
-                                            p.delta > 0 ? styles.deltaPositive : styles.deltaNegative
-                                        }
-                                    >
+                                    <span className={p.delta > 0 ? styles.deltaPositive : styles.deltaNegative}>
                                         {p.delta != null ? (p.delta > 0 ? '+' : '') + p.delta.toFixed(2) : '—'}
                                     </span>
                                 </div>
                             </div>
                         ))}
                     </div>
-
                 </>
             )}
         </div>
